@@ -2,6 +2,8 @@ const TRACTOR_INTERVAL_SEC = 3
 
 
 class GameLogic {
+
+
     constructor(server) {
         this.server = server
     }
@@ -14,10 +16,14 @@ class GameLogic {
         })
     }
 
+    stop() {
+        clearInterval(this.tractorInterval)
+    }
+
     setupTractor(func) {
         //todo: because interval is constant, server not need to send every tick to players
         //could send only changes
-        setInterval(function () {
+        this.tractorInterval = setInterval(function () {
             console.log('Tractor tick')
             if (func) func()
         }, TRACTOR_INTERVAL_SEC * 1000);

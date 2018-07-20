@@ -9,5 +9,8 @@
     </content>
     <orderEntry type="inheritedJdk" />
     <orderEntry type="sourceFolder" forTests="false" />
+    <orderEntry type="library" name="@types/mocha-each" level="application" />
+    <orderEntry type="library" name="@types/mocha" level="application" />
+    <orderEntry type="library" name="@types/istanbul" level="application" />
   </component>
 </module>

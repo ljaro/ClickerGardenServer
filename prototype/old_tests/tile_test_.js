@@ -12,23 +12,21 @@ const StateGround_PLOT_NUMBER = require('../tile_sm/state_ground').PLOT_NUMBER
 const StateGrass = require("../tile_sm/state_grass").StateGrass
 const PLANTS = require("../tile_sm/plants").PLANTS
 
-describe('state ground', function () {
+xdescribe('Tile', function () {
+    it('should be in StateHighGrass at the beginning', function () {
+        let tile = new Tile()
+        assert(tile.state instanceof StateHighGrass)
+    });
 
-    describe('after clicks should change from StateGround to StateHoleGround #', function () {
-
-        it('# plot num = ' + StateGround_PLOT_NUMBER, function () {
-            let tile = new Tile(new StateGround())
-            assert(tile.state instanceof StateGround, 'StateGround at start')
-            const clicks = tile.state.clicksLeft
-
-            for (let i = 0; i < clicks; i++) {
-                assert(tile.state instanceof StateGround)
-                tile.handleInput()
-            }
-
-            assert(tile.state instanceof StateHoleGround)
-        })
-    })
+    it('should call exit before new state', function () {
+        let tile = new Tile()
+        let state = tile.state.link(new StateGround())
+        let mock = sinon.mock(tile.state)
+        const mock2 = sinon.mock(state)
+        mock.expects("exit")
+        tile.handleState(state)
+        mock.verify()
+    });
 
 })
 
