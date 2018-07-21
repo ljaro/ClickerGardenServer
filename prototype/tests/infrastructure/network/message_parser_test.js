@@ -39,26 +39,11 @@ describe('MessageParser', function () {
                 assert(buffer.length <= 500 + 3)
             })
 
-            it('should be parsed as EventWelcome', function () {
-                let dir = 1 // 0 incoming 1 outgoing
-                let cmd = 2
-                let major = 255
-                let minor = 255
-                let patch = 255
-                let msg = new Array(501 + 1).join('A');
-
-                let b = 0
-                b |= (cmd << 1)
-                b |= (dir << 0)
-
-                let buff = Buffer.from([b, major, minor, patch, msg])
-                let event = parser.messageToEvent(buff)
-                assert(event instanceof EventsOut.EventWelcome)
-            });
-
             it('should serialize to Buffer', function () {
                 let buffer = (new Messages.MsgWelcome([1,2,3], 'message')).serialize()
                 let fromBuffer = Messages.MsgWelcome.fromBuffer(buffer)
+                let parsed = parser.messageToEvent(buffer)
+                assert(parsed instanceof EventsOut.EventWelcome)
                 assert(fromBuffer.serialize().equals(buffer))
                 assert(fromBuffer.toEvent() instanceof EventsOut.EventWelcome)
             });
@@ -68,22 +53,11 @@ describe('MessageParser', function () {
          * |00001
          */
         describe('Disconnect message', function () {
-            it('should be parsed as EventDisconnect', function () {
-                let dir = 1
-                let cmd = 1
-
-                let b = 0
-                b |= (cmd << 1)
-                b |= (dir << 0)
-
-                let buff = Buffer.from([b])
-                let event = parser.messageToEvent(buff)
-                assert(event instanceof EventsOut.EventDisconnect)
-            });
-
             it('should serialize to Buffer', function () {
                 let buffer = new Messages.MsgDisconnect().serialize()
                 let fromBuffer = Messages.MsgDisconnect.fromBuffer(buffer)
+                let parsed = parser.messageToEvent(buffer)
+                assert(parsed instanceof EventsOut.EventDisconnect)
                 assert(fromBuffer.serialize().equals(buffer))
                 assert(fromBuffer.toEvent() instanceof EventsOut.EventDisconnect)
             });
@@ -98,54 +72,42 @@ describe('MessageParser', function () {
             parser = new MessageParser()
         })
 
-        describe('login message', function () {
-            it('should be parsed as EventLogin', function () {
-                let fieldId = 15
-                let dir = 0
-                let cmd = 0
-
-                let b = 0
-                b |= (fieldId << 2)
-                b |= (cmd << 1)
-                b |= (dir << 0)
-
-                let buff = Buffer.from([b])
-                let event = parser.messageToEvent(buff)
-                assert(event instanceof EventsIn.EventClickField)
-            });
-
-            it('should serialize to Buffer', function () {
-                let buffer = new Messages.MsgClickField().serialize()
-                let fromBuffer = Messages.MsgClickField.fromBuffer(buffer)
-                assert(fromBuffer.serialize().equals(buffer))
-                assert(fromBuffer.toEvent() instanceof EventsIn.EventClickField)
-            });
-
-        })
+        // describe('login message', function () {
+        //     it('should be parsed as EventLogin', function () {
+        //         let dir = 0
+        //         let cmd = 4
+        //
+        //         let b = 0
+        //         b |= (cmd << 1)
+        //         b |= (dir << 0)
+        //
+        //         let login = new Array(12).join('A');
+        //         let pass = new Array(25).join('B');
+        //
+        //         let buff = Buffer.concat([Buffer.from([b]), Buffer.from(login), Buffer.from(pass)])
+        //         let event = parser.messageToEvent(buff)
+        //         assert(event instanceof EventsIn.EventLogin)
+        //     });
+        //
+        //     it('should serialize to Buffer', function () {
+        //         let buffer = new Messages.MsgLogin().serialize()
+        //         let fromBuffer = Messages.MsgLogin.fromBuffer(buffer)
+        //         assert(fromBuffer.serialize().equals(buffer))
+        //         assert(fromBuffer.toEvent() instanceof EventsIn.EventLogin)
+        //     });
+        //
+        // })
 
         /*
             [    xxxx      |  1     |  0   ]
                field id      cmd      user
          */
         describe('click field message', function () {
-            it('should be parsed as EventClickField', function () {
-                let fieldId = 15
-                let dir = 0
-                let cmd = 0
-
-                let b = 0
-                b |= (fieldId << 2)
-                b |= (cmd << 1)
-                b |= (dir << 0)
-
-                let buff = Buffer.from([b])
-                let event = parser.messageToEvent(buff)
-                assert(event instanceof EventsIn.EventClickField)
-            });
-
             it('should serialize to Buffer', function () {
                 let buffer = new Messages.MsgClickField().serialize()
                 let fromBuffer = Messages.MsgClickField.fromBuffer(buffer)
+                let parsed = parser.messageToEvent(buffer)
+                assert(parsed instanceof EventsIn.EventClickField)
                 assert(fromBuffer.serialize().equals(buffer))
                 assert(fromBuffer.toEvent() instanceof EventsIn.EventClickField)
             });
@@ -157,24 +119,11 @@ describe('MessageParser', function () {
                view id       cmd      user
         */
         describe('change view message', function () {
-            it('should be parsed as EventChangeView', function () {
-                let viewId = 1
-                let dir = 0
-                let cmd = 1
-
-                let b = 0
-                b |= (viewId << 4)
-                b |= (cmd << 1)
-                b |= (dir << 0)
-
-                let buff = Buffer.from([b])
-                let event = parser.messageToEvent(buff)
-                assert(event instanceof EventsIn.EventChangeView)
-            });
-
-            it('should serialize to Buffer', function () {
+             it('should serialize to Buffer', function () {
                 let buffer = new Messages.MsgChangeView().serialize()
                 let fromBuffer = Messages.MsgChangeView.fromBuffer(buffer)
+                let parsed = parser.messageToEvent(buffer)
+                assert(parsed instanceof EventsIn.EventChangeView)
                 assert(fromBuffer.serialize().equals(buffer))
                 assert(fromBuffer.toEvent() instanceof EventsIn.EventChangeView)
             });
@@ -185,24 +134,11 @@ describe('MessageParser', function () {
                boost id       cmd      user
         */
         describe('activate boost message', function () {
-            it('should be parsed as EventActivateBoost', function () {
-                let boostId = 1
-                let dir = 0
-                let cmd = 3
-
-                let b = 0
-                b |= (boostId << 4)
-                b |= (cmd << 1)
-                b |= (dir << 0)
-
-                let buff = Buffer.from([b])
-                let event = parser.messageToEvent(buff)
-                assert(event instanceof EventsIn.EventActivateBoost)
-            });
-
-            it('should serialize to Buffer', function () {
+             it('should serialize to Buffer', function () {
                 let buffer = new Messages.MsgActivateBoost().serialize()
                 let fromBuffer = Messages.MsgActivateBoost.fromBuffer(buffer)
+                let parsed = parser.messageToEvent(buffer)
+                assert(parsed instanceof EventsIn.EventActivateBoost)
                 assert(fromBuffer.serialize().equals(buffer))
                 assert(fromBuffer.toEvent() instanceof EventsIn.EventActivateBoost)
             });
@@ -213,24 +149,11 @@ describe('MessageParser', function () {
                boost id       cmd      user
         */
         describe('buy boost message', function () {
-            it('should be parsed as EventBuyBoost', function () {
-                let boostId = 1
-                let dir = 0
-                let cmd = 5
-
-                let b = 0
-                b |= (boostId << 4)
-                b |= (cmd << 1)
-                b |= (dir << 0)
-
-                let buff = Buffer.from([b])
-                let event = parser.messageToEvent(buff)
-                assert(event instanceof EventsIn.EventBuyBoost)
-            });
-
             it('should serialize to Buffer', function () {
                 let buffer = new Messages.MsgBuyBoost().serialize()
                 let fromBuffer = Messages.MsgBuyBoost.fromBuffer(buffer)
+                let parsed = parser.messageToEvent(buffer)
+                assert(parsed instanceof EventsIn.EventBuyBoost)
                 assert(fromBuffer.serialize().equals(buffer))
                 assert(fromBuffer.toEvent() instanceof EventsIn.EventBuyBoost)
             });
@@ -241,24 +164,11 @@ describe('MessageParser', function () {
                how many      cmd      user
         */
         describe('buy gems message', function () {
-            it('should be parsed as EventBuyGems', function () {
-                let boostId = 1
-                let dir = 0
-                let cmd = 7
-
-                let b = 0
-                b |= (boostId << 4)
-                b |= (cmd << 1)
-                b |= (dir << 0)
-
-                let buff = Buffer.from([b])
-                let event = parser.messageToEvent(buff)
-                assert(event instanceof EventsIn.EventBuyGems)
-            });
-
-            it('should serialize to Buffer', function () {
+               it('should serialize to Buffer', function () {
                 let buffer = new Messages.MsgBuyGems().serialize()
                 let fromBuffer = Messages.MsgBuyGems.fromBuffer(buffer)
+                let parsed = parser.messageToEvent(buffer)
+                assert(parsed instanceof EventsIn.EventBuyGems)
                 assert(fromBuffer.serialize().equals(buffer))
                 assert(fromBuffer.toEvent() instanceof EventsIn.EventBuyGems)
             });

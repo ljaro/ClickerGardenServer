@@ -79,6 +79,12 @@ class EventWelcome extends Event {
     }
 }
 
+class EventLogin extends Event {
+    constructor() {
+        super()
+    }
+}
+
 exports.EventsIn = {
     EventPlayerCloseSocket: EventPlayerCloseSocket,
     EventPlayerAboutToCloseSocket: EventPlayerAboutToCloseSocket,
@@ -87,7 +93,11 @@ exports.EventsIn = {
     EventActivateBoost: EventActivateBoost,
     EventBuyBoost: EventBuyBoost,
     EventBuyGems: EventBuyGems,
-    EventPlayerConnected: EventPlayerConnected,
+    EventPlayerConnected: EventPlayerConnected
+}
+
+exports.Events = {
+    EventLogin: EventLogin
 }
 
 exports.EventsOut = {
