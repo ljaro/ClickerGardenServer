@@ -35,3 +35,9 @@ class Auth {
 }
 
 exports.Auth = Auth
+
+
+/*
+https://www.tarsnap.com/scrypt/scrypt.pdf
+https://stackoverflow.com/questions/13275187/are-there-any-slow-javascript-hashing-algorithms-like-bcrypt
+ */
