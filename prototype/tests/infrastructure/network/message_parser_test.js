@@ -5,6 +5,7 @@ const MessageParser = require("../../../infrastructure/network/message_parser").
 const Messages = require("../../../infrastructure/network/message_parser").Messages
 const EventsIn = require("../../../infrastructure/network/events").EventsIn
 const EventsOut = require("../../../infrastructure/network/events").EventsOut
+const Events = require("../../../infrastructure/network/events").Events
 
 describe('MessageParser', function () {
 
@@ -72,31 +73,17 @@ describe('MessageParser', function () {
             parser = new MessageParser()
         })
 
-        // describe('login message', function () {
-        //     it('should be parsed as EventLogin', function () {
-        //         let dir = 0
-        //         let cmd = 4
-        //
-        //         let b = 0
-        //         b |= (cmd << 1)
-        //         b |= (dir << 0)
-        //
-        //         let login = new Array(12).join('A');
-        //         let pass = new Array(25).join('B');
-        //
-        //         let buff = Buffer.concat([Buffer.from([b]), Buffer.from(login), Buffer.from(pass)])
-        //         let event = parser.messageToEvent(buff)
-        //         assert(event instanceof EventsIn.EventLogin)
-        //     });
-        //
-        //     it('should serialize to Buffer', function () {
-        //         let buffer = new Messages.MsgLogin().serialize()
-        //         let fromBuffer = Messages.MsgLogin.fromBuffer(buffer)
-        //         assert(fromBuffer.serialize().equals(buffer))
-        //         assert(fromBuffer.toEvent() instanceof EventsIn.EventLogin)
-        //     });
-        //
-        // })
+        describe('login message', function () {
+             it('should serialize to Buffer', function () {
+                let buffer = new Messages.MsgLogin().serialize()
+                let fromBuffer = Messages.MsgLogin.fromBuffer(buffer)
+                let parsed = parser.messageToEvent(buffer)
+                assert(parsed instanceof Events.EventLogin)
+                assert(fromBuffer.serialize().equals(buffer))
+                assert(fromBuffer.toEvent() instanceof Events.EventLogin)
+            });
+
+        })
 
         /*
             [    xxxx      |  1     |  0   ]

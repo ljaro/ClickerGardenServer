@@ -2,6 +2,7 @@
 
 const EventsIn = require("./events").EventsIn
 const EventsOut = require("./events").EventsOut
+const Events = require("./events").Events
 
 class MessageParser  {
 
@@ -107,9 +108,10 @@ class MsgDisconnect extends OutboundMessage {
 }
 
 class MsgLogin extends  InboundMessage {
-    constructor() {
+    constructor(login, pass) {
         super()
-
+        this.login = login
+        this.pass = pass
     }
 
     static fromBuffer(buffer) {
@@ -126,7 +128,7 @@ class MsgLogin extends  InboundMessage {
     }
 
     toEvent() {
-        return new EventsIn.EventLogin()
+        return new Events.EventLogin()
     }
 
     serialize() {
