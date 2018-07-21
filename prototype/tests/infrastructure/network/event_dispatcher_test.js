@@ -1,8 +1,9 @@
 const assert = require('assert');
 const net = require('net');
 const sinon = require("sinon");
-const EventDispatcher = require("../../network/event_dispatcher").EventDispatcher
-const EventsIn = require("../../network/events").EventsIn
+const EventDispatcher = require("../../../infrastructure/network/event_dispatcher").EventDispatcher
+const EventsIn = require("../../../infrastructure/network/events").EventsIn
+
 
 describe('EventDispatcher', function () {
 
@@ -24,7 +25,7 @@ describe('EventDispatcher', function () {
 
     params.forEach(function (event) {
             it('should emit event '+ event.name(), function (done) {
-                this.timeout(10)
+                this.timeout(20)
                 let msg = event
                 dispatcher.on(event.name(), () => {
                     done()

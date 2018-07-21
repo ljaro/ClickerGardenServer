@@ -2,11 +2,11 @@ let assert = require('assert');
 var net = require('net');
 
 const sinon = require("sinon");
-const MessageParser = require("../../network/message_parser").MessageParser
-const ConnListener = require("../../network/listener").ConnectionListener
-const Events = require("../../network/events").EventsIn
-const Messages = require("../../network/message_parser").Messages
-const EventDispatcher = require("../../network/event_dispatcher").EventDispatcher
+const MessageParser = require("../../../infrastructure/network/message_parser").MessageParser
+const ConnListener = require("../../../infrastructure/network/listener").ConnectionListener
+const Events = require("../../../infrastructure/network/events").EventsIn
+const Messages = require("../../../infrastructure/network/message_parser").Messages
+const EventDispatcher = require("../../../infrastructure/network/event_dispatcher").EventDispatcher
 
 describe('TcpServer', function () {
 

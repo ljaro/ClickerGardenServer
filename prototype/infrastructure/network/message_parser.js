@@ -1,7 +1,7 @@
 'use strict';
 
-const EventsIn = require("../network/events").EventsIn
-const EventsOut = require("../network/events").EventsOut
+const EventsIn = require("./events").EventsIn
+const EventsOut = require("./events").EventsOut
 
 class MessageParser  {
 

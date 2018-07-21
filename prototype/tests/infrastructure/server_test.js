@@ -1,12 +1,12 @@
 const assert = require('assert');
 const net = require('net');
 const sinon = require("sinon");
-const MessageParser = require("../network/message_parser").MessageParser
+const MessageParser = require("../../infrastructure/network/message_parser").MessageParser
 
-const Server = require("../server").Server
+const Server = require("../../infrastructure/server").Server
 const Client = require("./utils/client").Client
-const Messages = require("../network/message_parser").Messages
-const EventsOut = require("../network/events").EventsOut
+const Messages = require("../../infrastructure/network/message_parser").Messages
+const EventsOut = require("../../infrastructure/network/events").EventsOut
 
 describe('Server', function () {
 
@@ -23,7 +23,7 @@ describe('Server', function () {
     })
 
     it('should server send disconnection to all users on stop', function (done) {
-        let max = 1
+        let max = 5
         let ready = 0
 
         //setTimeout(()=>{done(new Error('timeout'))}, 1500)
@@ -62,6 +62,37 @@ describe('Server', function () {
         })
 
 
+    });
+
+    it('should server send hello msg as first message', function (done) {
+        let max = 5
+
+        server.start()
+
+        function connClient() {
+            return new Promise((res, rej)=>{
+                var client = new Client(server.port())
+                client.on('connected', function (socket) {
+                    socket.on('data', function (data) {
+                        let event = parser.messageToEvent(data)
+
+                        if(event instanceof EventsOut.EventWelcome) {
+                            assert(event instanceof EventsOut.EventWelcome)
+                            res()
+                        }
+                    })
+                })
+            })
+        }
+
+        let prom = []
+        for(let i=0;i<max;++i) {
+            prom.push(connClient(i));
+        }
+
+        Promise.all(prom).then(()=>{
+            done()
+        })
     });
 
 })

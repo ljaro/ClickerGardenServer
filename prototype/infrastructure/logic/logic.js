@@ -1,14 +1,6 @@
 'use strict';
 
-/*
-    playerCloseSocket
-    playerAboutToCloseSocket
-    clickField
-    changeView
-    activateBoost
-    buyBoost
-    buyGems
- */
+
 class GameLogic {
 
     constructor() {

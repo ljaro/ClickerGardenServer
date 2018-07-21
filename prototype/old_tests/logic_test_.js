@@ -1,6 +1,6 @@
 let assert = require('assert');
 const sinon = require("sinon");
-const GameServer = require("../server").GameServer
+const GameServer = require("../infrastructure/server").GameServer
 const GameLogic = require('../logic.js').GameLogic
 
 xdescribe('GameLogic', function () {

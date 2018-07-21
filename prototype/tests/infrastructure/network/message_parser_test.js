@@ -1,10 +1,10 @@
 const assert = require('assert');
 const net = require('net');
 const sinon = require("sinon");
-const MessageParser = require("../../network/message_parser").MessageParser
-const Messages = require("../../network/message_parser").Messages
-const EventsIn = require("../../network/events").EventsIn
-const EventsOut = require("../../network/events").EventsOut
+const MessageParser = require("../../../infrastructure/network/message_parser").MessageParser
+const Messages = require("../../../infrastructure/network/message_parser").Messages
+const EventsIn = require("../../../infrastructure/network/events").EventsIn
+const EventsOut = require("../../../infrastructure/network/events").EventsOut
 
 describe('MessageParser', function () {
 

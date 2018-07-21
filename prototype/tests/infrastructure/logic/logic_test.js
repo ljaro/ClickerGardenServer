@@ -2,8 +2,8 @@ const assert = require('assert');
 const net = require('net');
 const EventEmitter = require('events').EventEmitter;
 const sinon = require("sinon");
-const EventsIn = require("../../network/events").EventsIn
-const GameLogic = require("../../logic/logic").GameLogic
+const EventsIn = require("../../../infrastructure/network/events").EventsIn
+const GameLogic = require("../../../infrastructure/logic/logic").GameLogic
 
 describe('Logic', function () {
 

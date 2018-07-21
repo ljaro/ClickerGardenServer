@@ -1,7 +1,7 @@
 'use strict';
 let net = require('net');
 const Messages = require("./message_parser").Messages
-const Events = require("../network/events").EventsIn
+const Events = require("./events").EventsIn
 const shortid = require('shortid');
 
 class TcpServer {
@@ -16,10 +16,6 @@ class TcpServer {
 
     stop(cb) {
         this.tcpSrv.close(cb)
-    }
-
-    end(msg) {
-        this.tcpSrv.sockets.emit('ff')
     }
 
     port() {
@@ -54,7 +50,7 @@ class ConnectionListener  {
 
     stop(cb) {
         if(this.started) {
-            this.tcpSrv.stop()
+            this.tcpSrv.stop(cb)
             this.disconnectClients()
             this.started = false
         }
