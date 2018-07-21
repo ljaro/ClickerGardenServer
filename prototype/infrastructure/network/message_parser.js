@@ -26,17 +26,17 @@ class MessageParser  {
         if(buffer.length <= 0)
             return null
 
-        let hd = buffer.readUInt8(0)
-        let user = (hd & 0x1) >> 0
-        let cmd = (hd & 0x2) >> 1
+        let firstByte = buffer.readUInt8(0)
+        let dir = (firstByte & 0x1) >> 0
+        let cmd = (firstByte & 0x2) >> 1
 
-        if(user === 0) {
+        if(dir === 0) {
 
             if (cmd === 0) {
                 return MsgClickField.fromBuffer(buffer)
             }
             else {
-                let cmd = (hd & 0xE) >> 1
+                let cmd = (firstByte & 0xE) >> 1
 
                 switch (cmd) {
                     case 1:
@@ -51,8 +51,8 @@ class MessageParser  {
 
                 return null
             }
-        } else if (user === 1) {
-            let cmd = (hd & 0x6e) >> 1
+        } else if (dir === 1) {
+            let cmd = (firstByte & 0x6e) >> 1
             switch (cmd) {
                 case 1:
                     return MsgDisconnect.fromBuffer(buffer)
@@ -98,9 +98,9 @@ class MsgDisconnect extends OutboundMessage {
 
     static fromBuffer(buffer) {
         let b1 = buffer.readUInt8(0)
-        let serverCmd = (b1 & 0x3E) >> 1
+        let cmd = (b1 & 0x3E) >> 1
 
-        if(serverCmd === 1)
+        if(cmd === 1)
         {
             return new MsgDisconnect()
         }
@@ -113,12 +113,12 @@ class MsgDisconnect extends OutboundMessage {
     }
 
     serialize() {
-        let userCmd = 1
-        let serverCmd = 1
+        let dir = 1
+        let cmd = 1
 
         let b = 0
-        b |= (serverCmd << 1)
-        b |= (userCmd << 0)
+        b |= (cmd << 1)
+        b |= (dir << 0)
 
         return Buffer.from([b])
     }
@@ -131,12 +131,12 @@ class MsgBuyGems extends InboundMessage {
     }
 
     static fromBuffer(buffer) {
-        let b1 = buffer.readUInt8(0)
-        let user = (b1 & 0x1) >> 0
-        let cmd = (b1 & 0xE) >> 1
-        let boostId = (b1 & 0xF0) >> 4
+        let firstByte = buffer.readUInt8(0)
+        let dir = (firstByte & 0x1) >> 0
+        let cmd = (firstByte & 0xE) >> 1
+        let boostId = (firstByte & 0xF0) >> 4
 
-        if(user === 0 && cmd === 7)
+        if(dir === 0 && cmd === 7)
         {
             return new MsgBuyGems(boostId)
         }
@@ -150,13 +150,13 @@ class MsgBuyGems extends InboundMessage {
 
     serialize() {
         let boostId = this.count
-        let userCmd = 0
-        let cmdType = 7
+        let dir = 0
+        let cmd = 7
 
         let b = 0
         b |= (boostId << 4)
-        b |= (cmdType << 1)
-        b |= (userCmd << 0)
+        b |= (cmd << 1)
+        b |= (dir << 0)
 
         return Buffer.from([b])
     }
@@ -171,11 +171,11 @@ class MsgBuyBoost extends InboundMessage {
 
     static fromBuffer(buffer) {
         let b1 = buffer.readUInt8(0)
-        let user = (b1 & 0x1) >> 0
+        let dir = (b1 & 0x1) >> 0
         let cmd = (b1 & 0xE) >> 1
         let boostId = (b1 & 0xF0) >> 4
 
-        if(user === 0 && cmd === 5)
+        if(dir === 0 && cmd === 5)
         {
             return new MsgBuyBoost(boostId)
         }
@@ -189,13 +189,13 @@ class MsgBuyBoost extends InboundMessage {
 
     serialize() {
         let boostId = this.boostId
-        let userCmd = 0
-        let cmdType = 5
+        let dir = 0
+        let cmd = 5
 
         let b = 0
         b |= (boostId << 4)
-        b |= (cmdType << 1)
-        b |= (userCmd << 0)
+        b |= (cmd << 1)
+        b |= (dir << 0)
 
         return Buffer.from([b])
     }
@@ -209,11 +209,11 @@ class MsgActivateBoost extends InboundMessage {
 
     static fromBuffer(buffer) {
         let b1 = buffer.readUInt8(0)
-        let user = (b1 & 0x1) >> 0
+        let dir = (b1 & 0x1) >> 0
         let cmd = (b1 & 0xE) >> 1
         let boostId = (b1 & 0xF0) >> 4
 
-        if(user === 0 && cmd === 3)
+        if(dir === 0 && cmd === 3)
         {
             return new MsgActivateBoost(boostId)
         }
@@ -227,13 +227,13 @@ class MsgActivateBoost extends InboundMessage {
 
     serialize() {
         let boostId = this.boostId
-        let userCmd = 0
-        let cmdType = 3
+        let dir = 0
+        let cmd = 3
 
         let b = 0
         b |= (boostId << 4)
-        b |= (cmdType << 1)
-        b |= (userCmd << 0)
+        b |= (cmd << 1)
+        b |= (dir << 0)
 
         return Buffer.from([b])
     }
@@ -246,12 +246,12 @@ class MsgChangeView extends InboundMessage {
     }
 
     static fromBuffer(buffer) {
-        let b1 = buffer.readUInt8(0)
-        let user = (b1 & 0x1) >> 0
-        let cmd = (b1 & 0xE) >> 1
-        let viewId = (b1 & 0x70) >> 4
+        let firstByte = buffer.readUInt8(0)
+        let dir = (firstByte & 0x1) >> 0
+        let cmd = (firstByte & 0xE) >> 1
+        let viewId = (firstByte & 0x70) >> 4
 
-        if(user === 0 && cmd === 1)
+        if(dir === 0 && cmd === 1)
         {
             return new MsgChangeView(viewId)
         }
@@ -265,13 +265,13 @@ class MsgChangeView extends InboundMessage {
 
     serialize() {
         let viewId = this.viewId
-        let userCmd = 0
-        let cmdType = 1
+        let dir = 0
+        let cmd = 1
 
         let b = 0
         b |= (viewId << 4)
-        b |= (cmdType << 1)
-        b |= (userCmd << 0)
+        b |= (cmd << 1)
+        b |= (dir << 0)
 
         return Buffer.from([b])
     }
@@ -284,11 +284,11 @@ class MsgClickField extends InboundMessage {
 
     static fromBuffer(buffer) {
         let b1 = buffer.readUInt8(0)
-        let user = (b1 & 0x1) >> 0
+        let dir = (b1 & 0x1) >> 0
         let cmd = (b1 & 0x2) >> 1
         let id = (b1 & 0x3c) >> 2
 
-        if(user === 0 && cmd === 0)
+        if(dir === 0 && cmd === 0)
         {
             return new MsgClickField(id)
         }
@@ -304,13 +304,13 @@ class MsgClickField extends InboundMessage {
 
     serialize() {
         let fieldId = this.fieldId
-        let userCmd = 0
-        let cmdType = 0
+        let dir = 0
+        let cmd = 0
 
         let b = 0
         b |= (fieldId << 2)
-        b |= (cmdType << 1)
-        b |= (userCmd << 0)
+        b |= (cmd << 1)
+        b |= (dir << 0)
 
         return Buffer.from([b])
     }
@@ -333,16 +333,16 @@ class MsgWelcome extends OutboundMessage {
     }
 
     static fromBuffer(buffer) {
-        let b1 = buffer.readUInt8(0)
-        let user = (b1 & 0x1) >> 0
-        let cmd = (b1 & 0x6f) >> 1
+        let firstByte = buffer.readUInt8(0)
+        let dir = (firstByte & 0x1) >> 0
+        let cmd = (firstByte & 0x6f) >> 1
         let major = buffer.readUInt8(1)
         let minor = buffer.readUInt8(2)
         let patch = buffer.readUInt8(3)
         let buffmsg = Buffer.allocUnsafe(500).fill(0);
         let message = buffer.copy(buffmsg, 4, 500).toString()
 
-        if(user === 1 && cmd === 2)
+        if(dir === 1 && cmd === 2)
         {
             return new MsgWelcome([major, minor, patch], message)
         }
@@ -357,16 +357,16 @@ class MsgWelcome extends OutboundMessage {
     }
 
     serialize() {
-        let userCmd = 1
-        let serverCmd = 2
+        let dir = 1
+        let cmd = 2
         let major = this.major
         let minor = this.minor
         let patch = this.patch
         let msg = this.msg.slice(0, 500-1)
 
         let b = 0
-        b |= (serverCmd << 1)
-        b |= (userCmd << 0)
+        b |= (cmd << 1)
+        b |= (dir << 0)
 
         return Buffer.from([b, major, minor, patch, msg])
     }

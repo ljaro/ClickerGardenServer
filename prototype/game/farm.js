@@ -3,6 +3,6 @@
 
 class Farm {
     constructor() {
-
+        this.fields = []
     }
 }

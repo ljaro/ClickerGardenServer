@@ -1,0 +1,23 @@
+
+### LOGIN
+
+I. player login should be separated from admin login
+II. player db and admin db should be also separated
+III. hashing pass
+
+P' = client_slow(site||userid||P)
+P" = server_slow(S||P')
+S - salt (long as hash) gen for each user and stored for each user in db
+P” is compared to P” stored within DB. P’ is never stored in database.
+
+slow hash such as: scrypt or Argon2.
+
+
+
+1. user enter login and password
+1.1 password is hashed
+
+2. password is sent over tcp
+3. checking if user exists
+4. user and pass validation
+5. if all ok then create unique session id

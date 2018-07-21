@@ -40,16 +40,16 @@ describe('MessageParser', function () {
             })
 
             it('should be parsed as EventWelcome', function () {
-                let userCmd = 1
-                let serverCmd = 2
+                let dir = 1 // 0 incoming 1 outgoing
+                let cmd = 2
                 let major = 255
                 let minor = 255
                 let patch = 255
                 let msg = new Array(501 + 1).join('A');
 
                 let b = 0
-                b |= (serverCmd << 1)
-                b |= (userCmd << 0)
+                b |= (cmd << 1)
+                b |= (dir << 0)
 
                 let buff = Buffer.from([b, major, minor, patch, msg])
                 let event = parser.messageToEvent(buff)
@@ -69,12 +69,12 @@ describe('MessageParser', function () {
          */
         describe('Disconnect message', function () {
             it('should be parsed as EventDisconnect', function () {
-                let userCmd = 1
-                let serverCmd = 1
+                let dir = 1
+                let cmd = 1
 
                 let b = 0
-                b |= (serverCmd << 1)
-                b |= (userCmd << 0)
+                b |= (cmd << 1)
+                b |= (dir << 0)
 
                 let buff = Buffer.from([b])
                 let event = parser.messageToEvent(buff)
@@ -98,6 +98,31 @@ describe('MessageParser', function () {
             parser = new MessageParser()
         })
 
+        describe('login message', function () {
+            it('should be parsed as EventLogin', function () {
+                let fieldId = 15
+                let dir = 0
+                let cmd = 0
+
+                let b = 0
+                b |= (fieldId << 2)
+                b |= (cmd << 1)
+                b |= (dir << 0)
+
+                let buff = Buffer.from([b])
+                let event = parser.messageToEvent(buff)
+                assert(event instanceof EventsIn.EventClickField)
+            });
+
+            it('should serialize to Buffer', function () {
+                let buffer = new Messages.MsgClickField().serialize()
+                let fromBuffer = Messages.MsgClickField.fromBuffer(buffer)
+                assert(fromBuffer.serialize().equals(buffer))
+                assert(fromBuffer.toEvent() instanceof EventsIn.EventClickField)
+            });
+
+        })
+
         /*
             [    xxxx      |  1     |  0   ]
                field id      cmd      user
@@ -105,13 +130,13 @@ describe('MessageParser', function () {
         describe('click field message', function () {
             it('should be parsed as EventClickField', function () {
                 let fieldId = 15
-                let userCmd = 0
-                let cmdType = 0
+                let dir = 0
+                let cmd = 0
 
                 let b = 0
                 b |= (fieldId << 2)
-                b |= (cmdType << 1)
-                b |= (userCmd << 0)
+                b |= (cmd << 1)
+                b |= (dir << 0)
 
                 let buff = Buffer.from([b])
                 let event = parser.messageToEvent(buff)
@@ -134,13 +159,13 @@ describe('MessageParser', function () {
         describe('change view message', function () {
             it('should be parsed as EventChangeView', function () {
                 let viewId = 1
-                let userCmd = 0
-                let cmdType = 1
+                let dir = 0
+                let cmd = 1
 
                 let b = 0
                 b |= (viewId << 4)
-                b |= (cmdType << 1)
-                b |= (userCmd << 0)
+                b |= (cmd << 1)
+                b |= (dir << 0)
 
                 let buff = Buffer.from([b])
                 let event = parser.messageToEvent(buff)
@@ -162,13 +187,13 @@ describe('MessageParser', function () {
         describe('activate boost message', function () {
             it('should be parsed as EventActivateBoost', function () {
                 let boostId = 1
-                let userCmd = 0
-                let cmdType = 3
+                let dir = 0
+                let cmd = 3
 
                 let b = 0
                 b |= (boostId << 4)
-                b |= (cmdType << 1)
-                b |= (userCmd << 0)
+                b |= (cmd << 1)
+                b |= (dir << 0)
 
                 let buff = Buffer.from([b])
                 let event = parser.messageToEvent(buff)
@@ -190,13 +215,13 @@ describe('MessageParser', function () {
         describe('buy boost message', function () {
             it('should be parsed as EventBuyBoost', function () {
                 let boostId = 1
-                let userCmd = 0
-                let cmdType = 5
+                let dir = 0
+                let cmd = 5
 
                 let b = 0
                 b |= (boostId << 4)
-                b |= (cmdType << 1)
-                b |= (userCmd << 0)
+                b |= (cmd << 1)
+                b |= (dir << 0)
 
                 let buff = Buffer.from([b])
                 let event = parser.messageToEvent(buff)
@@ -218,13 +243,13 @@ describe('MessageParser', function () {
         describe('buy gems message', function () {
             it('should be parsed as EventBuyGems', function () {
                 let boostId = 1
-                let userCmd = 0
-                let cmdType = 7
+                let dir = 0
+                let cmd = 7
 
                 let b = 0
                 b |= (boostId << 4)
-                b |= (cmdType << 1)
-                b |= (userCmd << 0)
+                b |= (cmd << 1)
+                b |= (dir << 0)
 
                 let buff = Buffer.from([b])
                 let event = parser.messageToEvent(buff)
