@@ -17,6 +17,11 @@ describe('Auth', function () {
 
     beforeEach(function () {
         dispatcher = new EventEmitter()
+        dispatcher['dispatch'] = function(){}
+        sinon.stub(dispatcher, 'dispatch').callsFake(function (event) {
+            event.emit(dispatcher)
+        })
+
         hasher = new Hasher()
         db = {'queryUserAuthData': function(){}}
         auth = new Auth(dispatcher, hasher, db)
@@ -44,8 +49,7 @@ describe('Auth', function () {
         sinon.stub(hasher, 'compare').withArgs(hashedTestPass, testPass).resolves(true)
         sinon.stub(auth, 'generateSessionId').returns(testSession)
 
-        dispatcher.on('authValid', function (login, session) {
-            assert.equal(login, testLogin)
+        dispatcher.on('authValid', function (session) {
             assert.equal(session, testSession)
             done()
         })

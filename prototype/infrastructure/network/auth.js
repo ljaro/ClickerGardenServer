@@ -1,8 +1,16 @@
 'use strict';
-const crypto = require('crypto');
+
 const uuidv4 = require('uuid/v4');
+const Hasher = require("./hasher").Hasher
+const EventsOut = require("./events").EventsOut
+
 
 class Auth {
+
+    static create(dispatcher, db) {
+        return new Auth(dispatcher, new Hasher(), db)
+    }
+
     constructor(dispatcher, hasher, db) {
         this.hasher = hasher
         this.dispatcher = dispatcher
@@ -16,11 +24,14 @@ class Auth {
 
         this.hasher.compare(hash, pass).then(function (result) {
             if(result) {
-                self.dispatcher.emit('authValid', login, self.generateSessionId())
+                let event = new EventsOut.EventAuthValid(self.generateSessionId())
+                self.dispatcher.dispatch(event)
             } else {
-                self.dispatcher.emit('authInvalid', login)
+                let event = new EventsOut.EventAuthInvalid(login)
+                self.dispatcher.dispatch(event)
             }
-        }).catch(function () {
+        }).catch(function (reason) {
+            console.log(reason)
             self.dispatcher.emit('authInvalid', login)
         })
     }

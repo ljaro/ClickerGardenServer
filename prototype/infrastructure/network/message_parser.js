@@ -1,9 +1,9 @@
 'use strict';
-
+const uuidv4 = require('uuid/v4');
 const EventsIn = require("./events").EventsIn
 const EventsOut = require("./events").EventsOut
 const Events = require("./events").Events
-
+const Uuid = require("../utils/uuid").Uuid
 class MessageParser  {
 
     constructor() {
@@ -47,6 +47,10 @@ class MessageParser  {
                 return MsgDisconnect.fromBuffer(buffer)
             case 7:
                 return MsgWelcome.fromBuffer(buffer)
+            case 8:
+                return MsgAuthValid.fromBuffer(buffer)
+            case 9:
+                return MsgAuthInvalid.fromBuffer(buffer)
             default:
                 return null
         }
@@ -128,7 +132,7 @@ class MsgLogin extends  InboundMessage {
     }
 
     toEvent() {
-        return new Events.EventLogin()
+        return new Events.EventLogin(this.login, this.pass)
     }
 
     serialize() {
@@ -261,6 +265,7 @@ class MsgChangeView extends InboundMessage {
 class MsgClickField extends InboundMessage {
     constructor(fieldId) {
         super()
+        this.fieldId = fieldId
     }
 
     static fromBuffer(buffer) {
@@ -323,7 +328,7 @@ class MsgWelcome extends OutboundMessage {
     }
 
     toEvent() {
-        return new EventsOut.EventWelcome()
+        return new EventsOut.EventWelcome(this.major, this.minor, this.patch, this.msg)
     }
 
     serialize() {
@@ -337,6 +342,67 @@ class MsgWelcome extends OutboundMessage {
     }
 }
 
+class MsgAuthValid extends OutboundMessage {
+    constructor(sessionString) {
+        super()
+        this.sessionString = sessionString
+    }
+
+    static fromBuffer(buffer) {
+        let cmd = buffer.readUInt8(0)
+        let buff = Buffer.alloc(16)
+        buffer.copy(buff, 0, 1, 17)
+        let sessionStr = Uuid.arrayToStr(buff)
+
+        if(cmd === 8)
+        {
+            return new MsgAuthValid(sessionStr)
+        }
+        else
+        {
+            return null
+        }
+    }
+
+    toEvent() {
+        return new EventsOut.EventAuthValid(this.sessionString)
+    }
+
+    serialize() {
+        let cmd = 8
+        let packetSession = Uuid.strToArray(this.sessionString)
+        let sessionBuffer = Buffer.from(packetSession)
+        return Buffer.concat([Buffer.from([cmd]), sessionBuffer])
+    }
+}
+
+class MsgAuthInvalid extends OutboundMessage {
+    constructor() {
+        super()
+    }
+
+    static fromBuffer(buffer) {
+        let cmd = buffer.readUInt8(0)
+
+        if(cmd === 9)
+        {
+            return new MsgAuthInvalid()
+        }
+        else
+        {
+            return null
+        }
+    }
+
+    toEvent() {
+        return new EventsOut.EventAuthInvalid()
+    }
+
+    serialize() {
+        let cmd = 9
+        return Buffer.from([cmd])
+    }
+}
 
 exports.MessageParser = MessageParser
 exports.Messages = {
@@ -347,5 +413,7 @@ exports.Messages = {
     MsgBuyBoost: MsgBuyBoost,
     MsgBuyGems: MsgBuyGems,
     MsgDisconnect: MsgDisconnect,
-    MsgLogin: MsgLogin
+    MsgLogin: MsgLogin,
+    MsgAuthValid: MsgAuthValid,
+    MsgAuthInvalid: MsgAuthInvalid
 }

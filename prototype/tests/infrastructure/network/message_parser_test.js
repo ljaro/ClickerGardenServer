@@ -63,6 +63,30 @@ describe('MessageParser', function () {
                 assert(fromBuffer.toEvent() instanceof EventsOut.EventDisconnect)
             });
         });
+
+        describe('AuthValid message', function () {
+            it('should serialize to Buffer', function () {
+                let session = '109156be-c4fb-41ea-b1b4-efe1671c5836'
+                let buffer = new Messages.MsgAuthValid(session).serialize()
+                let fromBuffer = Messages.MsgAuthValid.fromBuffer(buffer)
+                let parsed = parser.messageToEvent(buffer)
+                assert(parsed instanceof EventsOut.EventAuthValid)
+                assert.deepEqual(fromBuffer.serialize(), buffer)
+                assert(fromBuffer.toEvent() instanceof EventsOut.EventAuthValid)
+            });
+        });
+
+        describe('AuthInvalid message', function () {
+            it('should serialize to Buffer', function () {
+                let session = '109156be-c4fb-41ea-b1b4-efe1671c5836'
+                let buffer = new Messages.MsgAuthInvalid(session).serialize()
+                let fromBuffer = Messages.MsgAuthInvalid.fromBuffer(buffer)
+                let parsed = parser.messageToEvent(buffer)
+                assert(parsed instanceof EventsOut.EventAuthInvalid)
+                assert.deepEqual(fromBuffer.serialize(), buffer)
+                assert(fromBuffer.toEvent() instanceof EventsOut.EventAuthInvalid)
+            });
+        });
     })
 
     describe('Incoming messages', function () {

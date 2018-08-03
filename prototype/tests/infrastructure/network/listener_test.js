@@ -16,7 +16,11 @@ describe('TcpServer', function () {
 
     beforeEach(function () {
         parser = {'messageToEvent': function () {}}
-        dispatcher = {'dispatch': function(){}}
+        dispatcher = {
+            'dispatch': function(){},
+            'onAuthValid': function () {},
+            'onAuthInvalid': function () {}
+        }
         server = new ConnListener(parser, dispatcher)
     })
 

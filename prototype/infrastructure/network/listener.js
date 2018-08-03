@@ -6,7 +6,7 @@ const shortid = require('shortid');
 
 class TcpServer {
     constructor(connectionListener) {
-        this.listenPort = 1336
+        this.listenPort = 1337
         this.tcpSrv = net.createServer(connectionListener);
     }
 
@@ -119,6 +119,18 @@ class ConnectionListener  {
         socket.on('close', function () {
             self.unregisterClient.call(self, socket)
             self.eventDispatcher.dispatch(new Events.EventPlayerCloseSocket())
+        })
+
+        // outgoing handlers
+
+        self.eventDispatcher.onAuthValid(function (sessionStr) {
+            let msg = new Messages.MsgAuthValid(sessionStr)
+            socket.write(msg.serialize())
+        })
+
+        self.eventDispatcher.onAuthInvalid(function () {
+            let msg = new Messages.MsgAuthInvalid()
+            socket.write(msg.serialize())
         })
     }
 }
