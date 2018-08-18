@@ -3,6 +3,7 @@ const uuidv4 = require('uuid/v4');
 const EventsIn = require("./events").EventsIn
 const EventsOut = require("./events").EventsOut
 const Events = require("./events").Events
+const EventsLogic = require("../logic/events").EventsLogic
 const Uuid = require("../utils/uuid").Uuid
 class MessageParser  {
 
@@ -10,9 +11,12 @@ class MessageParser  {
 
     }
 
-    messageToEvent(buffer) {
+    messageToEvent(clientId, buffer) {
+        if(clientId === undefined|| buffer === undefined)
+            throw new Error("parameters doesn't match")
+
         let msg = this.parse(buffer)
-        let result = msg.toEvent()
+        let result = msg.toEvent(clientId)
         return result
     }
 
@@ -61,12 +65,23 @@ class MessageParser  {
 
 class OutboundMessage {
 
+    constructor() {
+    }
     /**
      * creates Event from Message
      * @return Event
      */
-    toEvent() {
+    toEvent(clientId) {
+        if(clientId === undefined) {
+            throw Error('client id must be provided as first parameter')
+        }
+        return this.__toEvent(clientId)
     }
+
+    __toEvent(clientId) {
+        throw Error('implement this')
+    }
+
 
     serialize() {
     }
@@ -74,17 +89,32 @@ class OutboundMessage {
 
 class InboundMessage {
 
+    constructor() {
+    }
+
     /**
      * creates Event from Message
      * @return Event
      */
-    toEvent() {
+    toEvent(clientId) {
+        if(clientId === undefined) {
+            throw Error('client id must be provided as first parameter')
+        }
+        return this.__toEvent(clientId)
+    }
+
+    __toEvent(clientId) {
+        throw Error('implement this')
     }
 
     serialize() {
     }
 }
 
+/**
+ * MsgDisconnect
+ * Server force to disconnect client
+ */
 class MsgDisconnect extends OutboundMessage {
     constructor() {
         super()
@@ -101,8 +131,8 @@ class MsgDisconnect extends OutboundMessage {
         return null
     }
 
-    toEvent() {
-        return new EventsOut.EventDisconnect()
+    __toEvent(clientId) {
+        return new EventsOut.EventDisconnect(clientId)
     }
 
     serialize() {
@@ -120,8 +150,11 @@ class MsgLogin extends  InboundMessage {
 
     static fromBuffer(buffer) {
         let cmd = buffer.readUInt8(0)
-        let login = buffer.toString('ascii', 1, 12)
-        let pass = buffer.toString('ascii', 13, 16+25)
+        let loginLen = buffer.readUInt8(1)
+        let login = buffer.toString('ascii', 2, 2+loginLen)
+
+        let passLen = buffer.readUInt8(2 + loginLen)
+        let pass = buffer.toString('ascii', 3+loginLen , 3+loginLen+passLen)
 
         if(cmd === 3)
         {
@@ -131,16 +164,23 @@ class MsgLogin extends  InboundMessage {
         return null
     }
 
-    toEvent() {
-        return new Events.EventLogin(this.login, this.pass)
+    __toEvent(clientId) {
+        return new Events.EventLogin(clientId, this.login, this.pass)
     }
 
     serialize() {
         let cmd = 3
-        let login = new Array(12).join('A');
-        let pass = new Array(25).join('B');
+        let cmdBuff = Buffer.from([cmd])
 
-        return Buffer.concat([Buffer.from([cmd]), Buffer.from(login), Buffer.from(pass)])
+        let login = this.login.slice(0, 12-1);
+        let loginBuff = Buffer.from(login)
+        let loginLen = Buffer.from([loginBuff.length])
+
+        let pass = this.pass.slice(0, (16+25)-1);
+        let passBuff = Buffer.from(pass)
+        let passLen = Buffer.from([passBuff.length])
+
+        return Buffer.concat([cmdBuff, loginLen, loginBuff, passLen, passBuff])
     }
 }
 
@@ -162,7 +202,7 @@ class MsgBuyGems extends InboundMessage {
         return null
     }
 
-    toEvent() {
+    __toEvent() {
         return new EventsIn.EventBuyGems(this.count)
     }
 
@@ -192,7 +232,7 @@ class MsgBuyBoost extends InboundMessage {
         return null
     }
 
-    toEvent() {
+    __toEvent() {
         return new EventsIn.EventBuyBoost(this.boostId)
     }
 
@@ -222,8 +262,8 @@ class MsgActivateBoost extends InboundMessage {
         return null
     }
 
-    toEvent() {
-        return new EventsIn.EventActivateBoost(this.boostId)
+    __toEvent(clientId) {
+        return new EventsLogic.EventActivateBoost(clientId, this.boostId)
     }
 
     serialize() {
@@ -251,8 +291,8 @@ class MsgChangeView extends InboundMessage {
         return null
     }
 
-    toEvent() {
-        return new EventsIn.EventChangeView(this.viewId)
+    __toEvent(clientId) {
+        return new EventsLogic.EventChangeView(clientId, this.viewId)
     }
 
     serialize() {
@@ -282,8 +322,8 @@ class MsgClickField extends InboundMessage {
         }
     }
 
-    toEvent() {
-        return new EventsIn.EventClickField(this.fieldId)
+    __toEvent(clientId) {
+        return new EventsLogic.EventClickField(clientId, this.fieldId)
     }
 
     serialize() {
@@ -309,13 +349,26 @@ class MsgWelcome extends OutboundMessage {
         this.msg = message.substring(0, 500)
     }
 
+    //TODO non sense -  this is outbound message and not need to check validy:)
     static fromBuffer(buffer) {
+        // first validity check
+
+        if(!(buffer.length >= 4)) {
+            return null
+        }
+
+
         let cmd = buffer.readUInt8(0)
         let major = buffer.readUInt8(1)
         let minor = buffer.readUInt8(2)
         let patch = buffer.readUInt8(3)
-        let buffmsg = Buffer.allocUnsafe(500).fill(0);
-        let message = buffer.copy(buffmsg, 4, 500).toString()
+        let messageLen = buffer.readUInt8(4)
+
+        if(messageLen > (buffer.length - 4)) {
+            return null
+        }
+
+        let message = buffer.toString('ascii', 5, 5 + messageLen)
 
         if(cmd === 7)
         {
@@ -327,7 +380,7 @@ class MsgWelcome extends OutboundMessage {
         }
     }
 
-    toEvent() {
+    __toEvent() {
         return new EventsOut.EventWelcome(this.major, this.minor, this.patch, this.msg)
     }
 
@@ -336,27 +389,35 @@ class MsgWelcome extends OutboundMessage {
         let major = this.major
         let minor = this.minor
         let patch = this.patch
-        let msg = this.msg.slice(0, 500-1)
+        let msg = Buffer.from(this.msg.slice(0, 255-1))
+        let msgLen = msg.length
 
-        return Buffer.from([cmd, major, minor, patch, msg])
+        return Buffer.concat([Buffer.from([cmd, major, minor, patch, msgLen]), msg])
     }
 }
 
 class MsgAuthValid extends OutboundMessage {
-    constructor(sessionString) {
+    constructor(login, sessionString) {
         super()
         this.sessionString = sessionString
+        this.login = login
     }
 
     static fromBuffer(buffer) {
         let cmd = buffer.readUInt8(0)
+
+        let sessionLen = buffer.readUInt8(1)
+
         let buff = Buffer.alloc(16)
-        buffer.copy(buff, 0, 1, 17)
+        buffer.copy(buff, 0, 2, 2+sessionLen)
         let sessionStr = Uuid.arrayToStr(buff)
+
+        let loginLen = buffer.readUInt8(2+sessionLen)
+        let login = buffer.toString('ascii', 3 + sessionLen, 3 + sessionLen + loginLen)
 
         if(cmd === 8)
         {
-            return new MsgAuthValid(sessionStr)
+            return new MsgAuthValid(login, sessionStr)
         }
         else
         {
@@ -364,15 +425,20 @@ class MsgAuthValid extends OutboundMessage {
         }
     }
 
-    toEvent() {
-        return new EventsOut.EventAuthValid(this.sessionString)
+    __toEvent(clientId) {
+        return new EventsOut.EventAuthValid(clientId, this.login, this.sessionString)
     }
 
     serialize() {
         let cmd = 8
         let packetSession = Uuid.strToArray(this.sessionString)
         let sessionBuffer = Buffer.from(packetSession)
-        return Buffer.concat([Buffer.from([cmd]), sessionBuffer])
+        let sessionLen = Buffer.from([sessionBuffer.length])
+
+        let login = Buffer.from(this.login.slice(0, 12-1), 'utf8')
+        let loginLen = Buffer.from([login.length])
+
+        return Buffer.concat([Buffer.from([cmd]), sessionLen, sessionBuffer, loginLen, login])
     }
 }
 
@@ -394,8 +460,8 @@ class MsgAuthInvalid extends OutboundMessage {
         }
     }
 
-    toEvent() {
-        return new EventsOut.EventAuthInvalid()
+    __toEvent(clientId) {
+        return new EventsOut.EventAuthInvalid(clientId)
     }
 
     serialize() {

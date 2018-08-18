@@ -5,6 +5,7 @@ const sinon = require("sinon");
 const MessageParser = require("../../../infrastructure/network/message_parser").MessageParser
 const ConnListener = require("../../../infrastructure/network/listener").ConnectionListener
 const Events = require("../../../infrastructure/network/events").EventsIn
+const EventsLogic = require("../../../infrastructure/logic/events").EventsLogic
 const Messages = require("../../../infrastructure/network/message_parser").Messages
 const EventDispatcher = require("../../../infrastructure/network/event_dispatcher").EventDispatcher
 
@@ -73,12 +74,12 @@ describe('TcpServer', function () {
     it('should dispatch incoming packet data', function (done) {
         let mock = sinon.mock(dispatcher)
         let stub = sinon.stub(parser, 'messageToEvent')
-        stub.returns(new Events.EventClickField())
+        stub.returns(new EventsLogic.EventClickField())
         server.start()
 
 
         let client = net.connect({port: server.port()}, function () {
-            mock.expects("dispatch").withArgs(new Events.EventClickField()).once()
+            mock.expects("dispatch").withArgs(new EventsLogic.EventClickField()).once()
             let data = new Messages.MsgClickField(15).serialize()
             client.write(data)
         })
@@ -96,7 +97,7 @@ describe('TcpServer', function () {
         let mock = sinon.mock(dispatcher)
         server.start()
 
-        mock.expects("dispatch").withArgs(sinon.match.instanceOf(Events.EventPlayerConnected)).once();
+        mock.expects("dispatch").withArgs(sinon.match.instanceOf(EventsLogic.EventPlayerConnected)).once();
 
         let client = net.connect({port: server.port()}, function () {
             client.end()

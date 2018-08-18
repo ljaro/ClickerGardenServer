@@ -18,21 +18,24 @@ class Auth {
         dispatcher.on('login', this.handleLogin.bind(this))
     }
 
-    handleLogin(login, pass) {
+    handleLogin(clientId, login, pass) {
+
+        console.log('handling login: ' + login)
+
         let self = this
         let hash = this.userHashedPassword(login)
 
         this.hasher.compare(hash, pass).then(function (result) {
             if(result) {
-                let event = new EventsOut.EventAuthValid(self.generateSessionId())
+                let event = new EventsOut.EventAuthValid(clientId, login, self.generateSessionId())
                 self.dispatcher.dispatch(event)
             } else {
-                let event = new EventsOut.EventAuthInvalid(login)
+                let event = new EventsOut.EventAuthInvalid(clientId)
                 self.dispatcher.dispatch(event)
             }
         }).catch(function (reason) {
-            console.log(reason)
-            self.dispatcher.emit('authInvalid', login)
+            let event = new EventsOut.EventAuthInvalid(clientId)
+            self.dispatcher.dispatch(event)
         })
     }
 

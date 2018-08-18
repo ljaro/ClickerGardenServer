@@ -49,12 +49,14 @@ describe('Auth', function () {
         sinon.stub(hasher, 'compare').withArgs(hashedTestPass, testPass).resolves(true)
         sinon.stub(auth, 'generateSessionId').returns(testSession)
 
-        dispatcher.on('authValid', function (session) {
-            assert.equal(session, testSession)
+        dispatcher.on('authValid', function (clientid, login, session) {
+            assert.deepEqual(clientid, 'clientid')
+            assert.deepEqual(login, testLogin)
+            assert.deepEqual(session, testSession)
             done()
         })
 
-        dispatcher.emit('login', testLogin, testPass)
+        dispatcher.emit('login', 'clientid', testLogin, testPass)
 
     });
 
@@ -67,11 +69,12 @@ describe('Auth', function () {
         sinon.stub(auth, 'userHashedPassword').returns(hashedTestPass)
         sinon.stub(hasher, 'compare').withArgs(hashedTestPass, testPass).resolves(false)
 
-        dispatcher.on('authInvalid', function () {
+        dispatcher.on('authInvalid', function (clientid) {
+            assert.equal(clientid, 'clientid')
             done()
         })
 
-        dispatcher.emit('login', testLogin, testPass)
+        dispatcher.emit('login', 'clientid', testLogin, testPass)
 
     });
 

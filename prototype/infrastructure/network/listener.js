@@ -2,11 +2,12 @@
 let net = require('net');
 const Messages = require("./message_parser").Messages
 const Events = require("./events").EventsIn
+const EventsLogic = require("./../logic/events").EventsLogic
 const shortid = require('shortid');
 
 class TcpServer {
     constructor(connectionListener) {
-        this.listenPort = 1337
+        this.listenPort = 1334
         this.tcpSrv = net.createServer(connectionListener);
     }
 
@@ -98,16 +99,17 @@ class ConnectionListener  {
 
         socket.write(this.welcomeMessage());
 
-        socket.id = shortid.generate()
+        socket.clientId = shortid.generate()
 
-        this.clientsById[socket.id] = socket
+        this.clientsById[socket.clientId] = socket
 
         self.sockets.push(socket)
 
-        self.eventDispatcher.dispatch(new Events.EventPlayerConnected())
+        self.eventDispatcher.dispatch(new EventsLogic.EventPlayerConnected())
 
+        //TODO every message should have client id?
         socket.on('data', function (data) {
-            let event = self.messageParser.messageToEvent(data)
+            let event = self.messageParser.messageToEvent(this.clientId, data)
             self.eventDispatcher.dispatch(event)
         })
 
@@ -123,9 +125,19 @@ class ConnectionListener  {
 
         // outgoing handlers
 
-        self.eventDispatcher.onAuthValid(function (sessionStr) {
-            let msg = new Messages.MsgAuthValid(sessionStr)
-            socket.write(msg.serialize())
+        self.eventDispatcher.onAuthValid(function (clientId, login, sessionStr) {
+            let msg = new Messages.MsgAuthValid(login, sessionStr)
+
+            //TODO taking just socket here and listening on dispatcher gives sending to all every message
+            //TODO should send only to interested socked
+            let socket = self.clientsById[clientId]
+            console.log('('+socket.clientId+')' + ' handling onAuthValid: '+login+'('+sessionStr+')')
+
+            if(socket) {
+                socket.write(msg.serialize())
+            } else  {
+                throw new Error('not such socket:'+clientId)
+            }
         })
 
         self.eventDispatcher.onAuthInvalid(function () {

@@ -7,10 +7,11 @@ const MessageParser = require("../../../infrastructure/network/message_parser").
 
 class Client extends EventEmitter {
 
-    constructor(port, dispatcher) {
+    constructor(id, port, dispatcher) {
         super()
         this.port = port
         this.dispatcher = dispatcher
+        this.id = id
     }
 
     init() {
@@ -24,7 +25,8 @@ class Client extends EventEmitter {
     }
 
     onData(data) {
-        let event = this.parser.messageToEvent(data)
+        let that = this
+        let event = this.parser.messageToEvent(that.id, data)
         this.dispatcher.dispatch(event)
     }
 

@@ -1,28 +1,32 @@
 'use strict';
 
-class Event {
+const Event = require("./event").Event
 
-    constructor() {
+/**
+ * EventLogic
+ * This type should be only used in logic module
+ */
 
-    }
-
-    name() {
-        let className = this.constructor.name.replace('Event', '')
-        return className.charAt(0).toLowerCase() + className.slice(1);
-    }
-
-    emit(emitter) {
-        emitter.emit(this.name())
-    }
-}
-
-class EventPlayerConnected extends  Event {
-    constructor() {
+class EventCashier extends Event
+{
+    constructor(){
         super()
     }
 }
 
-class EventBuyGems extends  Event {
+class EventNetwork extends Event
+{
+    constructor(clientId){
+        super(clientId)
+    }
+}
+
+/**
+ * EventBuyGems
+ * (cashier)
+ * player action routed to cashier (money stuff)
+ */
+class EventBuyGems extends  EventCashier {
     constructor(count){
         super()
         this.count = count
@@ -33,7 +37,12 @@ class EventBuyGems extends  Event {
     }
 }
 
-class EventBuyBoost extends  Event {
+/**
+ * EventBuyBoost
+ * (cashier)
+ * player action routed to cashier (money stuff)
+ */
+class EventBuyBoost extends  EventCashier {
     constructor(boostId){
         super()
         this.boostId = boostId
@@ -44,58 +53,38 @@ class EventBuyBoost extends  Event {
     }
 }
 
-class EventActivateBoost extends Event {
-    constructor(boostId){
-        super()
-        this.boostId = boostId
-    }
-
-    emit(emitter) {
-        emitter.emit(this.name(), this.boostId)
-    }
-}
-
-class EventChangeView extends Event {
-    constructor(viewId){
-        super()
-        this.viewId = viewId
-    }
-
-    emit(emitter) {
-        emitter.emit(this.name(), this.viewId)
-    }
-}
-
-class EventClickField extends Event {
-    constructor(fieldId){
-        super()
-        this.fieldId = fieldId
-    }
-
-    emit(emitter) {
-        emitter.emit(this.name(), this.fieldId)
-    }
-}
-
+/**
+ * EventPlayerCloseSocket
+ * internal (network module)
+ * player close the socket
+ * should emit EventPlayerDisconnected to logic
+ */
 class EventPlayerCloseSocket extends Event {
-    constructor(){
-        super()
+    constructor(clientId){
+        super(clientId)
     }
 }
 
+/**
+ * EventPlayerAboutToCloseSocket
+ * internal (network module)
+ * player close the socket
+ * should emit EventPlayerDisconnected to logic
+ */
 class EventPlayerAboutToCloseSocket extends Event {
-    constructor(){
-        super()
+    constructor(clientId){
+        super(clientId)
     }
 }
 
-class EventDisconnect extends Event {
-    constructor() {
-        super()
-    }
-}
-
-class EventWelcome extends Event {
+/**
+ * EventWelcome
+ * (network)
+ * server->client
+ * Sent after player connected
+ * Because its send directly from listener's conn handler not need to have clientId
+ */
+class EventWelcome extends EventNetwork {
     constructor(major, minor, patch, msg) {
         super()
         this.major = major
@@ -109,44 +98,67 @@ class EventWelcome extends Event {
     }
 }
 
-class EventLogin extends Event {
-    constructor(login, pass) {
+/**
+ * EventLogin
+ * client->server
+ * When player wants to login with name and pass
+ */
+class EventLogin extends EventNetwork {
+    constructor(clientId, login, pass) {
         super()
+        this.clientId = clientId
         this.login = login
         this.pass = pass
     }
 
     emit(emitter) {
-        emitter.emit(this.name(), this.login, this.pass)
+        emitter.emit(this.name(), this.clientId, this.login, this.pass)
     }
 }
 
-class EventAuthValid extends  Event {
-    constructor(sessionId) {
-        super()
+/**
+ * EventAuthValid
+ * server->client
+ */
+class EventAuthValid extends  EventNetwork {
+    constructor(clientId, login, sessionId) {
+        super(clientId)
         this.sessionId = sessionId
+        this.login = login
     }
 
     emit(emitter) {
-        emitter.emit(this.name(), this.sessionId)
+        emitter.emit(this.name(), this.clientId, this.login, this.sessionId)
     }
 }
 
-class EventAuthInvalid extends  Event {
-    constructor() {
+/**
+ * EventAuthInvalid
+ * server->client
+ */
+class EventAuthInvalid extends  EventNetwork {
+    constructor(clientId) {
+        super(clientId)
+    }
+}
+
+/**
+ * EventDisconnect
+ * (network)
+ * outbound
+ */
+class EventDisconnect extends EventNetwork {
+    constructor(clientId) {
         super()
+        this.clientId = clientId
     }
 }
 
 exports.EventsIn = {
     EventPlayerCloseSocket: EventPlayerCloseSocket,
     EventPlayerAboutToCloseSocket: EventPlayerAboutToCloseSocket,
-    EventClickField: EventClickField,
-    EventChangeView: EventChangeView,
-    EventActivateBoost: EventActivateBoost,
     EventBuyBoost: EventBuyBoost,
     EventBuyGems: EventBuyGems,
-    EventPlayerConnected: EventPlayerConnected
 }
 
 exports.Events = {
@@ -154,9 +166,9 @@ exports.Events = {
 }
 
 exports.EventsOut = {
-    EventDisconnect: EventDisconnect,
     EventWelcome: EventWelcome,
     EventAuthValid: EventAuthValid,
-    EventAuthInvalid: EventAuthInvalid
+    EventAuthInvalid: EventAuthInvalid,
+    EventDisconnect: EventDisconnect
 }
 

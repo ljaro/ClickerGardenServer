@@ -10,6 +10,7 @@ describe('Logic', function () {
     var logic
     var dispatcher
     var mock
+    var clientId = 'abcd'
 
     beforeEach(function () {
         dispatcher = new EventEmitter()
@@ -23,15 +24,15 @@ describe('Logic', function () {
     let params = []
     Object.keys(EventsIn).map((o)=>{
         let classType = EventsIn[o]
-        let obj = new classType();
+        let obj = new classType(clientId);
         params.push(obj)
     })
 
     params.forEach((event)=>{
         it('should Logic class handle event ' + event.name(), function () {
-            mock.expects(event.name()).once()
+            mock.expects(event.name()).withArgs(clientId).once()
             logic.bindDispatcher(dispatcher)
-            dispatcher.emit(event.name())
+            event.emit(dispatcher)
             mock.verify()
         });
     })
