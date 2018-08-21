@@ -11,12 +11,32 @@ class MessageParser  {
 
     }
 
+    readHeader(data) {
+        let msg = MsgHeader.fromBuffer(data)
+        return msg
+    }
+
+    //TODO nice but read twice
+    removeHeader(data) {
+        let msg = MsgHeader.fromBuffer(data)
+
+        let dataSize = data.length - msg.headerSize
+        let buff = Buffer.alloc(dataSize)
+        data.copy(buff, 0, msg.headerSize, msg.headerSize+dataSize)
+        return buff
+    }
+
     messageToEvent(clientId, buffer) {
         if(clientId === undefined|| buffer === undefined)
             throw new Error("parameters doesn't match")
 
         let msg = this.parse(buffer)
         let result = msg.toEvent(clientId)
+
+        if(!result) {
+            throw new Error('Event was not created')
+        }
+
         return result
     }
 
@@ -28,6 +48,24 @@ class MessageParser  {
      * @return InboundMessage
      */
     parse(buffer) {
+
+        let type = this.extractInstance(buffer)
+        if(type)
+            return type.fromBuffer(buffer)
+
+        return null
+    }
+
+    isLogin(buffer) {
+        if(buffer.length <= 0)
+            return null
+
+        let cmd = buffer.readUInt8(0)
+
+        return cmd === 3
+    }
+
+    extractInstance(buffer) {
         if(buffer.length <= 0)
             return null
 
@@ -36,30 +74,28 @@ class MessageParser  {
         switch (cmd)
         {
             case 0:
-                return MsgClickField.fromBuffer(buffer)
+                return MsgClickField
             case 1:
-                return MsgChangeView.fromBuffer(buffer)
+                return MsgChangeView
             case 2:
-                return MsgActivateBoost.fromBuffer(buffer)
+                return MsgActivateBoost
             case 3:
-                return MsgLogin.fromBuffer(buffer)
+                return MsgLogin
             case 4:
-                return MsgBuyBoost.fromBuffer(buffer)
+                return MsgBuyBoost
             case 5:
-                return MsgBuyGems.fromBuffer(buffer)
+                return MsgBuyGems
             case 6:
-                return MsgDisconnect.fromBuffer(buffer)
+                return MsgDisconnect
             case 7:
-                return MsgWelcome.fromBuffer(buffer)
+                return MsgWelcome
             case 8:
-                return MsgAuthValid.fromBuffer(buffer)
+                return MsgAuthValid
             case 9:
-                return MsgAuthInvalid.fromBuffer(buffer)
+                return MsgAuthInvalid
             default:
                 return null
         }
-
-
     }
 }
 
@@ -108,6 +144,72 @@ class InboundMessage {
     }
 
     serialize() {
+    }
+}
+
+/**
+ * If sessionStr is not provided then MsgHeader is dummy header
+ */
+//TODO make security tests
+class MsgHeader extends InboundMessage {
+    constructor(sessionStr) {
+        super()
+        this.sessionStr = sessionStr
+    }
+
+    static fromBuffer(buffer) {
+        if(buffer.length > 1)
+        {
+            let msg = new MsgHeader()
+
+            msg.headerSize = buffer.readUInt8(0)
+            let sessionSize = msg.headerSize-1
+
+            if(sessionSize > 0 && sessionSize <= buffer.length-1)
+            {
+                //TODO pack session to binary
+                let buff = Buffer.alloc(sessionSize)
+                buffer.copy(buff, 0, 1, 1+sessionSize)
+                let sessionStr = Uuid.arrayToStr(buff)
+
+                msg.sessionStr = sessionStr
+            }
+            else
+            {
+                // return msg without sessionstr
+            }
+
+            return msg
+        }
+
+        throw new Error('Cannot create message from buffer')
+    }
+
+    __toEvent(clientId) {
+        throw new Error('__toEvent not implemented for MsgHeader')
+    }
+
+    serialize(payload) {
+
+        if(this.sessionStr && payload)
+        {
+            let packetSession = Uuid.strToArray(this.sessionStr)
+            let sessionBuffer = Buffer.from(packetSession)
+            let size = Buffer.from([sessionBuffer.length+1])
+            return Buffer.concat([size, sessionBuffer, payload])
+        }
+        else if(payload && !this.sessionStr)
+        {
+            let size = Buffer.from([1])
+            return Buffer.concat([size, payload])
+        }
+        else if(!payload && this.sessionStr)
+        {
+            let size = Buffer.from([1])
+            return Buffer.concat([size])
+        }
+
+        throw new Error('Case not implemented')
     }
 }
 
@@ -380,8 +482,8 @@ class MsgWelcome extends OutboundMessage {
         }
     }
 
-    __toEvent() {
-        return new EventsOut.EventWelcome(this.major, this.minor, this.patch, this.msg)
+    __toEvent(clientId) {
+        return new EventsOut.EventWelcome(clientId, this.major, this.minor, this.patch, this.msg)
     }
 
     serialize() {
@@ -406,6 +508,7 @@ class MsgAuthValid extends OutboundMessage {
     static fromBuffer(buffer) {
         let cmd = buffer.readUInt8(0)
 
+        //TODO getting session len and fixed alloc(16) ?
         let sessionLen = buffer.readUInt8(1)
 
         let buff = Buffer.alloc(16)
@@ -481,5 +584,6 @@ exports.Messages = {
     MsgDisconnect: MsgDisconnect,
     MsgLogin: MsgLogin,
     MsgAuthValid: MsgAuthValid,
-    MsgAuthInvalid: MsgAuthInvalid
+    MsgAuthInvalid: MsgAuthInvalid,
+    MsgHeader: MsgHeader
 }

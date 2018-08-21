@@ -8,6 +8,9 @@ class EventDispatcher  extends EventEmitter {
     }
 
     dispatch(event) {
+        if(!event) {
+            throw new Error('Undefined event')
+        }
         event.emit(this)
     }
 

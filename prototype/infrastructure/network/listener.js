@@ -2,12 +2,13 @@
 let net = require('net');
 const Messages = require("./message_parser").Messages
 const Events = require("./events").EventsIn
+const EventsOut = require("./events").EventsOut
 const EventsLogic = require("./../logic/events").EventsLogic
 const shortid = require('shortid');
 
 class TcpServer {
     constructor(connectionListener) {
-        this.listenPort = 1334
+        this.listenPort = 1336
         this.tcpSrv = net.createServer(connectionListener);
     }
 
@@ -33,6 +34,7 @@ class ConnectionListener  {
         this.version = {}
         this.sockets = []
         this.clientsById = {}
+        this.clientIdBySession = {}
         this.connHook = undefined
         this.started = false
     }
@@ -99,7 +101,12 @@ class ConnectionListener  {
 
         socket.write(this.welcomeMessage());
 
-        socket.clientId = shortid.generate()
+        // very new socket gets its tmp id needed for Auth routing
+        // when data arrived it could contains session id or not
+        // those without session id are packet before auth
+        // with session id are after auth
+        //TODO this must be extracted to separate classes. listen should only dispatch messages not manage session/clientId
+        socket.clientId = 'tmp#'+shortid.generate()
 
         this.clientsById[socket.clientId] = socket
 
@@ -108,9 +115,45 @@ class ConnectionListener  {
         self.eventDispatcher.dispatch(new EventsLogic.EventPlayerConnected())
 
         //TODO every message should have client id?
+        // 1. login msg omit session check
+        // 2. every other message must pass session check
         socket.on('data', function (data) {
-            let event = self.messageParser.messageToEvent(this.clientId, data)
-            self.eventDispatcher.dispatch(event)
+
+            function sessionCheck(sessionStr) {
+                return sessionStr && (sessionStr in self.clientIdBySession)
+            }
+
+            function needSessionCheck(msg) {
+                //TODO not nice fromBuffer use to check instance. Second use is in messageToEvent
+                return !self.messageParser.isLogin(msg)
+            }
+
+            try {
+                let header = self.messageParser.readHeader(data)
+
+                if(!header) {
+                    // all incoming messages must have MsgHeader
+                    // log that event
+                    return
+                }
+
+                let clientId = this.clientId
+
+                let d = self.messageParser.removeHeader(data)
+
+                if(needSessionCheck(d) && !sessionCheck(header.sessionStr)) {
+                    //TODO do we need dispatch event or directly use socket.write ?
+                    let event = new EventsOut.EventDisconnect(clientId)
+                    self.eventDispatcher.dispatch(event)
+                } else {
+                    let event = self.messageParser.messageToEvent(clientId, d)
+                    self.eventDispatcher.dispatch(event)
+                }
+
+
+            } catch(err) {
+                console.log(err)
+            }
         })
 
         socket.on('end', function () {
@@ -125,11 +168,46 @@ class ConnectionListener  {
 
         // outgoing handlers
 
+        //TODO onDisconnect and onAuthValid has common things. For instance routing can be extracted
+        self.eventDispatcher.onDisconnect(function (clientId) {
+            let msg = new Messages.MsgDisconnect()
+
+            let socket = self.clientsById[clientId]
+            console.log('('+socket.clientId+')' + ' will be disconnected ')
+            if(socket) {
+                socket.end(msg.serialize())
+
+
+                //TODO refactor this
+                var idx = self.sockets.indexOf(socket);
+                if (idx !== -1) {
+                    self.sockets.splice(idx, 1);
+                }
+
+
+                delete self.clientsById[clientId]
+
+                for(let session in self.clientIdBySession) {
+                    if(self.clientIdBySession.hasOwnProperty(session)) {
+                        if(self.clientIdBySession[session] === clientId) {
+                            delete self.clientIdBySession[session]
+                            break
+                        }
+                    }
+                }
+
+
+            } else  {
+                throw new Error('not such socket:'+clientId)
+            }
+        })
+
+
         self.eventDispatcher.onAuthValid(function (clientId, login, sessionStr) {
             let msg = new Messages.MsgAuthValid(login, sessionStr)
 
-            //TODO taking just socket here and listening on dispatcher gives sending to all every message
-            //TODO should send only to interested socked
+            self.clientIdBySession[sessionStr] = clientId
+
             let socket = self.clientsById[clientId]
             console.log('('+socket.clientId+')' + ' handling onAuthValid: '+login+'('+sessionStr+')')
 

@@ -74,6 +74,7 @@ describe('MessageParser', function () {
                 let fromBuffer = Messages.MsgWelcome.fromBuffer(buffer)
                 let event = parser.messageToEvent('clientid', buffer)
                 assert(event instanceof EventsOut.EventWelcome)
+                assert.equal(event.clientId, 'clientid')
                 assert.deepEqual(fromBuffer.serialize(), buffer)
                 assert(fromBuffer.toEvent('clientid') instanceof EventsOut.EventWelcome)
                 assert.deepEqual(fromBuffer.msg, 'message')

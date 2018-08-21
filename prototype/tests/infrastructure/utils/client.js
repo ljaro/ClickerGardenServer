@@ -27,6 +27,7 @@ class Client extends EventEmitter {
     onData(data) {
         let that = this
         let event = this.parser.messageToEvent(that.id, data)
+        console.log('Message arrived ')
         this.dispatcher.dispatch(event)
     }
 

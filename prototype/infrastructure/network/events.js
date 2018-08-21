@@ -85,8 +85,8 @@ class EventPlayerAboutToCloseSocket extends Event {
  * Because its send directly from listener's conn handler not need to have clientId
  */
 class EventWelcome extends EventNetwork {
-    constructor(major, minor, patch, msg) {
-        super()
+    constructor(clientId, major, minor, patch, msg) {
+        super(clientId)
         this.major = major
         this.minor = minor
         this.patch = patch
@@ -105,8 +105,7 @@ class EventWelcome extends EventNetwork {
  */
 class EventLogin extends EventNetwork {
     constructor(clientId, login, pass) {
-        super()
-        this.clientId = clientId
+        super(clientId)
         this.login = login
         this.pass = pass
     }

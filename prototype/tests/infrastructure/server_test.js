@@ -54,14 +54,14 @@ describe('Server end-2-end tests', function () {
 
                     disp.onWelcome(() => {
                         // only one client send login
-                        if (i == 5) {
-                            let msg = new Messages.MsgLogin('login' + client.id, 'pass1')
-                            client.client.write(msg.serialize())
+                        if (i === 5) {
+                            let payload = new Messages.MsgLogin('login' + client.id, 'pass1')
+                            let msg = new Messages.MsgHeader()
+                            client.client.write(msg.serialize(payload.serialize()))
                         }
                     })
 
                     disp.onAuthValid((a) => {
-                        console.log(a)
                         ready++
                         if(res)
                             res()
@@ -108,12 +108,12 @@ describe('Server end-2-end tests', function () {
                     client.init()
 
                     disp.onWelcome(()=>{
-                        let msg = new Messages.MsgLogin('login'+i, 'pass1')
-                        client.client.write(msg.serialize())
+                        let payload = new Messages.MsgLogin('login'+i, 'pass1')
+                        let msg = new Messages.MsgHeader()
+                        client.client.write(msg.serialize(payload.serialize()))
                     })
 
                     disp.onAuthValid((a)=>{
-                        console.log(a)
                         ready++
                         res()
                     })
@@ -138,32 +138,146 @@ describe('Server end-2-end tests', function () {
 
         });
 
-        it('should respond with session id when valid login and password', function () {
+        it('should respond with session id when valid login and password', function (done) {
+            let max = 1
+            let ready = 0
+            let client_cnt = 0
 
+            server.start()
+
+            function connClient(i) {
+
+                console.log('create client ' + i)
+                return new Promise((res, rej)=>{
+                    let disp = new EventDispatcher()
+                    var client = new Client(i, server.port(), disp)
+                    client.init()
+
+                    disp.onWelcome(()=>{
+                        let payload = new Messages.MsgLogin('login'+i, 'pass1')
+                        let msg = new Messages.MsgHeader()
+                        client.client.write(msg.serialize(payload.serialize()))
+                    })
+
+                    //TODO client id is always transfered in event
+                    // Event has always its client (maybe not always?)
+                    // clientid in event is passed by MessageParser.messageToEvent on client side
+                    disp.onAuthValid((clientId, login, session)=>{
+                        assert.equal('login'+i, login)
+                        assert.notEqual(undefined, session)
+                        ready++
+                        res()
+                    })
+
+                    disp.onAuthInvalid(()=>{
+                        rej()
+                    })
+                })
+            }
+
+            let prom = []
+            for(let i=0;i<max;++i) {
+                prom.push(connClient(i));
+            }
+
+            Promise.all(prom).then(()=>{
+                assert.equal(ready, max)
+                done()
+            }).catch(function (reason) {
+                //throw new Error(reason)
+            })
         });
 
-        it('should respond with fail auth when invalid login', function () {
+        it('should respond with fail auth when invalid login or password', function (done) {
+            server.auth.hasher.compare.restore()
+            sinon.stub(server.auth.hasher, 'compare').resolves(false)
+            let max = 2
+            let ready = 0
+            let client_cnt = 0
 
-        });
+            server.start()
 
-        it('should respond with fail auth when invalid password', function () {
+            function connClient(i) {
 
+                console.log('create client ' + i)
+                return new Promise((res, rej)=>{
+                    let disp = new EventDispatcher()
+                    var client = new Client(i, server.port(), disp)
+                    client.init()
+
+                    disp.onWelcome(()=>{
+                        let payload = new Messages.MsgLogin('login'+i, 'pass12222')
+                        let msg = new Messages.MsgHeader()
+                        client.client.write(msg.serialize(payload.serialize()))
+                    })
+
+                    //TODO client id is always transfered in event
+                    // Event has always its client (maybe not always?)
+                    // clientid in event is passed by MessageParser.messageToEvent on client side
+                    disp.onAuthValid((clientId, login, session)=>{
+                        rej()
+                    })
+
+                    disp.onAuthInvalid(()=>{
+                        ready++
+                        res()
+                    })
+                })
+            }
+
+            let prom = []
+            for(let i=0;i<max;++i) {
+                prom.push(connClient(i));
+            }
+
+            Promise.all(prom).then(()=>{
+                assert.equal(ready, max)
+                done()
+            }).catch(function (reason) {
+                //throw new Error(reason)
+            })
         });
     })
 
-    describe('authentication', function (){
-        it('should client send session id in every message to server', function () {
+    describe('authentication2', function (){
+        it('should disconnect when session id not in message', function (done) {
+            server.start()
+            let disp = new EventDispatcher()
+            var client = new Client('c1', server.port(), disp)
+            client.init()
 
+            let authDone = false
+            disp.onWelcome(()=>{
+                let payload = new Messages.MsgLogin('login', 'pass12222')
+                let msg = new Messages.MsgHeader()
+                client.client.write(msg.serialize(payload.serialize()))
+            })
+
+            disp.onAuthValid((clientId, login, session)=>{
+                // has session but do not send
+                let msg = new Messages.MsgClickField(2)
+                client.client.write(msg.serialize())
+                authDone = true
+            })
+
+            disp.onDisconnect(()=>{
+                if(authDone) {
+                    done()
+                }
+            })
         });
-
-        it('should disconnect when session id not in message', function () {
-
-        });
+        
+        it('should disconnect when session id doesnt match', function () {
+            
+        })
+        
+        it('should route messages to proper context of session', function () {
+            
+        })
     })
 
     describe('connection', function () {
         it('should server send disconnection to all users on stop', function (done) {
-
 
             let max = 5
             let ready = 0
