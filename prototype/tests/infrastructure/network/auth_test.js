@@ -6,7 +6,7 @@ const sinon = require("sinon");
 const Auth = require("../../../infrastructure/network/auth").Auth
 const Events = require("../../../infrastructure/network/events").Events
 const EventEmitter = require('events').EventEmitter;
-const Hasher = require("../../../infrastructure/network/hasher").Hasher
+const Hasher = require("../../../infrastructure/utils/hasher").Hasher
 
 describe('Auth', function () {
 

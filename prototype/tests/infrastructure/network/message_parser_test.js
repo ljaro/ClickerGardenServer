@@ -5,7 +5,7 @@ const MessageParser = require("../../../infrastructure/network/message_parser").
 const Messages = require("../../../infrastructure/network/message_parser").Messages
 const EventsIn = require("../../../infrastructure/network/events").EventsIn
 const EventsOut = require("../../../infrastructure/network/events").EventsOut
-const EventsLogic = require("../../../infrastructure/logic/events").EventsLogic
+const EventsLogic = require("../../../game/logic/events").EventsLogic
 const Events = require("../../../infrastructure/network/events").Events
 
 describe('MessageParser', function () {

@@ -21,3 +21,13 @@ slow hash such as: scrypt or Argon2.
 3. checking if user exists
 4. user and pass validation
 5. if all ok then create unique session id
+
+
+### EVENTS
+
+1. Events are messages to communicate between server modules
+
+
+### LOGIC
+
+1. Logic should be moved from infrastructure to game

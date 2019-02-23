@@ -1,7 +1,7 @@
 'use strict';
 
 const uuidv4 = require('uuid/v4');
-const Hasher = require("./hasher").Hasher
+const Hasher = require("../utils/hasher").Hasher
 const EventsOut = require("./events").EventsOut
 
 

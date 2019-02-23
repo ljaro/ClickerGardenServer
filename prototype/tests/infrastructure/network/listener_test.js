@@ -6,7 +6,7 @@ const MessageParser = require("../../../infrastructure/network/message_parser").
 const ConnListener = require("../../../infrastructure/network/listener").ConnectionListener
 const Events = require("../../../infrastructure/network/events").EventsIn
 const EventsOut = require("../../../infrastructure/network/events").EventsOut
-const EventsLogic = require("../../../infrastructure/logic/events").EventsLogic
+const EventsLogic = require("../../../game/logic/events").EventsLogic
 const Messages = require("../../../infrastructure/network/message_parser").Messages
 const EventDispatcher = require("../../../infrastructure/network/event_dispatcher").EventDispatcher
 

@@ -6,7 +6,7 @@ const MessageParser = require("./network/message_parser").MessageParser
 const Events = require("./network/events").Events
 const MsgWelcome = require("./network/message_parser").MsgWelcome
 const ConnectionListener = require("./network/listener").ConnectionListener
-const GameLogic = require("./logic/logic").GameLogic
+const GameLogic = require("../game/logic/logic").GameLogic
 
 class Server {
     constructor() {

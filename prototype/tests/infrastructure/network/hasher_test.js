@@ -2,7 +2,7 @@ const assert = require('assert');
 const net = require('net');
 const sinon = require("sinon");
 
-const Hasher = require("../../../infrastructure/network/hasher").Hasher
+const Hasher = require("../../../infrastructure/utils/hasher").Hasher
 const bcrypt = require('bcrypt');
 
 

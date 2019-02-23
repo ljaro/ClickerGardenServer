@@ -3,7 +3,7 @@ let net = require('net');
 const Messages = require("./message_parser").Messages
 const Events = require("./events").EventsIn
 const EventsOut = require("./events").EventsOut
-const EventsLogic = require("./../logic/events").EventsLogic
+const EventsLogic = require("../../game/logic/events").EventsLogic
 const shortid = require('shortid');
 
 class TcpServer {

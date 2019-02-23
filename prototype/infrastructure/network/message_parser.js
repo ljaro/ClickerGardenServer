@@ -3,7 +3,7 @@ const uuidv4 = require('uuid/v4');
 const EventsIn = require("./events").EventsIn
 const EventsOut = require("./events").EventsOut
 const Events = require("./events").Events
-const EventsLogic = require("../logic/events").EventsLogic
+const EventsLogic = require("../../game/logic/events").EventsLogic
 const Uuid = require("../utils/uuid").Uuid
 class MessageParser  {
 
