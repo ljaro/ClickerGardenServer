@@ -1,0 +1,7 @@
+syntax = "proto3";
+
+
+message LoginRequest {
+    string login = 1;
+    bytes pass = 2;
+}

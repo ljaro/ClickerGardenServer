@@ -1,0 +1,15 @@
+syntax = "proto3";
+
+
+message DisconnectReq {
+
+    enum Status {
+        SERVER_ABOUT_TO_CLOSE = 0;
+    }
+
+    Status status = 1;
+}
+
+message TestNonEmptyMessage {
+    int32 field1 = 1;
+}
