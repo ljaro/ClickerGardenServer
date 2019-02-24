@@ -8,7 +8,26 @@ class EventsDispatcher {
     }
 
     registerListener(listener) {
-        this.emitter.on(listener.getGroup(), listener.handleEvent);
+        if(!listener) {
+            throw new TypeError("Listener must be defined");
+        }
+
+        if(!listener.getGroup) {
+            throw new TypeError("Listener must implement getGroup method");
+        }
+
+        if(!listener.handleEvent) {
+            throw new TypeError("Listener must implement handleEvent");
+        }
+
+        const group = listener.getGroup();
+        if(Array.isArray(group)) {
+            group.forEach((group) => this.emitter.on(group, listener.handleEvent));
+        } else {
+            this.emitter.on(group, listener.handleEvent);
+        }
+
+        listener.addEmitter(this);
     }
 
     dispatch(event) {
