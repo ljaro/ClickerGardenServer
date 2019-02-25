@@ -5,6 +5,7 @@ const sinon = require("sinon");
 
 const EventsDispatcher = require("../../infra/core/events_dispatcher").EventsDispatcher;
 const Auth = require('../../auth/auth').Auth;
+const EventHandler = require("../../infra/core/event_handler").EventHandler;
 
 describe('EventsDispatcher', function () {
 
@@ -160,6 +161,30 @@ describe('EventsDispatcher', function () {
         listenerAny.dispatch({})
         mock.verify()
         mock2.verify()
+    });
+
+    it('should invoke handler in listener scope', function () {
+        const dispatcher = new EventsDispatcher();
+        const listener = new EventHandler();
+        listener.getGroup = () => {return 'any'};
+        listener.handleEvent = sinon.spy()
+
+        dispatcher.registerListener(listener);
+        dispatcher.dispatch({id:1, group: 'any'});
+
+        assert(listener.handleEvent.calledOn(listener))
+    });
+
+    it('should invoke handler in listener scope for different groups', function () {
+        const dispatcher = new EventsDispatcher();
+        const listener = new EventHandler();
+        listener.getGroup = () => {return ['any', 'any2']};
+        listener.handleEvent = sinon.spy()
+
+        dispatcher.registerListener(listener);
+        dispatcher.dispatch({id:1, group: 'any'});
+
+        assert(listener.handleEvent.calledOn(listener))
     });
 });
 

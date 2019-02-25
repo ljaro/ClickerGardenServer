@@ -22,9 +22,9 @@ class EventsDispatcher {
 
         const group = listener.getGroup();
         if(Array.isArray(group)) {
-            group.forEach((group) => this.emitter.on(group, listener.handleEvent));
+            group.forEach((group) => this.emitter.on(group, listener.handleEvent.bind(listener)));
         } else {
-            this.emitter.on(group, listener.handleEvent);
+            this.emitter.on(group, listener.handleEvent.bind(listener));
         }
 
         listener.addEmitter(this);

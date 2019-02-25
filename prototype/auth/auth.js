@@ -3,6 +3,7 @@
 const uuidv4 = require('uuid/v4');
 const CryptoChecker = require("../infra/utils/crypto_checker").CryptoChecker
 const EventHandler = require("../infra/core/event_handler").EventHandler
+const assert = require('assert');
 
 class Auth extends EventHandler {
 
@@ -12,6 +13,7 @@ class Auth extends EventHandler {
     }
 
     async handleEvent(event) {
+        assert(this instanceof Auth, 'this must be Auth type')
 
         const userLogin = event.msg.login;
         const userPass  = event.msg.password;
