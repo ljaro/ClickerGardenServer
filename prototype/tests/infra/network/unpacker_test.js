@@ -60,5 +60,20 @@ describe('UnPacker', function () {
         assert.deepEqual(result, undefined);
     });
 
+    it('should create message from id', function () {
+        let msg = unpacker.createMessage(100);
+        assert(msg instanceof c2s.LoginRequest);
+    });
+
+    it('should create message and unpack', function () {
+        const event1 = {id: 100, group: 'any', msg: {login: '', pass: ''}};
+        let t = msgTypes.getTypeById(event1.id);
+        let msg = new t()
+        const message = unpacker.createMessage(event1)
+        const packed = unpacker.packMessage(message)
+        const event2 = unpacker.unpackMessage(packed)
+
+        assert.deepEqual(event2, event1);
+    });
 
 });

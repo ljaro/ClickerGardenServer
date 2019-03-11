@@ -59,7 +59,8 @@ proto.LoginRequest.prototype.toObject = function(opt_includeInstance) {
  */
 proto.LoginRequest.toObject = function(includeInstance, msg) {
   var f, obj = {
-    cos: jspb.Message.getFieldWithDefault(msg, 1, 0)
+    login: jspb.Message.getFieldWithDefault(msg, 1, ""),
+    pass: msg.getPass_asB64()
   };
 
   if (includeInstance) {
@@ -97,8 +98,12 @@ proto.LoginRequest.deserializeBinaryFromReader = function(msg, reader) {
     var field = reader.getFieldNumber();
     switch (field) {
     case 1:
-      var value = /** @type {number} */ (reader.readInt32());
-      msg.setCos(value);
+      var value = /** @type {string} */ (reader.readString());
+      msg.setLogin(value);
+      break;
+    case 2:
+      var value = /** @type {!Uint8Array} */ (reader.readBytes());
+      msg.setPass(value);
       break;
     default:
       reader.skipField();
@@ -129,10 +134,17 @@ proto.LoginRequest.prototype.serializeBinary = function() {
  */
 proto.LoginRequest.serializeBinaryToWriter = function(message, writer) {
   var f = undefined;
-  f = message.getCos();
-  if (f !== 0) {
-    writer.writeInt32(
+  f = message.getLogin();
+  if (f.length > 0) {
+    writer.writeString(
       1,
+      f
+    );
+  }
+  f = message.getPass_asU8();
+  if (f.length > 0) {
+    writer.writeBytes(
+      2,
       f
     );
   }
@@ -140,17 +152,56 @@ proto.LoginRequest.serializeBinaryToWriter = function(message, writer) {
 
 
 /**
- * optional int32 cos = 1;
- * @return {number}
+ * optional string login = 1;
+ * @return {string}
  */
-proto.LoginRequest.prototype.getCos = function() {
-  return /** @type {number} */ (jspb.Message.getFieldWithDefault(this, 1, 0));
+proto.LoginRequest.prototype.getLogin = function() {
+  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 1, ""));
 };
 
 
-/** @param {number} value */
-proto.LoginRequest.prototype.setCos = function(value) {
-  jspb.Message.setProto3IntField(this, 1, value);
+/** @param {string} value */
+proto.LoginRequest.prototype.setLogin = function(value) {
+  jspb.Message.setProto3StringField(this, 1, value);
+};
+
+
+/**
+ * optional bytes pass = 2;
+ * @return {!(string|Uint8Array)}
+ */
+proto.LoginRequest.prototype.getPass = function() {
+  return /** @type {!(string|Uint8Array)} */ (jspb.Message.getFieldWithDefault(this, 2, ""));
+};
+
+
+/**
+ * optional bytes pass = 2;
+ * This is a type-conversion wrapper around `getPass()`
+ * @return {string}
+ */
+proto.LoginRequest.prototype.getPass_asB64 = function() {
+  return /** @type {string} */ (jspb.Message.bytesAsB64(
+      this.getPass()));
+};
+
+
+/**
+ * optional bytes pass = 2;
+ * Note that Uint8Array is not supported on all browsers.
+ * @see http://caniuse.com/Uint8Array
+ * This is a type-conversion wrapper around `getPass()`
+ * @return {!Uint8Array}
+ */
+proto.LoginRequest.prototype.getPass_asU8 = function() {
+  return /** @type {!Uint8Array} */ (jspb.Message.bytesAsU8(
+      this.getPass()));
+};
+
+
+/** @param {!(string|Uint8Array)} value */
+proto.LoginRequest.prototype.setPass = function(value) {
+  jspb.Message.setProto3BytesField(this, 2, value);
 };
 
 
