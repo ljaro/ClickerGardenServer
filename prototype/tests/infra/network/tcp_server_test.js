@@ -15,7 +15,8 @@ describe('TcpServer', function () {
     var connHandler;
     var dispatcher = {
         consume: function(){},
-        closeToAll: function () {}
+        closeToAll: function () {},
+        registerSocket: function () {}
     };
     var port = 1333;
 

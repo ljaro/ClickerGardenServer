@@ -11,7 +11,6 @@ class Dispatcher {
     }
 
     consume(socket, payload) {
-        this.registerSocket(socket);
         let event = this.unpackMessage(payload);
         this.dispatch(event);
     }

@@ -12,6 +12,8 @@ class ConnectionHandler {
 
 
         let connectionHandler = this;
+        connectionHandler.dispatcher.registerSocket(socket);
+
         ChunkProcessor.initProcessChunk(socket);
 
         socket.on('data', function(chunk) {

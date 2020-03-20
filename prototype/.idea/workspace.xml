@@ -1,10 +1,14 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
+  <component name="BookmarkManager">
+    <bookmark url="file://$PROJECT_DIR$/infra/network/unpacker.js" line="80" />
+  </component>
   <component name="ChangeListManager">
     <list default="true" id="04350df5-5e13-4cd1-a9f1-4886f17ff16d" name="Default" comment="" />
     <ignored path="$PROJECT_DIR$/.tmp/" />
     <ignored path="$PROJECT_DIR$/temp/" />
     <ignored path="$PROJECT_DIR$/tmp/" />
+    <ignored path=".idea/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -14,99 +18,91 @@
   </component>
   <component name="CoverageDataManager">
     <SUITE FILE_PATH="coverage/prototype$tile_test.dat" NAME="tile_test Coverage Results" MODIFIED="1532097852981" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="MochaJavaScriptTestRunnerCoverage" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" />
+    <SUITE FILE_PATH="coverage/prototype$Auth.dat" NAME="Auth Coverage Results" MODIFIED="1551022972653" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="MochaJavaScriptTestRunnerCoverage" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" />
     <SUITE FILE_PATH="coverage/prototype$TcpServer.dat" NAME="TcpServer Coverage Results" MODIFIED="1531848903176" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="MochaJavaScriptTestRunnerCoverage" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" />
     <SUITE FILE_PATH="coverage/prototype$Server.dat" NAME="Server Coverage Results" MODIFIED="1531943092352" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="MochaJavaScriptTestRunnerCoverage" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" />
   </component>
   <component name="FileEditorManager">
-    <splitter split-orientation="horizontal" split-proportion="0.37924153">
+    <splitter split-orientation="horizontal" split-proportion="0.5076242">
       <split-first>
         <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
+          <file leaf-file-name="events_dispatcher_test.js" pinned="false" current-in-tab="false">
+            <entry file="file://$PROJECT_DIR$/tests/core/events_dispatcher_test.js">
+              <provider selected="true" editor-type-id="text-editor">
+                <state relative-caret-position="100">
+                  <caret line="163" column="7" selection-start-line="163" selection-start-column="7" selection-end-line="163" selection-end-column="7" />
+                </state>
+              </provider>
+            </entry>
+          </file>
+          <file leaf-file-name="dispatcher.js" pinned="false" current-in-tab="false">
+            <entry file="file://$PROJECT_DIR$/infra/network/dispatcher.js">
+              <provider selected="true" editor-type-id="text-editor">
+                <state relative-caret-position="450">
+                  <caret line="25" column="21" lean-forward="true" selection-start-line="25" selection-start-column="21" selection-end-line="25" selection-end-column="21" />
+                </state>
+              </provider>
+            </entry>
+          </file>
+          <file leaf-file-name="dispatcher_test.js" pinned="false" current-in-tab="false">
+            <entry file="file://$PROJECT_DIR$/tests/infra/network/dispatcher_test.js">
+              <provider selected="true" editor-type-id="text-editor">
+                <state relative-caret-position="314">
+                  <caret line="85" column="24" selection-start-line="85" selection-start-column="24" selection-end-line="85" selection-end-column="24" />
+                </state>
+              </provider>
+            </entry>
+          </file>
+          <file leaf-file-name="connection_handler.js" pinned="false" current-in-tab="true">
+            <entry file="file://$PROJECT_DIR$/infra/network/connection_handler.js">
+              <provider selected="true" editor-type-id="text-editor">
+                <state relative-caret-position="252">
+                  <caret line="14" column="19" selection-start-line="14" selection-start-column="19" selection-end-line="14" selection-end-column="19" />
+                </state>
+              </provider>
+            </entry>
+          </file>
+          <file leaf-file-name="tcp_server.js" pinned="false" current-in-tab="false">
+            <entry file="file://$PROJECT_DIR$/infra/network/tcp_server.js">
+              <provider selected="true" editor-type-id="text-editor">
+                <state relative-caret-position="144">
+                  <caret line="8" column="52" selection-start-line="8" selection-start-column="52" selection-end-line="8" selection-end-column="52" />
+                </state>
+              </provider>
+            </entry>
+          </file>
+          <file leaf-file-name="chunk_processor.js" pinned="false" current-in-tab="false">
+            <entry file="file://$PROJECT_DIR$/infra/network/chunk_processor.js">
+              <provider selected="true" editor-type-id="text-editor">
+                <state relative-caret-position="972">
+                  <caret line="54" column="16" selection-start-line="54" selection-start-column="16" selection-end-line="54" selection-end-column="16" />
+                </state>
+              </provider>
+            </entry>
+          </file>
           <file leaf-file-name="server_test.js" pinned="false" current-in-tab="false">
-            <entry file="file://$PROJECT_DIR$/tests/infrastructure/server_test.js">
+            <entry file="file://$PROJECT_DIR$/e2e/server_test.js">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="558">
-                  <caret line="31" column="31" selection-start-line="31" selection-start-column="31" selection-end-line="31" selection-end-column="31" />
+                <state relative-caret-position="600">
+                  <caret line="58" column="36" lean-forward="true" selection-start-line="58" selection-start-column="36" selection-end-line="58" selection-end-column="36" />
                 </state>
               </provider>
             </entry>
           </file>
-          <file leaf-file-name="state_grass_test.js" pinned="false" current-in-tab="false">
-            <entry file="file://$PROJECT_DIR$/tests/game/states/state_grass_test.js">
+          <file leaf-file-name="unpacker_test.js" pinned="false" current-in-tab="false">
+            <entry file="file://$PROJECT_DIR$/tests/infra/network/unpacker_test.js">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="306">
-                  <caret line="17" column="52" lean-forward="true" selection-start-line="17" selection-start-column="52" selection-end-line="17" selection-end-column="52" />
+                <state relative-caret-position="44">
+                  <caret line="40" lean-forward="true" selection-start-line="40" selection-end-line="40" />
                 </state>
               </provider>
             </entry>
           </file>
-          <file leaf-file-name="state_plant_test.js" pinned="false" current-in-tab="false">
-            <entry file="file://$PROJECT_DIR$/tests/game/states/state_plant_test.js">
+          <file leaf-file-name="crypto_checker_test.js" pinned="false" current-in-tab="false">
+            <entry file="file://$PROJECT_DIR$/tests/infra/utils/crypto_checker_test.js">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="108">
-                  <caret line="6" column="61" selection-start-line="6" selection-start-column="61" selection-end-line="6" selection-end-column="61" />
-                </state>
-              </provider>
-            </entry>
-          </file>
-          <file leaf-file-name="state_ready_test.js" pinned="false" current-in-tab="false">
-            <entry file="file://$PROJECT_DIR$/tests/game/states/state_ready_test.js">
-              <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="126">
-                  <caret line="7" column="88" selection-start-line="7" selection-start-column="88" selection-end-line="7" selection-end-column="88" />
-                </state>
-              </provider>
-            </entry>
-          </file>
-          <file leaf-file-name="state_ground_test.js" pinned="false" current-in-tab="false">
-            <entry file="file://$PROJECT_DIR$/tests/game/states/state_ground_test.js">
-              <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="90">
-                  <caret line="5" selection-start-line="5" selection-end-line="5" selection-end-column="88" />
-                </state>
-              </provider>
-            </entry>
-          </file>
-          <file leaf-file-name="state_wilted_test.js" pinned="false" current-in-tab="false">
-            <entry file="file://$PROJECT_DIR$/tests/game/states/state_wilted_test.js">
-              <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="18">
-                  <caret line="1" column="31" selection-start-line="1" selection-start-column="31" selection-end-line="1" selection-end-column="31" />
-                </state>
-              </provider>
-            </entry>
-          </file>
-          <file leaf-file-name="state_planted_test.js" pinned="false" current-in-tab="false">
-            <entry file="file://$PROJECT_DIR$/tests/game/states/state_planted_test.js">
-              <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="90">
-                  <caret line="5" column="61" selection-start-line="5" selection-start-column="61" selection-end-line="5" selection-end-column="61" />
-                </state>
-              </provider>
-            </entry>
-          </file>
-          <file leaf-file-name="event_dispatcher_test.js" pinned="false" current-in-tab="true">
-            <entry file="file://$PROJECT_DIR$/tests/infrastructure/network/event_dispatcher_test.js">
-              <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="216">
-                  <caret line="12" column="34" selection-start-line="12" selection-start-column="34" selection-end-line="12" selection-end-column="34" />
-                </state>
-              </provider>
-            </entry>
-          </file>
-          <file leaf-file-name="state_highgrass_test.js" pinned="false" current-in-tab="false">
-            <entry file="file://$PROJECT_DIR$/tests/game/states/state_highgrass_test.js">
-              <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="36">
-                  <caret line="2" selection-start-line="2" selection-end-line="2" />
-                </state>
-              </provider>
-            </entry>
-          </file>
-          <file leaf-file-name="state_holeground_test.js" pinned="false" current-in-tab="false">
-            <entry file="file://$PROJECT_DIR$/tests/game/states/state_holeground_test.js">
-              <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="90">
-                  <caret line="5" column="49" selection-start-line="5" selection-start-column="49" selection-end-line="5" selection-end-column="49" />
+                <state>
+                  <caret selection-end-line="5" selection-end-column="33" />
                 </state>
               </provider>
             </entry>
@@ -115,71 +111,8 @@
       </split-first>
       <split-second>
         <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-          <file leaf-file-name="state_wilted.js" pinned="false" current-in-tab="false">
-            <entry file="file://$PROJECT_DIR$/game/states/state_wilted.js">
-              <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="36">
-                  <caret line="2" column="6" selection-start-line="2" selection-start-column="6" selection-end-line="2" selection-end-column="6" />
-                </state>
-              </provider>
-            </entry>
-          </file>
-          <file leaf-file-name="state_planted.js" pinned="false" current-in-tab="false">
-            <entry file="file://$PROJECT_DIR$/game/states/state_planted.js">
-              <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="234">
-                  <caret line="13" column="42" selection-start-line="13" selection-start-column="42" selection-end-line="13" selection-end-column="42" />
-                </state>
-              </provider>
-            </entry>
-          </file>
-          <file leaf-file-name="state_highgrass.js" pinned="false" current-in-tab="false">
-            <entry file="file://$PROJECT_DIR$/game/states/state_highgrass.js">
-              <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="216">
-                  <caret line="12" column="8" selection-start-line="12" selection-start-column="8" selection-end-line="12" selection-end-column="8" />
-                </state>
-              </provider>
-            </entry>
-          </file>
-          <file leaf-file-name="farm.js" pinned="false" current-in-tab="false">
-            <entry file="file://$PROJECT_DIR$/game/farm.js">
-              <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="126">
-                  <caret line="7" column="1" lean-forward="true" selection-start-line="7" selection-start-column="1" selection-end-line="7" selection-end-column="1" />
-                </state>
-              </provider>
-            </entry>
-          </file>
-          <file leaf-file-name="player.js" pinned="false" current-in-tab="false">
-            <entry file="file://$PROJECT_DIR$/game/player.js">
-              <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="126">
-                  <caret line="7" column="1" lean-forward="true" selection-start-line="7" selection-start-column="1" selection-end-line="7" selection-end-column="1" />
-                </state>
-              </provider>
-            </entry>
-          </file>
-          <file leaf-file-name="field.js" pinned="false" current-in-tab="false">
-            <entry file="file://$PROJECT_DIR$/game/field.js">
-              <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="144">
-                  <caret line="8" column="22" selection-start-line="8" selection-start-column="22" selection-end-line="8" selection-end-column="22" />
-                </state>
-              </provider>
-            </entry>
-          </file>
-          <file leaf-file-name="logic.js" pinned="false" current-in-tab="true">
-            <entry file="file://$PROJECT_DIR$/infrastructure/logic/logic.js">
-              <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="342">
-                  <caret line="19" column="23" lean-forward="true" selection-start-line="19" selection-start-column="23" selection-end-line="19" selection-end-column="23" />
-                </state>
-              </provider>
-            </entry>
-          </file>
-          <file leaf-file-name="tile.js" pinned="false" current-in-tab="false">
-            <entry file="file://$PROJECT_DIR$/game/states/tile.js">
+          <file leaf-file-name="crypto_checker.js" pinned="false" current-in-tab="false">
+            <entry file="file://$PROJECT_DIR$/infra/utils/crypto_checker.js">
               <provider selected="true" editor-type-id="text-editor">
                 <state relative-caret-position="270">
                   <caret line="15" lean-forward="true" selection-start-line="15" selection-end-line="15" />
@@ -187,20 +120,38 @@
               </provider>
             </entry>
           </file>
-          <file leaf-file-name="state_ready.js" pinned="false" current-in-tab="false">
-            <entry file="file://$PROJECT_DIR$/game/states/state_ready.js">
+          <file leaf-file-name="auth_test.js" pinned="false" current-in-tab="false">
+            <entry file="file://$PROJECT_DIR$/tests/auth/auth_test.js">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="252">
-                  <caret line="14" column="17" selection-start-line="14" selection-start-column="17" selection-end-line="14" selection-end-column="17" />
+                <state relative-caret-position="2574">
+                  <caret line="143" column="24" selection-start-line="143" selection-start-column="24" selection-end-line="143" selection-end-column="24" />
                 </state>
               </provider>
             </entry>
           </file>
-          <file leaf-file-name="state_ground.js" pinned="false" current-in-tab="false">
-            <entry file="file://$PROJECT_DIR$/game/states/state_ground.js">
+          <file leaf-file-name="unpacker.js" pinned="false" current-in-tab="false">
+            <entry file="file://$PROJECT_DIR$/infra/network/unpacker.js">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="306">
-                  <caret line="17" column="51" selection-start-line="17" selection-start-column="51" selection-end-line="17" selection-end-column="51" />
+                <state relative-caret-position="978">
+                  <caret line="75" column="18" selection-start-line="75" selection-start-column="18" selection-end-line="75" selection-end-column="18" />
+                </state>
+              </provider>
+            </entry>
+          </file>
+          <file leaf-file-name="auth.js" pinned="false" current-in-tab="true">
+            <entry file="file://$PROJECT_DIR$/auth/auth.js">
+              <provider selected="true" editor-type-id="text-editor">
+                <state relative-caret-position="636">
+                  <caret line="43" column="9" lean-forward="true" selection-start-line="43" selection-start-column="9" selection-end-line="43" selection-end-column="9" />
+                </state>
+              </provider>
+            </entry>
+          </file>
+          <file leaf-file-name="events_dispatcher.js" pinned="false" current-in-tab="false">
+            <entry file="file://$PROJECT_DIR$/infra/core/events_dispatcher.js">
+              <provider selected="true" editor-type-id="text-editor">
+                <state relative-caret-position="504">
+                  <caret line="28" lean-forward="true" selection-start-line="28" selection-end-line="28" />
                 </state>
               </provider>
             </entry>
@@ -218,9 +169,6 @@
   </component>
   <component name="FindInProjectRecents">
     <findStrings>
-      <find>StateHoleGround</find>
-      <find>wilted</find>
-      <find>ready</find>
       <find>plant</find>
       <find>holegro</find>
       <find>ground</find>
@@ -233,62 +181,80 @@
       <find>eventchan</find>
       <find>Events.</find>
       <find>StateGround_PLOT_NUMBER</find>
+      <find>assert.equal</find>
+      <find>shortid</find>
+      <find>client id must be provided as first parameter</find>
+      <find>authValid</find>
+      <find>readHeader</find>
+      <find>id</find>
+      <find>withArgs</find>
+      <find>sinon.stub</find>
+      <find>sinon.</find>
+      <find>MsgL</find>
+      <find>msglo</find>
+      <find>verif</find>
+      <find>disc</find>
+      <find>removeHead</find>
+      <find>copy</find>
+      <find>login</find>
+      <find>from</find>
+      <find>LoginRequest</find>
     </findStrings>
   </component>
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/tests/state_ready_test.js" />
-        <option value="$PROJECT_DIR$/tests/state_wilted_test.js" />
-        <option value="$PROJECT_DIR$/tests/tile_test.js" />
-        <option value="$PROJECT_DIR$/network/server.js" />
-        <option value="$PROJECT_DIR$/network/server_test.js" />
-        <option value="$PROJECT_DIR$/states/state_grass_test.js" />
-        <option value="$PROJECT_DIR$/states/state_ground_test.js" />
-        <option value="$PROJECT_DIR$/states/state_highgrass_test.js" />
-        <option value="$PROJECT_DIR$/states/state_holeground_test.js" />
-        <option value="$PROJECT_DIR$/states/state_plant_test.js" />
-        <option value="$PROJECT_DIR$/states/state_planted_test.js" />
-        <option value="$PROJECT_DIR$/states/state_ready_test.js" />
-        <option value="$PROJECT_DIR$/states/state_wilted_test.js" />
-        <option value="$PROJECT_DIR$/network/event_dispatcher_test.js" />
-        <option value="$PROJECT_DIR$/network/listener_test.js" />
-        <option value="$PROJECT_DIR$/network/message_parser_test.js" />
-        <option value="$PROJECT_DIR$/logic/logic_test.js" />
-        <option value="$PROJECT_DIR$/network/network_test.js" />
-        <option value="$PROJECT_DIR$/network/network.js" />
-        <option value="$PROJECT_DIR$/run.js" />
-        <option value="$PROJECT_DIR$/server_test.js" />
-        <option value="$PROJECT_DIR$/tests/logic/states/state_wilted_test.js" />
-        <option value="$PROJECT_DIR$/tests/utils/client.js" />
-        <option value="$PROJECT_DIR$/server.js" />
-        <option value="$PROJECT_DIR$/network/event_dispatcher.js" />
-        <option value="$PROJECT_DIR$/network/events.js" />
-        <option value="$PROJECT_DIR$/tests/logic/logic_test.js" />
-        <option value="$PROJECT_DIR$/network/message_parser.js" />
-        <option value="$PROJECT_DIR$/tests/network/listener_test.js" />
-        <option value="$PROJECT_DIR$/tests/network/message_parser_test.js" />
-        <option value="$PROJECT_DIR$/tests/network/event_dispatcher_test.js" />
-        <option value="$PROJECT_DIR$/network/listener.js" />
-        <option value="$PROJECT_DIR$/tests/server_test.js" />
-        <option value="$PROJECT_DIR$/logic/logic.js" />
-        <option value="$PROJECT_DIR$/logic/player.js" />
-        <option value="$PROJECT_DIR$/logic/farm.js" />
+        <option value="$PROJECT_DIR$/infrastructure/network/events.js" />
+        <option value="$PROJECT_DIR$/infrastructure/network/event_dispatcher.js" />
         <option value="$PROJECT_DIR$/infrastructure/network/message_parser.js" />
-        <option value="$PROJECT_DIR$/tests/infrastructure/logic/logic_test.js" />
-        <option value="$PROJECT_DIR$/tests/infrastructure/logic/states/state_ground_test.js" />
-        <option value="$PROJECT_DIR$/tests/game/states/state_highgrass_test.js" />
-        <option value="$PROJECT_DIR$/tests/game/states/state_grass_test.js" />
-        <option value="$PROJECT_DIR$/tests/game/states/state_ground_test.js" />
-        <option value="$PROJECT_DIR$/tests/game/states/state_wilted_test.js" />
-        <option value="$PROJECT_DIR$/tests/game/states/state_ready_test.js" />
-        <option value="$PROJECT_DIR$/tests/game/states/state_holeground_test.js" />
-        <option value="$PROJECT_DIR$/tests/game/states/state_plant_test.js" />
-        <option value="$PROJECT_DIR$/tests/game/states/state_planted_test.js" />
-        <option value="$PROJECT_DIR$/tests/infrastructure/network/event_dispatcher_test.js" />
-        <option value="$PROJECT_DIR$/game/farm.js" />
-        <option value="$PROJECT_DIR$/game/player.js" />
-        <option value="$PROJECT_DIR$/game/field.js" />
+        <option value="$PROJECT_DIR$/tests/infrastructure/server_test.js" />
+        <option value="$PROJECT_DIR$/tests/infrastructure/network/listener_test.js" />
+        <option value="$PROJECT_DIR$/tests/infrastructure/utils/client.js" />
+        <option value="$PROJECT_DIR$/infrastructure/network/listener.js" />
+        <option value="$PROJECT_DIR$/tests/infra/server_test.js" />
+        <option value="$PROJECT_DIR$/tests/infra/network/server_test.js" />
+        <option value="$PROJECT_DIR$/infra/network/connected_handler.js" />
+        <option value="$PROJECT_DIR$/infra/network/server.js" />
+        <option value="$PROJECT_DIR$/infra/network/messages/message1.proto" />
+        <option value="$PROJECT_DIR$/infra/network/messages/compile.sh" />
+        <option value="$PROJECT_DIR$/infra/core/EventsDispatcher.js" />
+        <option value="$PROJECT_DIR$/infra/network/ChunkProcessor.js" />
+        <option value="$PROJECT_DIR$/infra/network/chunk_processor.js" />
+        <option value="$PROJECT_DIR$/tests/infra/network/chunk_processor.js" />
+        <option value="$PROJECT_DIR$/infra/network/messages/server2client.proto" />
+        <option value="$PROJECT_DIR$/../../test1/test1.js" />
+        <option value="$PROJECT_DIR$/tests/infra/network/connection_handler_test.js" />
+        <option value="$PROJECT_DIR$/run.js" />
+        <option value="$PROJECT_DIR$/infra/network/tcp_server.js" />
+        <option value="$PROJECT_DIR$/infra/network/messages/client2server.proto" />
+        <option value="$PROJECT_DIR$/infra/core/EventHandler.js" />
+        <option value="$PROJECT_DIR$/infra/server.js" />
+        <option value="$PROJECT_DIR$/.gitignore" />
+        <option value="$PROJECT_DIR$/tests/auth.js" />
+        <option value="$PROJECT_DIR$/tests/auth/auth.js" />
+        <option value="$PROJECT_DIR$/package.json" />
+        <option value="$PROJECT_DIR$/infrastructure/rules.txt" />
+        <option value="$PROJECT_DIR$/infrastructure/utils/hasher.js" />
+        <option value="$PROJECT_DIR$/infra/utils/hasher.js" />
+        <option value="$PROJECT_DIR$/tests/game/logic/logic_test.js" />
+        <option value="$PROJECT_DIR$/infra/Rules.txt" />
+        <option value="$PROJECT_DIR$/tests/infra/utils/crypto_checker.js" />
+        <option value="$PROJECT_DIR$/infra/utils/crypto_checker.js" />
+        <option value="$PROJECT_DIR$/tests/infra/utils/crypto_checker_test.js" />
+        <option value="$PROJECT_DIR$/tests/auth/auth_test.js" />
+        <option value="$PROJECT_DIR$/auth/auth.js" />
+        <option value="$PROJECT_DIR$/tests/core/events_dispatcher_test.js" />
+        <option value="$PROJECT_DIR$/infra/core/events_dispatcher.js" />
+        <option value="$PROJECT_DIR$/infra/core/event_handler.js" />
+        <option value="$PROJECT_DIR$/infra/network/messages/message_types.js" />
+        <option value="$PROJECT_DIR$/tests/infra/utils/message_types.test.js" />
+        <option value="$PROJECT_DIR$/infra/network/unpacker.js" />
+        <option value="$PROJECT_DIR$/tests/infra/network/unpacker_test.js" />
+        <option value="$PROJECT_DIR$/e2e/server_test.js" />
+        <option value="$PROJECT_DIR$/infra/network/connection_handler.js" />
+        <option value="$PROJECT_DIR$/tests/infra/network/dispatcher_test.js" />
+        <option value="$PROJECT_DIR$/tests/infra/network/tcp_server_test.js" />
+        <option value="$PROJECT_DIR$/infra/network/dispatcher.js" />
       </list>
     </option>
   </component>
@@ -304,442 +270,23 @@
     <detection-done>true</detection-done>
     <sorting>DEFINITION_ORDER</sorting>
   </component>
+  <component name="NodeModulesDirectoryManager">
+    <handled-path value="$PROJECT_DIR$/node_modules" />
+  </component>
   <component name="NodePackageJsonFileManager">
     <packageJsonPaths>
-      <path value="$PROJECT_DIR$/node_modules/@babel/code-frame/package.json" />
-      <path value="$PROJECT_DIR$/node_modules/@babel/generator/node_modules/jsesc/package.json" />
-      <path value="$PROJECT_DIR$/node_modules/@babel/generator/package.json" />
-      <path value="$PROJECT_DIR$/node_modules/@babel/helper-function-name/package.json" />
-      <path value="$PROJECT_DIR$/node_modules/@babel/helper-get-function-arity/package.json" />
-      <path value="$PROJECT_DIR$/node_modules/@babel/helper-split-export-declaration/package.json" />
-      <path value="$PROJECT_DIR$/node_modules/@babel/highlight/node_modules/ansi-styles/package.json" />
-      <path value="$PROJECT_DIR$/node_modules/@babel/highlight/node_modules/chalk/package.json" />
-      <path value="$PROJECT_DIR$/node_modules/@babel/highlight/package.json" />
-      <path value="$PROJECT_DIR$/node_modules/@babel/parser/package.json" />
-      <path value="$PROJECT_DIR$/node_modules/@babel/template/package.json" />
-      <path value="$PROJECT_DIR$/node_modules/@babel/traverse/node_modules/debug/package.json" />
-      <path value="$PROJECT_DIR$/node_modules/@babel/traverse/node_modules/globals/package.json" />
-      <path value="$PROJECT_DIR$/node_modules/@babel/traverse/package.json" />
-      <path value="$PROJECT_DIR$/node_modules/@babel/types/node_modules/to-fast-properties/package.json" />
-      <path value="$PROJECT_DIR$/node_modules/@babel/types/package.json" />
-      <path value="$PROJECT_DIR$/node_modules/@sinonjs/formatio/package.json" />
-      <path value="$PROJECT_DIR$/node_modules/ansi-regex/package.json" />
-      <path value="$PROJECT_DIR$/node_modules/ansi-styles/package.json" />
-      <path value="$PROJECT_DIR$/node_modules/anymatch/package.json" />
-      <path value="$PROJECT_DIR$/node_modules/arr-diff/package.json" />
-      <path value="$PROJECT_DIR$/node_modules/arr-flatten/package.json" />
-      <path value="$PROJECT_DIR$/node_modules/array-unique/package.json" />
-      <path value="$PROJECT_DIR$/node_modules/async-each/package.json" />
-      <path value="$PROJECT_DIR$/node_modules/babel-cli/package.json" />
-      <path value="$PROJECT_DIR$/node_modules/babel-code-frame/package.json" />
-      <path value="$PROJECT_DIR$/node_modules/babel-core/package.json" />
-      <path value="$PROJECT_DIR$/node_modules/babel-generator/package.json" />
-      <path value="$PROJECT_DIR$/node_modules/babel-helper-builder-binary-assignment-operator-visitor/package.json" />
-      <path value="$PROJECT_DIR$/node_modules/babel-helper-explode-assignable-expression/package.json" />
-      <path value="$PROJECT_DIR$/node_modules/babel-helper-function-name/package.json" />
-      <path value="$PROJECT_DIR$/node_modules/babel-helper-get-function-arity/package.json" />
-      <path value="$PROJECT_DIR$/node_modules/babel-helper-remap-async-to-generator/package.json" />
-      <path value="$PROJECT_DIR$/node_modules/babel-helpers/package.json" />
-      <path value="$PROJECT_DIR$/node_modules/babel-messages/package.json" />
-      <path value="$PROJECT_DIR$/node_modules/babel-plugin-syntax-async-functions/package.json" />
-      <path value="$PROJECT_DIR$/node_modules/babel-plugin-syntax-exponentiation-operator/package.json" />
-      <path value="$PROJECT_DIR$/node_modules/babel-plugin-syntax-trailing-function-commas/package.json" />
-      <path value="$PROJECT_DIR$/node_modules/babel-plugin-transform-async-to-generator/package.json" />
-      <path value="$PROJECT_DIR$/node_modules/babel-plugin-transform-exponentiation-operator/package.json" />
-      <path value="$PROJECT_DIR$/node_modules/babel-polyfill/node_modules/regenerator-runtime/package.json" />
-      <path value="$PROJECT_DIR$/node_modules/babel-polyfill/package.json" />
-      <path value="$PROJECT_DIR$/node_modules/babel-preset-es2016/package.json" />
-      <path value="$PROJECT_DIR$/node_modules/babel-preset-es2017/package.json" />
-      <path value="$PROJECT_DIR$/node_modules/babel-register/package.json" />
-      <path value="$PROJECT_DIR$/node_modules/babel-runtime/package.json" />
-      <path value="$PROJECT_DIR$/node_modules/babel-template/package.json" />
-      <path value="$PROJECT_DIR$/node_modules/babel-traverse/package.json" />
-      <path value="$PROJECT_DIR$/node_modules/babel-types/package.json" />
-      <path value="$PROJECT_DIR$/node_modules/babylon/package.json" />
-      <path value="$PROJECT_DIR$/node_modules/balanced-match/package.json" />
-      <path value="$PROJECT_DIR$/node_modules/binary-extensions/package.json" />
-      <path value="$PROJECT_DIR$/node_modules/brace-expansion/package.json" />
-      <path value="$PROJECT_DIR$/node_modules/braces/package.json" />
-      <path value="$PROJECT_DIR$/node_modules/chalk/node_modules/supports-color/package.json" />
-      <path value="$PROJECT_DIR$/node_modules/chalk/package.json" />
-      <path value="$PROJECT_DIR$/node_modules/chokidar/package.json" />
-      <path value="$PROJECT_DIR$/node_modules/color-convert/package.json" />
-      <path value="$PROJECT_DIR$/node_modules/color-name/package.json" />
-      <path value="$PROJECT_DIR$/node_modules/commander/package.json" />
-      <path value="$PROJECT_DIR$/node_modules/concat-map/package.json" />
-      <path value="$PROJECT_DIR$/node_modules/convert-source-map/package.json" />
-      <path value="$PROJECT_DIR$/node_modules/core-js/package.json" />
-      <path value="$PROJECT_DIR$/node_modules/core-util-is/package.json" />
-      <path value="$PROJECT_DIR$/node_modules/debug/package.json" />
-      <path value="$PROJECT_DIR$/node_modules/detect-indent/package.json" />
-      <path value="$PROJECT_DIR$/node_modules/diff/package.json" />
-      <path value="$PROJECT_DIR$/node_modules/escape-string-regexp/package.json" />
-      <path value="$PROJECT_DIR$/node_modules/esutils/package.json" />
-      <path value="$PROJECT_DIR$/node_modules/expand-brackets/package.json" />
-      <path value="$PROJECT_DIR$/node_modules/expand-range/package.json" />
-      <path value="$PROJECT_DIR$/node_modules/extglob/package.json" />
-      <path value="$PROJECT_DIR$/node_modules/filename-regex/package.json" />
-      <path value="$PROJECT_DIR$/node_modules/fill-range/package.json" />
-      <path value="$PROJECT_DIR$/node_modules/for-in/package.json" />
-      <path value="$PROJECT_DIR$/node_modules/for-own/package.json" />
-      <path value="$PROJECT_DIR$/node_modules/fs-readdir-recursive/package.json" />
-      <path value="$PROJECT_DIR$/node_modules/fs.realpath/package.json" />
-      <path value="$PROJECT_DIR$/node_modules/glob-base/package.json" />
-      <path value="$PROJECT_DIR$/node_modules/glob-parent/package.json" />
-      <path value="$PROJECT_DIR$/node_modules/glob/package.json" />
-      <path value="$PROJECT_DIR$/node_modules/globals/package.json" />
-      <path value="$PROJECT_DIR$/node_modules/graceful-fs/package.json" />
-      <path value="$PROJECT_DIR$/node_modules/has-ansi/package.json" />
-      <path value="$PROJECT_DIR$/node_modules/has-flag/package.json" />
-      <path value="$PROJECT_DIR$/node_modules/home-or-tmp/package.json" />
-      <path value="$PROJECT_DIR$/node_modules/inflight/package.json" />
-      <path value="$PROJECT_DIR$/node_modules/inherits/package.json" />
-      <path value="$PROJECT_DIR$/node_modules/invariant/package.json" />
-      <path value="$PROJECT_DIR$/node_modules/is-binary-path/package.json" />
-      <path value="$PROJECT_DIR$/node_modules/is-buffer/package.json" />
-      <path value="$PROJECT_DIR$/node_modules/is-dotfile/package.json" />
-      <path value="$PROJECT_DIR$/node_modules/is-equal-shallow/package.json" />
-      <path value="$PROJECT_DIR$/node_modules/is-extendable/package.json" />
-      <path value="$PROJECT_DIR$/node_modules/is-extglob/package.json" />
-      <path value="$PROJECT_DIR$/node_modules/is-finite/package.json" />
-      <path value="$PROJECT_DIR$/node_modules/is-glob/package.json" />
-      <path value="$PROJECT_DIR$/node_modules/is-number/package.json" />
-      <path value="$PROJECT_DIR$/node_modules/is-posix-bracket/package.json" />
-      <path value="$PROJECT_DIR$/node_modules/is-primitive/package.json" />
-      <path value="$PROJECT_DIR$/node_modules/isarray/package.json" />
-      <path value="$PROJECT_DIR$/node_modules/isobject/node_modules/isarray/package.json" />
-      <path value="$PROJECT_DIR$/node_modules/isobject/package.json" />
-      <path value="$PROJECT_DIR$/node_modules/istanbul-lib-coverage/package.json" />
-      <path value="$PROJECT_DIR$/node_modules/istanbul-lib-instrument/package.json" />
-      <path value="$PROJECT_DIR$/node_modules/js-tokens/package.json" />
-      <path value="$PROJECT_DIR$/node_modules/jsesc/package.json" />
-      <path value="$PROJECT_DIR$/node_modules/json5/package.json" />
-      <path value="$PROJECT_DIR$/node_modules/just-extend/package.json" />
-      <path value="$PROJECT_DIR$/node_modules/kind-of/package.json" />
-      <path value="$PROJECT_DIR$/node_modules/lodash.get/package.json" />
-      <path value="$PROJECT_DIR$/node_modules/lodash/package.json" />
-      <path value="$PROJECT_DIR$/node_modules/lolex/package.json" />
-      <path value="$PROJECT_DIR$/node_modules/loose-envify/package.json" />
-      <path value="$PROJECT_DIR$/node_modules/math-random/package.json" />
-      <path value="$PROJECT_DIR$/node_modules/micromatch/package.json" />
-      <path value="$PROJECT_DIR$/node_modules/minimatch/package.json" />
-      <path value="$PROJECT_DIR$/node_modules/minimist/package.json" />
-      <path value="$PROJECT_DIR$/node_modules/mkdirp/package.json" />
-      <path value="$PROJECT_DIR$/node_modules/ms/package.json" />
-      <path value="$PROJECT_DIR$/node_modules/nanoid/package.json" />
-      <path value="$PROJECT_DIR$/node_modules/nise/package.json" />
-      <path value="$PROJECT_DIR$/node_modules/normalize-path/package.json" />
-      <path value="$PROJECT_DIR$/node_modules/number-is-nan/package.json" />
-      <path value="$PROJECT_DIR$/node_modules/nyc/node_modules/align-text/package.json" />
-      <path value="$PROJECT_DIR$/node_modules/nyc/node_modules/amdefine/package.json" />
-      <path value="$PROJECT_DIR$/node_modules/nyc/node_modules/ansi-regex/package.json" />
-      <path value="$PROJECT_DIR$/node_modules/nyc/node_modules/append-transform/package.json" />
-      <path value="$PROJECT_DIR$/node_modules/nyc/node_modules/archy/package.json" />
-      <path value="$PROJECT_DIR$/node_modules/nyc/node_modules/arr-diff/package.json" />
-      <path value="$PROJECT_DIR$/node_modules/nyc/node_modules/arr-flatten/package.json" />
-      <path value="$PROJECT_DIR$/node_modules/nyc/node_modules/arr-union/package.json" />
-      <path value="$PROJECT_DIR$/node_modules/nyc/node_modules/array-unique/package.json" />
-      <path value="$PROJECT_DIR$/node_modules/nyc/node_modules/arrify/package.json" />
-      <path value="$PROJECT_DIR$/node_modules/nyc/node_modules/assign-symbols/package.json" />
-      <path value="$PROJECT_DIR$/node_modules/nyc/node_modules/async/package.json" />
-      <path value="$PROJECT_DIR$/node_modules/nyc/node_modules/atob/package.json" />
-      <path value="$PROJECT_DIR$/node_modules/nyc/node_modules/balanced-match/package.json" />
-      <path value="$PROJECT_DIR$/node_modules/nyc/node_modules/base/node_modules/define-property/package.json" />
-      <path value="$PROJECT_DIR$/node_modules/nyc/node_modules/base/node_modules/is-accessor-descriptor/package.json" />
-      <path value="$PROJECT_DIR$/node_modules/nyc/node_modules/base/node_modules/is-data-descriptor/package.json" />
-      <path value="$PROJECT_DIR$/node_modules/nyc/node_modules/base/node_modules/is-descriptor/package.json" />
-      <path value="$PROJECT_DIR$/node_modules/nyc/node_modules/base/node_modules/kind-of/package.json" />
-      <path value="$PROJECT_DIR$/node_modules/nyc/node_modules/base/package.json" />
-      <path value="$PROJECT_DIR$/node_modules/nyc/node_modules/brace-expansion/package.json" />
-      <path value="$PROJECT_DIR$/node_modules/nyc/node_modules/braces/node_modules/extend-shallow/package.json" />
-      <path value="$PROJECT_DIR$/node_modules/nyc/node_modules/braces/package.json" />
-      <path value="$PROJECT_DIR$/node_modules/nyc/node_modules/builtin-modules/package.json" />
-      <path value="$PROJECT_DIR$/node_modules/nyc/node_modules/cache-base/package.json" />
-      <path value="$PROJECT_DIR$/node_modules/nyc/node_modules/caching-transform/package.json" />
-      <path value="$PROJECT_DIR$/node_modules/nyc/node_modules/camelcase/package.json" />
-      <path value="$PROJECT_DIR$/node_modules/nyc/node_modules/center-align/package.json" />
-      <path value="$PROJECT_DIR$/node_modules/nyc/node_modules/class-utils/node_modules/define-property/package.json" />
-      <path value="$PROJECT_DIR$/node_modules/nyc/node_modules/class-utils/package.json" />
-      <path value="$PROJECT_DIR$/node_modules/nyc/node_modules/cliui/node_modules/wordwrap/package.json" />
-      <path value="$PROJECT_DIR$/node_modules/nyc/node_modules/cliui/package.json" />
-      <path value="$PROJECT_DIR$/node_modules/nyc/node_modules/code-point-at/package.json" />
-      <path value="$PROJECT_DIR$/node_modules/nyc/node_modules/collection-visit/package.json" />
-      <path value="$PROJECT_DIR$/node_modules/nyc/node_modules/commondir/package.json" />
-      <path value="$PROJECT_DIR$/node_modules/nyc/node_modules/component-emitter/package.json" />
-      <path value="$PROJECT_DIR$/node_modules/nyc/node_modules/concat-map/package.json" />
-      <path value="$PROJECT_DIR$/node_modules/nyc/node_modules/convert-source-map/package.json" />
-      <path value="$PROJECT_DIR$/node_modules/nyc/node_modules/copy-descriptor/package.json" />
-      <path value="$PROJECT_DIR$/node_modules/nyc/node_modules/cross-spawn/package.json" />
-      <path value="$PROJECT_DIR$/node_modules/nyc/node_modules/debug-log/package.json" />
-      <path value="$PROJECT_DIR$/node_modules/nyc/node_modules/debug/package.json" />
-      <path value="$PROJECT_DIR$/node_modules/nyc/node_modules/decamelize/package.json" />
-      <path value="$PROJECT_DIR$/node_modules/nyc/node_modules/decode-uri-component/package.json" />
-      <path value="$PROJECT_DIR$/node_modules/nyc/node_modules/default-require-extensions/package.json" />
-      <path value="$PROJECT_DIR$/node_modules/nyc/node_modules/define-property/node_modules/is-accessor-descriptor/package.json" />
-      <path value="$PROJECT_DIR$/node_modules/nyc/node_modules/define-property/node_modules/is-data-descriptor/package.json" />
-      <path value="$PROJECT_DIR$/node_modules/nyc/node_modules/define-property/node_modules/is-descriptor/package.json" />
-      <path value="$PROJECT_DIR$/node_modules/nyc/node_modules/define-property/node_modules/kind-of/package.json" />
-      <path value="$PROJECT_DIR$/node_modules/nyc/node_modules/define-property/package.json" />
-      <path value="$PROJECT_DIR$/node_modules/nyc/node_modules/error-ex/package.json" />
-      <path value="$PROJECT_DIR$/node_modules/nyc/node_modules/execa/node_modules/cross-spawn/package.json" />
-      <path value="$PROJECT_DIR$/node_modules/nyc/node_modules/execa/package.json" />
-      <path value="$PROJECT_DIR$/node_modules/nyc/node_modules/expand-brackets/node_modules/debug/package.json" />
-      <path value="$PROJECT_DIR$/node_modules/nyc/node_modules/expand-brackets/node_modules/define-property/package.json" />
-      <path value="$PROJECT_DIR$/node_modules/nyc/node_modules/expand-brackets/node_modules/extend-shallow/package.json" />
-      <path value="$PROJECT_DIR$/node_modules/nyc/node_modules/expand-brackets/package.json" />
-      <path value="$PROJECT_DIR$/node_modules/nyc/node_modules/extend-shallow/node_modules/is-extendable/package.json" />
-      <path value="$PROJECT_DIR$/node_modules/nyc/node_modules/extend-shallow/package.json" />
-      <path value="$PROJECT_DIR$/node_modules/nyc/node_modules/extglob/node_modules/define-property/package.json" />
-      <path value="$PROJECT_DIR$/node_modules/nyc/node_modules/extglob/node_modules/extend-shallow/package.json" />
-      <path value="$PROJECT_DIR$/node_modules/nyc/node_modules/extglob/node_modules/is-accessor-descriptor/package.json" />
-      <path value="$PROJECT_DIR$/node_modules/nyc/node_modules/extglob/node_modules/is-data-descriptor/package.json" />
-      <path value="$PROJECT_DIR$/node_modules/nyc/node_modules/extglob/node_modules/is-descriptor/package.json" />
-      <path value="$PROJECT_DIR$/node_modules/nyc/node_modules/extglob/node_modules/kind-of/package.json" />
-      <path value="$PROJECT_DIR$/node_modules/nyc/node_modules/extglob/package.json" />
-      <path value="$PROJECT_DIR$/node_modules/nyc/node_modules/fill-range/node_modules/extend-shallow/package.json" />
-      <path value="$PROJECT_DIR$/node_modules/nyc/node_modules/fill-range/package.json" />
-      <path value="$PROJECT_DIR$/node_modules/nyc/node_modules/find-cache-dir/package.json" />
-      <path value="$PROJECT_DIR$/node_modules/nyc/node_modules/find-up/package.json" />
-      <path value="$PROJECT_DIR$/node_modules/nyc/node_modules/for-in/package.json" />
-      <path value="$PROJECT_DIR$/node_modules/nyc/node_modules/foreground-child/package.json" />
-      <path value="$PROJECT_DIR$/node_modules/nyc/node_modules/fragment-cache/package.json" />
-      <path value="$PROJECT_DIR$/node_modules/nyc/node_modules/fs.realpath/package.json" />
-      <path value="$PROJECT_DIR$/node_modules/nyc/node_modules/get-caller-file/package.json" />
-      <path value="$PROJECT_DIR$/node_modules/nyc/node_modules/get-stream/package.json" />
-      <path value="$PROJECT_DIR$/node_modules/nyc/node_modules/get-value/package.json" />
-      <path value="$PROJECT_DIR$/node_modules/nyc/node_modules/glob/package.json" />
-      <path value="$PROJECT_DIR$/node_modules/nyc/node_modules/graceful-fs/package.json" />
-      <path value="$PROJECT_DIR$/node_modules/nyc/node_modules/handlebars/node_modules/source-map/package.json" />
-      <path value="$PROJECT_DIR$/node_modules/nyc/node_modules/handlebars/package.json" />
-      <path value="$PROJECT_DIR$/node_modules/nyc/node_modules/has-value/package.json" />
-      <path value="$PROJECT_DIR$/node_modules/nyc/node_modules/has-values/node_modules/kind-of/package.json" />
-      <path value="$PROJECT_DIR$/node_modules/nyc/node_modules/has-values/package.json" />
-      <path value="$PROJECT_DIR$/node_modules/nyc/node_modules/hosted-git-info/package.json" />
-      <path value="$PROJECT_DIR$/node_modules/nyc/node_modules/imurmurhash/package.json" />
-      <path value="$PROJECT_DIR$/node_modules/nyc/node_modules/inflight/package.json" />
-      <path value="$PROJECT_DIR$/node_modules/nyc/node_modules/inherits/package.json" />
-      <path value="$PROJECT_DIR$/node_modules/nyc/node_modules/invert-kv/package.json" />
-      <path value="$PROJECT_DIR$/node_modules/nyc/node_modules/is-accessor-descriptor/package.json" />
-      <path value="$PROJECT_DIR$/node_modules/nyc/node_modules/is-arrayish/package.json" />
-      <path value="$PROJECT_DIR$/node_modules/nyc/node_modules/is-buffer/package.json" />
-      <path value="$PROJECT_DIR$/node_modules/nyc/node_modules/is-builtin-module/package.json" />
-      <path value="$PROJECT_DIR$/node_modules/nyc/node_modules/is-data-descriptor/package.json" />
-      <path value="$PROJECT_DIR$/node_modules/nyc/node_modules/is-descriptor/node_modules/kind-of/package.json" />
-      <path value="$PROJECT_DIR$/node_modules/nyc/node_modules/is-descriptor/package.json" />
-      <path value="$PROJECT_DIR$/node_modules/nyc/node_modules/is-extendable/package.json" />
-      <path value="$PROJECT_DIR$/node_modules/nyc/node_modules/is-fullwidth-code-point/package.json" />
-      <path value="$PROJECT_DIR$/node_modules/nyc/node_modules/is-number/package.json" />
-      <path value="$PROJECT_DIR$/node_modules/nyc/node_modules/is-odd/node_modules/is-number/package.json" />
-      <path value="$PROJECT_DIR$/node_modules/nyc/node_modules/is-odd/package.json" />
-      <path value="$PROJECT_DIR$/node_modules/nyc/node_modules/is-plain-object/package.json" />
-      <path value="$PROJECT_DIR$/node_modules/nyc/node_modules/is-stream/package.json" />
-      <path value="$PROJECT_DIR$/node_modules/nyc/node_modules/is-utf8/package.json" />
-      <path value="$PROJECT_DIR$/node_modules/nyc/node_modules/is-windows/package.json" />
-      <path value="$PROJECT_DIR$/node_modules/nyc/node_modules/isarray/package.json" />
-      <path value="$PROJECT_DIR$/node_modules/nyc/node_modules/isexe/package.json" />
-      <path value="$PROJECT_DIR$/node_modules/nyc/node_modules/isobject/package.json" />
-      <path value="$PROJECT_DIR$/node_modules/nyc/node_modules/istanbul-lib-coverage/package.json" />
-      <path value="$PROJECT_DIR$/node_modules/nyc/node_modules/istanbul-lib-hook/package.json" />
-      <path value="$PROJECT_DIR$/node_modules/nyc/node_modules/istanbul-lib-report/node_modules/has-flag/package.json" />
-      <path value="$PROJECT_DIR$/node_modules/nyc/node_modules/istanbul-lib-report/node_modules/supports-color/package.json" />
-      <path value="$PROJECT_DIR$/node_modules/nyc/node_modules/istanbul-lib-report/package.json" />
-      <path value="$PROJECT_DIR$/node_modules/nyc/node_modules/istanbul-lib-source-maps/package.json" />
-      <path value="$PROJECT_DIR$/node_modules/nyc/node_modules/istanbul-reports/package.json" />
-      <path value="$PROJECT_DIR$/node_modules/nyc/node_modules/kind-of/package.json" />
-      <path value="$PROJECT_DIR$/node_modules/nyc/node_modules/lazy-cache/package.json" />
-      <path value="$PROJECT_DIR$/node_modules/nyc/node_modules/lcid/package.json" />
-      <path value="$PROJECT_DIR$/node_modules/nyc/node_modules/load-json-file/package.json" />
-      <path value="$PROJECT_DIR$/node_modules/nyc/node_modules/locate-path/node_modules/path-exists/package.json" />
-      <path value="$PROJECT_DIR$/node_modules/nyc/node_modules/locate-path/package.json" />
-      <path value="$PROJECT_DIR$/node_modules/nyc/node_modules/longest/package.json" />
-      <path value="$PROJECT_DIR$/node_modules/nyc/node_modules/lru-cache/package.json" />
-      <path value="$PROJECT_DIR$/node_modules/nyc/node_modules/map-cache/package.json" />
-      <path value="$PROJECT_DIR$/node_modules/nyc/node_modules/map-visit/package.json" />
-      <path value="$PROJECT_DIR$/node_modules/nyc/node_modules/md5-hex/package.json" />
-      <path value="$PROJECT_DIR$/node_modules/nyc/node_modules/md5-o-matic/package.json" />
-      <path value="$PROJECT_DIR$/node_modules/nyc/node_modules/mem/package.json" />
-      <path value="$PROJECT_DIR$/node_modules/nyc/node_modules/merge-source-map/node_modules/source-map/package.json" />
-      <path value="$PROJECT_DIR$/node_modules/nyc/node_modules/merge-source-map/package.json" />
-      <path value="$PROJECT_DIR$/node_modules/nyc/node_modules/micromatch/node_modules/kind-of/package.json" />
-      <path value="$PROJECT_DIR$/node_modules/nyc/node_modules/micromatch/package.json" />
-      <path value="$PROJECT_DIR$/node_modules/nyc/node_modules/mimic-fn/package.json" />
-      <path value="$PROJECT_DIR$/node_modules/nyc/node_modules/minimatch/package.json" />
-      <path value="$PROJECT_DIR$/node_modules/nyc/node_modules/minimist/package.json" />
-      <path value="$PROJECT_DIR$/node_modules/nyc/node_modules/mixin-deep/node_modules/is-extendable/package.json" />
-      <path value="$PROJECT_DIR$/node_modules/nyc/node_modules/mixin-deep/package.json" />
-      <path value="$PROJECT_DIR$/node_modules/nyc/node_modules/mkdirp/package.json" />
-      <path value="$PROJECT_DIR$/node_modules/nyc/node_modules/ms/package.json" />
-      <path value="$PROJECT_DIR$/node_modules/nyc/node_modules/nanomatch/node_modules/kind-of/package.json" />
-      <path value="$PROJECT_DIR$/node_modules/nyc/node_modules/nanomatch/package.json" />
-      <path value="$PROJECT_DIR$/node_modules/nyc/node_modules/normalize-package-data/package.json" />
-      <path value="$PROJECT_DIR$/node_modules/nyc/node_modules/npm-run-path/package.json" />
-      <path value="$PROJECT_DIR$/node_modules/nyc/node_modules/number-is-nan/package.json" />
-      <path value="$PROJECT_DIR$/node_modules/nyc/node_modules/object-assign/package.json" />
-      <path value="$PROJECT_DIR$/node_modules/nyc/node_modules/object-copy/node_modules/define-property/package.json" />
-      <path value="$PROJECT_DIR$/node_modules/nyc/node_modules/object-copy/package.json" />
-      <path value="$PROJECT_DIR$/node_modules/nyc/node_modules/object-visit/package.json" />
-      <path value="$PROJECT_DIR$/node_modules/nyc/node_modules/object.pick/package.json" />
-      <path value="$PROJECT_DIR$/node_modules/nyc/node_modules/once/package.json" />
-      <path value="$PROJECT_DIR$/node_modules/nyc/node_modules/optimist/package.json" />
-      <path value="$PROJECT_DIR$/node_modules/nyc/node_modules/os-homedir/package.json" />
-      <path value="$PROJECT_DIR$/node_modules/nyc/node_modules/os-locale/package.json" />
-      <path value="$PROJECT_DIR$/node_modules/nyc/node_modules/p-finally/package.json" />
-      <path value="$PROJECT_DIR$/node_modules/nyc/node_modules/p-limit/package.json" />
-      <path value="$PROJECT_DIR$/node_modules/nyc/node_modules/p-locate/package.json" />
-      <path value="$PROJECT_DIR$/node_modules/nyc/node_modules/p-try/package.json" />
-      <path value="$PROJECT_DIR$/node_modules/nyc/node_modules/parse-json/package.json" />
-      <path value="$PROJECT_DIR$/node_modules/nyc/node_modules/pascalcase/package.json" />
-      <path value="$PROJECT_DIR$/node_modules/nyc/node_modules/path-exists/package.json" />
-      <path value="$PROJECT_DIR$/node_modules/nyc/node_modules/path-is-absolute/package.json" />
-      <path value="$PROJECT_DIR$/node_modules/nyc/node_modules/path-key/package.json" />
-      <path value="$PROJECT_DIR$/node_modules/nyc/node_modules/path-parse/package.json" />
-      <path value="$PROJECT_DIR$/node_modules/nyc/node_modules/path-type/package.json" />
-      <path value="$PROJECT_DIR$/node_modules/nyc/node_modules/pify/package.json" />
-      <path value="$PROJECT_DIR$/node_modules/nyc/node_modules/pinkie-promise/package.json" />
-      <path value="$PROJECT_DIR$/node_modules/nyc/node_modules/pinkie/package.json" />
-      <path value="$PROJECT_DIR$/node_modules/nyc/node_modules/pkg-dir/node_modules/find-up/package.json" />
-      <path value="$PROJECT_DIR$/node_modules/nyc/node_modules/pkg-dir/package.json" />
-      <path value="$PROJECT_DIR$/node_modules/nyc/node_modules/posix-character-classes/package.json" />
-      <path value="$PROJECT_DIR$/node_modules/nyc/node_modules/pseudomap/package.json" />
-      <path value="$PROJECT_DIR$/node_modules/nyc/node_modules/read-pkg-up/node_modules/find-up/package.json" />
-      <path value="$PROJECT_DIR$/node_modules/nyc/node_modules/read-pkg-up/package.json" />
-      <path value="$PROJECT_DIR$/node_modules/nyc/node_modules/read-pkg/package.json" />
-      <path value="$PROJECT_DIR$/node_modules/nyc/node_modules/regex-not/package.json" />
-      <path value="$PROJECT_DIR$/node_modules/nyc/node_modules/repeat-element/package.json" />
-      <path value="$PROJECT_DIR$/node_modules/nyc/node_modules/repeat-string/package.json" />
-      <path value="$PROJECT_DIR$/node_modules/nyc/node_modules/require-directory/package.json" />
-      <path value="$PROJECT_DIR$/node_modules/nyc/node_modules/require-main-filename/package.json" />
-      <path value="$PROJECT_DIR$/node_modules/nyc/node_modules/resolve-from/package.json" />
-      <path value="$PROJECT_DIR$/node_modules/nyc/node_modules/resolve-url/package.json" />
-      <path value="$PROJECT_DIR$/node_modules/nyc/node_modules/ret/package.json" />
-      <path value="$PROJECT_DIR$/node_modules/nyc/node_modules/right-align/package.json" />
-      <path value="$PROJECT_DIR$/node_modules/nyc/node_modules/rimraf/package.json" />
-      <path value="$PROJECT_DIR$/node_modules/nyc/node_modules/safe-regex/package.json" />
-      <path value="$PROJECT_DIR$/node_modules/nyc/node_modules/semver/package.json" />
-      <path value="$PROJECT_DIR$/node_modules/nyc/node_modules/set-blocking/package.json" />
-      <path value="$PROJECT_DIR$/node_modules/nyc/node_modules/set-value/node_modules/extend-shallow/package.json" />
-      <path value="$PROJECT_DIR$/node_modules/nyc/node_modules/set-value/package.json" />
-      <path value="$PROJECT_DIR$/node_modules/nyc/node_modules/shebang-command/package.json" />
-      <path value="$PROJECT_DIR$/node_modules/nyc/node_modules/shebang-regex/package.json" />
-      <path value="$PROJECT_DIR$/node_modules/nyc/node_modules/signal-exit/package.json" />
-      <path value="$PROJECT_DIR$/node_modules/nyc/node_modules/slide/package.json" />
-      <path value="$PROJECT_DIR$/node_modules/nyc/node_modules/snapdragon-node/node_modules/define-property/package.json" />
-      <path value="$PROJECT_DIR$/node_modules/nyc/node_modules/snapdragon-node/node_modules/is-accessor-descriptor/package.json" />
-      <path value="$PROJECT_DIR$/node_modules/nyc/node_modules/snapdragon-node/node_modules/is-data-descriptor/package.json" />
-      <path value="$PROJECT_DIR$/node_modules/nyc/node_modules/snapdragon-node/node_modules/is-descriptor/package.json" />
-      <path value="$PROJECT_DIR$/node_modules/nyc/node_modules/snapdragon-node/node_modules/kind-of/package.json" />
-      <path value="$PROJECT_DIR$/node_modules/nyc/node_modules/snapdragon-node/package.json" />
-      <path value="$PROJECT_DIR$/node_modules/nyc/node_modules/snapdragon-util/package.json" />
-      <path value="$PROJECT_DIR$/node_modules/nyc/node_modules/snapdragon/node_modules/debug/package.json" />
-      <path value="$PROJECT_DIR$/node_modules/nyc/node_modules/snapdragon/node_modules/define-property/package.json" />
-      <path value="$PROJECT_DIR$/node_modules/nyc/node_modules/snapdragon/node_modules/extend-shallow/package.json" />
-      <path value="$PROJECT_DIR$/node_modules/nyc/node_modules/snapdragon/package.json" />
-      <path value="$PROJECT_DIR$/node_modules/nyc/node_modules/source-map-resolve/package.json" />
-      <path value="$PROJECT_DIR$/node_modules/nyc/node_modules/source-map-url/package.json" />
-      <path value="$PROJECT_DIR$/node_modules/nyc/node_modules/source-map/package.json" />
-      <path value="$PROJECT_DIR$/node_modules/nyc/node_modules/spawn-wrap/package.json" />
-      <path value="$PROJECT_DIR$/node_modules/nyc/node_modules/spdx-correct/package.json" />
-      <path value="$PROJECT_DIR$/node_modules/nyc/node_modules/spdx-exceptions/package.json" />
-      <path value="$PROJECT_DIR$/node_modules/nyc/node_modules/spdx-expression-parse/package.json" />
-      <path value="$PROJECT_DIR$/node_modules/nyc/node_modules/spdx-license-ids/package.json" />
-      <path value="$PROJECT_DIR$/node_modules/nyc/node_modules/split-string/package.json" />
-      <path value="$PROJECT_DIR$/node_modules/nyc/node_modules/static-extend/node_modules/define-property/package.json" />
-      <path value="$PROJECT_DIR$/node_modules/nyc/node_modules/static-extend/package.json" />
-      <path value="$PROJECT_DIR$/node_modules/nyc/node_modules/string-width/package.json" />
-      <path value="$PROJECT_DIR$/node_modules/nyc/node_modules/strip-ansi/package.json" />
-      <path value="$PROJECT_DIR$/node_modules/nyc/node_modules/strip-bom/package.json" />
-      <path value="$PROJECT_DIR$/node_modules/nyc/node_modules/strip-eof/package.json" />
-      <path value="$PROJECT_DIR$/node_modules/nyc/node_modules/test-exclude/package.json" />
-      <path value="$PROJECT_DIR$/node_modules/nyc/node_modules/to-object-path/package.json" />
-      <path value="$PROJECT_DIR$/node_modules/nyc/node_modules/to-regex-range/package.json" />
-      <path value="$PROJECT_DIR$/node_modules/nyc/node_modules/to-regex/package.json" />
-      <path value="$PROJECT_DIR$/node_modules/nyc/node_modules/uglify-js/node_modules/yargs/package.json" />
-      <path value="$PROJECT_DIR$/node_modules/nyc/node_modules/uglify-js/package.json" />
-      <path value="$PROJECT_DIR$/node_modules/nyc/node_modules/uglify-to-browserify/package.json" />
-      <path value="$PROJECT_DIR$/node_modules/nyc/node_modules/union-value/node_modules/extend-shallow/package.json" />
-      <path value="$PROJECT_DIR$/node_modules/nyc/node_modules/union-value/node_modules/set-value/package.json" />
-      <path value="$PROJECT_DIR$/node_modules/nyc/node_modules/union-value/package.json" />
-      <path value="$PROJECT_DIR$/node_modules/nyc/node_modules/unset-value/node_modules/has-value/node_modules/isobject/package.json" />
-      <path value="$PROJECT_DIR$/node_modules/nyc/node_modules/unset-value/node_modules/has-value/package.json" />
-      <path value="$PROJECT_DIR$/node_modules/nyc/node_modules/unset-value/node_modules/has-values/package.json" />
-      <path value="$PROJECT_DIR$/node_modules/nyc/node_modules/unset-value/package.json" />
-      <path value="$PROJECT_DIR$/node_modules/nyc/node_modules/urix/package.json" />
-      <path value="$PROJECT_DIR$/node_modules/nyc/node_modules/use/node_modules/kind-of/package.json" />
-      <path value="$PROJECT_DIR$/node_modules/nyc/node_modules/use/package.json" />
-      <path value="$PROJECT_DIR$/node_modules/nyc/node_modules/validate-npm-package-license/package.json" />
-      <path value="$PROJECT_DIR$/node_modules/nyc/node_modules/which-module/package.json" />
-      <path value="$PROJECT_DIR$/node_modules/nyc/node_modules/which/package.json" />
-      <path value="$PROJECT_DIR$/node_modules/nyc/node_modules/window-size/package.json" />
-      <path value="$PROJECT_DIR$/node_modules/nyc/node_modules/wordwrap/package.json" />
-      <path value="$PROJECT_DIR$/node_modules/nyc/node_modules/wrap-ansi/node_modules/ansi-regex/package.json" />
-      <path value="$PROJECT_DIR$/node_modules/nyc/node_modules/wrap-ansi/node_modules/is-fullwidth-code-point/package.json" />
-      <path value="$PROJECT_DIR$/node_modules/nyc/node_modules/wrap-ansi/node_modules/string-width/package.json" />
-      <path value="$PROJECT_DIR$/node_modules/nyc/node_modules/wrap-ansi/node_modules/strip-ansi/package.json" />
-      <path value="$PROJECT_DIR$/node_modules/nyc/node_modules/wrap-ansi/package.json" />
-      <path value="$PROJECT_DIR$/node_modules/nyc/node_modules/wrappy/package.json" />
-      <path value="$PROJECT_DIR$/node_modules/nyc/node_modules/write-file-atomic/package.json" />
-      <path value="$PROJECT_DIR$/node_modules/nyc/node_modules/y18n/package.json" />
-      <path value="$PROJECT_DIR$/node_modules/nyc/node_modules/yallist/package.json" />
-      <path value="$PROJECT_DIR$/node_modules/nyc/node_modules/yargs-parser/node_modules/camelcase/package.json" />
-      <path value="$PROJECT_DIR$/node_modules/nyc/node_modules/yargs-parser/package.json" />
-      <path value="$PROJECT_DIR$/node_modules/nyc/node_modules/yargs/node_modules/camelcase/package.json" />
-      <path value="$PROJECT_DIR$/node_modules/nyc/node_modules/yargs/node_modules/cliui/package.json" />
-      <path value="$PROJECT_DIR$/node_modules/nyc/node_modules/yargs/node_modules/yargs-parser/package.json" />
-      <path value="$PROJECT_DIR$/node_modules/nyc/node_modules/yargs/package.json" />
-      <path value="$PROJECT_DIR$/node_modules/nyc/package.json" />
-      <path value="$PROJECT_DIR$/node_modules/object-assign/package.json" />
-      <path value="$PROJECT_DIR$/node_modules/object.omit/package.json" />
-      <path value="$PROJECT_DIR$/node_modules/once/package.json" />
-      <path value="$PROJECT_DIR$/node_modules/os-homedir/package.json" />
-      <path value="$PROJECT_DIR$/node_modules/os-tmpdir/package.json" />
-      <path value="$PROJECT_DIR$/node_modules/output-file-sync/package.json" />
-      <path value="$PROJECT_DIR$/node_modules/parse-glob/package.json" />
-      <path value="$PROJECT_DIR$/node_modules/path-is-absolute/package.json" />
-      <path value="$PROJECT_DIR$/node_modules/path-to-regexp/package.json" />
-      <path value="$PROJECT_DIR$/node_modules/preserve/package.json" />
-      <path value="$PROJECT_DIR$/node_modules/private/package.json" />
-      <path value="$PROJECT_DIR$/node_modules/process-nextick-args/package.json" />
-      <path value="$PROJECT_DIR$/node_modules/randomatic/node_modules/is-number/package.json" />
-      <path value="$PROJECT_DIR$/node_modules/randomatic/node_modules/kind-of/package.json" />
-      <path value="$PROJECT_DIR$/node_modules/randomatic/package.json" />
-      <path value="$PROJECT_DIR$/node_modules/readable-stream/node_modules/isarray/package.json" />
-      <path value="$PROJECT_DIR$/node_modules/readable-stream/package.json" />
-      <path value="$PROJECT_DIR$/node_modules/readdirp/examples/package.json" />
-      <path value="$PROJECT_DIR$/node_modules/readdirp/package.json" />
-      <path value="$PROJECT_DIR$/node_modules/regenerator-runtime/package.json" />
-      <path value="$PROJECT_DIR$/node_modules/regex-cache/package.json" />
-      <path value="$PROJECT_DIR$/node_modules/remove-trailing-separator/package.json" />
-      <path value="$PROJECT_DIR$/node_modules/repeat-element/package.json" />
-      <path value="$PROJECT_DIR$/node_modules/repeat-string/package.json" />
-      <path value="$PROJECT_DIR$/node_modules/repeating/package.json" />
-      <path value="$PROJECT_DIR$/node_modules/safe-buffer/package.json" />
-      <path value="$PROJECT_DIR$/node_modules/samsam/package.json" />
-      <path value="$PROJECT_DIR$/node_modules/semver/package.json" />
-      <path value="$PROJECT_DIR$/node_modules/set-immediate-shim/package.json" />
-      <path value="$PROJECT_DIR$/node_modules/shortid/package.json" />
-      <path value="$PROJECT_DIR$/node_modules/sinon/package.json" />
-      <path value="$PROJECT_DIR$/node_modules/slash/package.json" />
-      <path value="$PROJECT_DIR$/node_modules/source-map-support/package.json" />
-      <path value="$PROJECT_DIR$/node_modules/source-map/package.json" />
-      <path value="$PROJECT_DIR$/node_modules/string_decoder/package.json" />
-      <path value="$PROJECT_DIR$/node_modules/strip-ansi/package.json" />
-      <path value="$PROJECT_DIR$/node_modules/supports-color/package.json" />
-      <path value="$PROJECT_DIR$/node_modules/text-encoding/package.json" />
-      <path value="$PROJECT_DIR$/node_modules/to-fast-properties/package.json" />
-      <path value="$PROJECT_DIR$/node_modules/trim-right/package.json" />
-      <path value="$PROJECT_DIR$/node_modules/type-detect/package.json" />
-      <path value="$PROJECT_DIR$/node_modules/user-home/package.json" />
-      <path value="$PROJECT_DIR$/node_modules/util-deprecate/package.json" />
-      <path value="$PROJECT_DIR$/node_modules/v8flags/package.json" />
-      <path value="$PROJECT_DIR$/node_modules/wrappy/package.json" />
+      <path value="$PROJECT_DIR$/package.json" />
     </packageJsonPaths>
   </component>
-  <component name="ProjectFrameBounds" extendedState="7">
-    <option name="width" value="1260" />
-    <option name="height" value="943" />
+  <component name="ProjectFrameBounds">
+    <option name="x" value="818" />
+    <option name="y" value="31" />
+    <option name="width" value="2340" />
+    <option name="height" value="1265" />
   </component>
   <component name="ProjectView">
     <navigator proportions="" version="1">
+      <autoscrollFromSource ProjectPane="true" />
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
@@ -753,56 +300,72 @@
             <path>
               <item name="prototype" type="b2602c69:ProjectViewProjectNode" />
               <item name="prototype" type="462c0819:PsiDirectoryNode" />
-              <item name="game" type="462c0819:PsiDirectoryNode" />
+              <item name="auth" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="prototype" type="b2602c69:ProjectViewProjectNode" />
               <item name="prototype" type="462c0819:PsiDirectoryNode" />
-              <item name="infrastructure" type="462c0819:PsiDirectoryNode" />
+              <item name="e2e" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="prototype" type="b2602c69:ProjectViewProjectNode" />
               <item name="prototype" type="462c0819:PsiDirectoryNode" />
-              <item name="infrastructure" type="462c0819:PsiDirectoryNode" />
-              <item name="logic" type="462c0819:PsiDirectoryNode" />
+              <item name="infra" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="prototype" type="b2602c69:ProjectViewProjectNode" />
               <item name="prototype" type="462c0819:PsiDirectoryNode" />
-              <item name="tests" type="462c0819:PsiDirectoryNode" />
+              <item name="infra" type="462c0819:PsiDirectoryNode" />
+              <item name="core" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="prototype" type="b2602c69:ProjectViewProjectNode" />
               <item name="prototype" type="462c0819:PsiDirectoryNode" />
-              <item name="tests" type="462c0819:PsiDirectoryNode" />
-              <item name="game" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="prototype" type="b2602c69:ProjectViewProjectNode" />
-              <item name="prototype" type="462c0819:PsiDirectoryNode" />
-              <item name="tests" type="462c0819:PsiDirectoryNode" />
-              <item name="game" type="462c0819:PsiDirectoryNode" />
-              <item name="states" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="prototype" type="b2602c69:ProjectViewProjectNode" />
-              <item name="prototype" type="462c0819:PsiDirectoryNode" />
-              <item name="tests" type="462c0819:PsiDirectoryNode" />
-              <item name="infrastructure" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="prototype" type="b2602c69:ProjectViewProjectNode" />
-              <item name="prototype" type="462c0819:PsiDirectoryNode" />
-              <item name="tests" type="462c0819:PsiDirectoryNode" />
-              <item name="infrastructure" type="462c0819:PsiDirectoryNode" />
-              <item name="logic" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="prototype" type="b2602c69:ProjectViewProjectNode" />
-              <item name="prototype" type="462c0819:PsiDirectoryNode" />
-              <item name="tests" type="462c0819:PsiDirectoryNode" />
-              <item name="infrastructure" type="462c0819:PsiDirectoryNode" />
+              <item name="infra" type="462c0819:PsiDirectoryNode" />
               <item name="network" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="prototype" type="b2602c69:ProjectViewProjectNode" />
+              <item name="prototype" type="462c0819:PsiDirectoryNode" />
+              <item name="tests" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="prototype" type="b2602c69:ProjectViewProjectNode" />
+              <item name="prototype" type="462c0819:PsiDirectoryNode" />
+              <item name="tests" type="462c0819:PsiDirectoryNode" />
+              <item name="auth" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="prototype" type="b2602c69:ProjectViewProjectNode" />
+              <item name="prototype" type="462c0819:PsiDirectoryNode" />
+              <item name="tests" type="462c0819:PsiDirectoryNode" />
+              <item name="core" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="prototype" type="b2602c69:ProjectViewProjectNode" />
+              <item name="prototype" type="462c0819:PsiDirectoryNode" />
+              <item name="tests" type="462c0819:PsiDirectoryNode" />
+              <item name="game" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="prototype" type="b2602c69:ProjectViewProjectNode" />
+              <item name="prototype" type="462c0819:PsiDirectoryNode" />
+              <item name="tests" type="462c0819:PsiDirectoryNode" />
+              <item name="infra" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="prototype" type="b2602c69:ProjectViewProjectNode" />
+              <item name="prototype" type="462c0819:PsiDirectoryNode" />
+              <item name="tests" type="462c0819:PsiDirectoryNode" />
+              <item name="infra" type="462c0819:PsiDirectoryNode" />
+              <item name="network" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="prototype" type="b2602c69:ProjectViewProjectNode" />
+              <item name="prototype" type="462c0819:PsiDirectoryNode" />
+              <item name="tests" type="462c0819:PsiDirectoryNode" />
+              <item name="infra" type="462c0819:PsiDirectoryNode" />
+              <item name="utils" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="prototype" type="b2602c69:ProjectViewProjectNode" />
@@ -828,26 +391,26 @@
   <component name="PropertiesComponent">
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="javascript.nodejs.core.library.configured.version" value="10.0.0" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/tests/network/event_dispatcher_test.js" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/.idea" />
     <property name="nodejs.mocha.mocha_node_package_dir" value="/usr/lib/node_modules/mocha" />
     <property name="nodejs_package_manager_path" value="npm" />
     <property name="run.code.analysis.last.selected.profile" value="pProject Default" />
-    <property name="settings.editor.selected.configurable" value="coverage" />
+    <property name="settings.editor.selected.configurable" value="project.propVCSSupport.Ignored.Files" />
   </component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/tests/infra/utils" />
+      <recent name="$PROJECT_DIR$/infra" />
+      <recent name="$PROJECT_DIR$/tests/infra/network" />
+      <recent name="$PROJECT_DIR$/infra/network/messages" />
       <recent name="$PROJECT_DIR$/game" />
-      <recent name="$PROJECT_DIR$/network" />
-      <recent name="$PROJECT_DIR$/logic" />
-      <recent name="$PROJECT_DIR$" />
-      <recent name="$PROJECT_DIR$/tests" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
-      <recent name="$PROJECT_DIR$/tests/infrastructure" />
+      <recent name="$PROJECT_DIR$/tests/auth" />
+      <recent name="$PROJECT_DIR$/infra/network/messages" />
+      <recent name="$PROJECT_DIR$/tests/infra/network" />
       <recent name="$PROJECT_DIR$/tests/game" />
       <recent name="$PROJECT_DIR$/game" />
-      <recent name="$PROJECT_DIR$/infrastructure" />
-      <recent name="$PROJECT_DIR$/tests" />
     </key>
   </component>
   <component name="RunDashboard">
@@ -862,7 +425,139 @@
       </list>
     </option>
   </component>
-  <component name="RunManager">
+  <component name="RunManager" selected="Mocha.tile_test">
+    <configuration name="ConnectionHandler" type="mocha-javascript-test-runner" factoryName="Mocha" nameIsGenerated="true">
+      <node-interpreter>project</node-interpreter>
+      <node-options />
+      <working-directory>$PROJECT_DIR$/</working-directory>
+      <pass-parent-env>true</pass-parent-env>
+      <ui>bdd</ui>
+      <extra-mocha-options>--compilers js:babel-core/register</extra-mocha-options>
+      <test-kind>SUITE</test-kind>
+      <test-file>$PROJECT_DIR$/tests/infra/network/connection_handler_test.js</test-file>
+      <test-names>
+        <name value="ConnectionHandler" />
+      </test-names>
+    </configuration>
+    <configuration name="Dispatcher" type="mocha-javascript-test-runner" factoryName="Mocha" nameIsGenerated="true">
+      <node-interpreter>project</node-interpreter>
+      <node-options />
+      <working-directory>$PROJECT_DIR$/</working-directory>
+      <pass-parent-env>true</pass-parent-env>
+      <ui>bdd</ui>
+      <extra-mocha-options>--compilers js:babel-core/register</extra-mocha-options>
+      <test-kind>SUITE</test-kind>
+      <test-file>$PROJECT_DIR$/tests/infra/network/dispatcher_test.js</test-file>
+      <test-names>
+        <name value="Dispatcher" />
+      </test-names>
+    </configuration>
+    <configuration name="TcpServer" type="mocha-javascript-test-runner" factoryName="Mocha" nameIsGenerated="true">
+      <node-interpreter>project</node-interpreter>
+      <node-options />
+      <working-directory>$PROJECT_DIR$/</working-directory>
+      <pass-parent-env>true</pass-parent-env>
+      <ui>bdd</ui>
+      <extra-mocha-options>--compilers js:babel-core/register</extra-mocha-options>
+      <test-kind>SUITE</test-kind>
+      <test-file>$PROJECT_DIR$/tests/infra/network/tcp_server_test.js</test-file>
+      <test-names>
+        <name value="TcpServer" />
+      </test-names>
+    </configuration>
+    <configuration name="TcpServer.Chunk processing" type="mocha-javascript-test-runner" factoryName="Mocha" nameIsGenerated="true">
+      <node-interpreter>project</node-interpreter>
+      <node-options />
+      <working-directory>$PROJECT_DIR$/</working-directory>
+      <pass-parent-env>true</pass-parent-env>
+      <ui>bdd</ui>
+      <extra-mocha-options>--compilers js:babel-core/register</extra-mocha-options>
+      <test-kind>SUITE</test-kind>
+      <test-file>$PROJECT_DIR$/tests/infra/network/tcp_server_test.js</test-file>
+      <test-names>
+        <name value="TcpServer" />
+        <name value="Chunk processing" />
+      </test-names>
+    </configuration>
+    <configuration name="UnPacker" type="mocha-javascript-test-runner" factoryName="Mocha" temporary="true" nameIsGenerated="true">
+      <node-interpreter>project</node-interpreter>
+      <node-options />
+      <working-directory>$PROJECT_DIR$/</working-directory>
+      <pass-parent-env>true</pass-parent-env>
+      <ui>bdd</ui>
+      <extra-mocha-options>--compilers js:babel-core/register</extra-mocha-options>
+      <test-kind>SUITE</test-kind>
+      <test-file>$PROJECT_DIR$/tests/infra/network/unpacker_test.js</test-file>
+      <test-names>
+        <name value="UnPacker" />
+      </test-names>
+    </configuration>
+    <configuration name="UnPacker.should " type="mocha-javascript-test-runner" factoryName="Mocha" temporary="true" nameIsGenerated="true">
+      <node-interpreter>project</node-interpreter>
+      <node-options />
+      <working-directory>$PROJECT_DIR$/</working-directory>
+      <pass-parent-env>true</pass-parent-env>
+      <ui>bdd</ui>
+      <extra-mocha-options>--compilers js:babel-core/register</extra-mocha-options>
+      <test-kind>TEST</test-kind>
+      <test-file>$PROJECT_DIR$/tests/infra/network/unpacker_test.js</test-file>
+      <test-names>
+        <name value="UnPacker" />
+        <name value="should " />
+      </test-names>
+    </configuration>
+    <configuration name="UnPacker.should handle null or undefined payload" type="mocha-javascript-test-runner" factoryName="Mocha" temporary="true" nameIsGenerated="true">
+      <node-interpreter>project</node-interpreter>
+      <node-options />
+      <working-directory>$PROJECT_DIR$/</working-directory>
+      <pass-parent-env>true</pass-parent-env>
+      <ui>bdd</ui>
+      <extra-mocha-options>--compilers js:babel-core/register</extra-mocha-options>
+      <test-kind>TEST</test-kind>
+      <test-file>$PROJECT_DIR$/tests/infra/network/unpacker_test.js</test-file>
+      <test-names>
+        <name value="UnPacker" />
+        <name value="should handle null or undefined payload" />
+      </test-names>
+    </configuration>
+    <configuration name="UnPacker.should ooo" type="mocha-javascript-test-runner" factoryName="Mocha" temporary="true" nameIsGenerated="true">
+      <node-interpreter>project</node-interpreter>
+      <node-options />
+      <working-directory>$PROJECT_DIR$</working-directory>
+      <pass-parent-env>true</pass-parent-env>
+      <ui>bdd</ui>
+      <extra-mocha-options />
+      <test-kind>TEST</test-kind>
+      <test-file>$PROJECT_DIR$/tests/infra/network/unpacker_test.js</test-file>
+      <test-names>
+        <name value="UnPacker" />
+        <name value="should ooo" />
+      </test-names>
+    </configuration>
+    <configuration name="UnPacker.should unpack message to event" type="mocha-javascript-test-runner" factoryName="Mocha" temporary="true" nameIsGenerated="true">
+      <node-interpreter>project</node-interpreter>
+      <node-options />
+      <working-directory>$PROJECT_DIR$/</working-directory>
+      <pass-parent-env>true</pass-parent-env>
+      <ui>bdd</ui>
+      <extra-mocha-options>--compilers js:babel-core/register</extra-mocha-options>
+      <test-kind>TEST</test-kind>
+      <test-file>$PROJECT_DIR$/tests/infra/network/unpacker_test.js</test-file>
+      <test-names>
+        <name value="UnPacker" />
+        <name value="should unpack message to event" />
+      </test-names>
+    </configuration>
+    <configuration name="e2e" type="mocha-javascript-test-runner" factoryName="Mocha">
+      <node-interpreter>project</node-interpreter>
+      <node-options />
+      <working-directory>$PROJECT_DIR$/</working-directory>
+      <pass-parent-env>true</pass-parent-env>
+      <ui>bdd</ui>
+      <extra-mocha-options>--compilers js:babel-core/register</extra-mocha-options>
+      <test-kind>PATTERN</test-kind>
+      <test-pattern>./e2e/**/*_test.js</test-pattern>
+    </configuration>
     <configuration name="tile_test" type="mocha-javascript-test-runner" factoryName="Mocha">
       <node-interpreter>project</node-interpreter>
       <node-options />
@@ -873,9 +568,31 @@
       <test-kind>PATTERN</test-kind>
       <test-pattern>./tests/**/*_test.js</test-pattern>
     </configuration>
+    <list>
+      <item itemvalue="Mocha.Dispatcher" />
+      <item itemvalue="Mocha.ConnectionHandler" />
+      <item itemvalue="Mocha.TcpServer" />
+      <item itemvalue="Mocha.tile_test" />
+      <item itemvalue="Mocha.e2e" />
+      <item itemvalue="Mocha.TcpServer.Chunk processing" />
+      <item itemvalue="Mocha.UnPacker.should " />
+      <item itemvalue="Mocha.UnPacker.should ooo" />
+      <item itemvalue="Mocha.UnPacker.should handle null or undefined payload" />
+      <item itemvalue="Mocha.UnPacker" />
+      <item itemvalue="Mocha.UnPacker.should unpack message to event" />
+    </list>
+    <recent_temporary>
+      <list>
+        <item itemvalue="Mocha.UnPacker.should unpack message to event" />
+        <item itemvalue="Mocha.UnPacker" />
+        <item itemvalue="Mocha.UnPacker.should handle null or undefined payload" />
+        <item itemvalue="Mocha.UnPacker.should ooo" />
+        <item itemvalue="Mocha.UnPacker.should " />
+      </list>
+    </recent_temporary>
   </component>
   <component name="SvnConfiguration">
-    <configuration />
+    <configuration>$USER_HOME$/.subversion</configuration>
   </component>
   <component name="TaskManager">
     <task active="true" id="Default" summary="Default task">
@@ -968,43 +685,184 @@
       <workItem from="1532096541120" duration="2201000" />
       <workItem from="1532114811021" duration="1781000" />
       <workItem from="1532116616918" duration="1264000" />
+      <workItem from="1533320563695" duration="457000" />
+      <workItem from="1533321044644" duration="588000" />
+      <workItem from="1533375954401" duration="1784000" />
+      <workItem from="1533377760811" duration="1784000" />
+      <workItem from="1533379568597" duration="1382000" />
+      <workItem from="1533381380530" duration="1782000" />
+      <workItem from="1533383186064" duration="1783000" />
+      <workItem from="1533384992354" duration="1836000" />
+      <workItem from="1533386913227" duration="813000" />
+      <workItem from="1533390791991" duration="1162000" />
+      <workItem from="1533413135849" duration="756000" />
+      <workItem from="1533456780778" duration="1571000" />
+      <workItem from="1533458593765" duration="1785000" />
+      <workItem from="1533460400742" duration="1855000" />
+      <workItem from="1533462279368" duration="1869000" />
+      <workItem from="1533464219710" duration="166000" />
+      <workItem from="1533466810794" duration="930000" />
+      <workItem from="1533474944388" duration="1825000" />
+      <workItem from="1533476794768" duration="1787000" />
+      <workItem from="1533478605039" duration="1787000" />
+      <workItem from="1533480416584" duration="1783000" />
+      <workItem from="1533482223491" duration="1783000" />
+      <workItem from="1533484029376" duration="2069000" />
+      <workItem from="1533486126877" duration="460000" />
+      <workItem from="1533487095165" duration="2067000" />
+      <workItem from="1533489189880" duration="1399000" />
+      <workItem from="1534587671038" duration="1414000" />
+      <workItem from="1534589482131" duration="1078000" />
+      <workItem from="1534591289338" duration="1784000" />
+      <workItem from="1534593100134" duration="1783000" />
+      <workItem from="1534594907542" duration="1348000" />
+      <workItem from="1534596998088" duration="638000" />
+      <workItem from="1534598921743" duration="2161000" />
+      <workItem from="1534604304475" duration="1784000" />
+      <workItem from="1534606111704" duration="1341000" />
+      <workItem from="1534608136734" duration="924000" />
+      <workItem from="1534609956521" duration="1782000" />
+      <workItem from="1534611761667" duration="1784000" />
+      <workItem from="1534613576615" duration="1009000" />
+      <workItem from="1534678464397" duration="1830000" />
+      <workItem from="1534680316852" duration="1187000" />
+      <workItem from="1534688925631" duration="602000" />
+      <workItem from="1534690849585" duration="1998000" />
+      <workItem from="1534692870650" duration="1785000" />
+      <workItem from="1534694679408" duration="2116000" />
+      <workItem from="1534696818803" duration="1211000" />
+      <workItem from="1534775041601" duration="1984000" />
+      <workItem from="1534777202658" duration="1819000" />
+      <workItem from="1534779044649" duration="1902000" />
+      <workItem from="1534781627665" duration="1490000" />
+      <workItem from="1534862092621" duration="1689000" />
+      <workItem from="1534863901584" duration="1784000" />
+      <workItem from="1534865709608" duration="874000" />
+      <workItem from="1534870108607" duration="2340000" />
+      <workItem from="1534873486493" duration="1782000" />
+      <workItem from="1534875295549" duration="1781000" />
+      <workItem from="1534877099666" duration="1796000" />
+      <workItem from="1534878921247" duration="824000" />
+      <workItem from="1538934976659" duration="1723000" />
+      <workItem from="1550171293269" duration="599000" />
+      <workItem from="1550233004991" duration="1526000" />
+      <workItem from="1550234841713" duration="2112000" />
+      <workItem from="1550236985106" duration="1777000" />
+      <workItem from="1550238795364" duration="1828000" />
+      <workItem from="1550240659026" duration="2352000" />
+      <workItem from="1550250333479" duration="1786000" />
+      <workItem from="1550252151936" duration="1779000" />
+      <workItem from="1550253967409" duration="1138000" />
+      <workItem from="1550305753497" duration="1608000" />
+      <workItem from="1550307564478" duration="1779000" />
+      <workItem from="1550309386227" duration="1543000" />
+      <workItem from="1550311192253" duration="1780000" />
+      <workItem from="1550313007918" duration="1776000" />
+      <workItem from="1550314817708" duration="1777000" />
+      <workItem from="1550316636930" duration="1611000" />
+      <workItem from="1550318454133" duration="1343000" />
+      <workItem from="1550320402932" duration="1775000" />
+      <workItem from="1550322211572" duration="1776000" />
+      <workItem from="1550324024446" duration="1787000" />
+      <workItem from="1550325846798" duration="1777000" />
+      <workItem from="1550327662203" duration="1786000" />
+      <workItem from="1550329485120" duration="1869000" />
+      <workItem from="1550333556662" duration="1776000" />
+      <workItem from="1550335368817" duration="2307000" />
+      <workItem from="1550337730988" duration="1039000" />
+      <workItem from="1550342996660" duration="1776000" />
+      <workItem from="1550344806564" duration="1778000" />
+      <workItem from="1550346621706" duration="1772000" />
+      <workItem from="1550348433025" duration="1772000" />
+      <workItem from="1550350244232" duration="1772000" />
+      <workItem from="1550352059789" duration="344000" />
+      <workItem from="1550401863375" duration="1776000" />
+      <workItem from="1550403675728" duration="2196000" />
+      <workItem from="1550406025002" duration="1921000" />
+      <workItem from="1550407985310" duration="1799000" />
+      <workItem from="1550409821832" duration="1774000" />
+      <workItem from="1550411634615" duration="221000" />
+      <workItem from="1550504050585" duration="730000" />
+      <workItem from="1550506511943" duration="1774000" />
+      <workItem from="1550508318829" duration="1776000" />
+      <workItem from="1550510124964" duration="1416000" />
+      <workItem from="1550590250390" duration="1920000" />
+      <workItem from="1550592203589" duration="1629000" />
+      <workItem from="1550594158583" duration="427000" />
+      <workItem from="1550916269418" duration="1634000" />
+      <workItem from="1550924003260" duration="1823000" />
+      <workItem from="1550925858056" duration="1948000" />
+      <workItem from="1550927836789" duration="1808000" />
+      <workItem from="1550929675763" duration="599000" />
+      <workItem from="1550932302028" duration="1778000" />
+      <workItem from="1550934160723" duration="599000" />
+      <workItem from="1550937327670" duration="1742000" />
+      <workItem from="1550939137804" duration="1777000" />
+      <workItem from="1550940952058" duration="1773000" />
+      <workItem from="1550942761194" duration="1774000" />
+      <workItem from="1550944581131" duration="1642000" />
+      <workItem from="1550946499991" duration="1827000" />
+      <workItem from="1550948760928" duration="1968000" />
+      <workItem from="1550950792430" duration="1042000" />
+      <workItem from="1550952935808" duration="1780000" />
+      <workItem from="1550954749431" duration="1776000" />
+      <workItem from="1550956565848" duration="113000" />
+      <workItem from="1550956726790" duration="1227000" />
+      <workItem from="1551016710393" duration="1215000" />
+      <workItem from="1551018549870" duration="1773000" />
+      <workItem from="1551020354777" duration="533000" />
+      <workItem from="1551022171347" duration="1777000" />
+      <workItem from="1551024022465" duration="883000" />
+      <workItem from="1551025882120" duration="649000" />
+      <workItem from="1551108478394" duration="2069000" />
+      <workItem from="1551110588496" duration="796000" />
+      <workItem from="1551196347317" duration="1587000" />
+      <workItem from="1551198447361" duration="1775000" />
+      <workItem from="1551200258216" duration="1773000" />
+      <workItem from="1551281371269" duration="1800000" />
+      <workItem from="1551283206729" duration="1803000" />
+      <workItem from="1551285061844" duration="938000" />
+      <workItem from="1552072883264" duration="844000" />
+      <workItem from="1552324671060" duration="1778000" />
+      <workItem from="1552326490814" duration="1772000" />
+      <workItem from="1552328302076" duration="1773000" />
     </task>
     <servers />
   </component>
   <component name="TestHistory">
-    <history-entry file="tile_test - 2018.07.20 at 21h 58m 56s.xml">
+    <history-entry file="tile_test - 2019.03.11 at 19h 10m 03s.xml">
       <configuration name="tile_test" configurationId="mocha-javascript-test-runner" />
     </history-entry>
-    <history-entry file="tile_test - 2018.07.20 at 21h 59m 32s.xml">
+    <history-entry file="tile_test - 2019.03.11 at 19h 10m 19s.xml">
       <configuration name="tile_test" configurationId="mocha-javascript-test-runner" />
     </history-entry>
-    <history-entry file="tile_test - 2018.07.20 at 22h 00m 08s.xml">
+    <history-entry file="tile_test - 2019.03.11 at 19h 18m 47s.xml">
       <configuration name="tile_test" configurationId="mocha-javascript-test-runner" />
     </history-entry>
-    <history-entry file="tile_test - 2018.07.20 at 22h 01m 20s.xml">
+    <history-entry file="e2e - 2019.03.11 at 19h 28m 11s.xml">
+      <configuration name="e2e" configurationId="mocha-javascript-test-runner" />
+    </history-entry>
+    <history-entry file="e2e - 2019.03.11 at 19h 31m 38s.xml">
+      <configuration name="e2e" configurationId="mocha-javascript-test-runner" />
+    </history-entry>
+    <history-entry file="e2e - 2019.03.11 at 19h 43m 14s.xml">
+      <configuration name="e2e" configurationId="mocha-javascript-test-runner" />
+    </history-entry>
+    <history-entry file="tile_test - 2019.03.11 at 19h 43m 19s.xml">
       <configuration name="tile_test" configurationId="mocha-javascript-test-runner" />
     </history-entry>
-    <history-entry file="tile_test - 2018.07.20 at 22h 01m 45s.xml">
+    <history-entry file="tile_test - 2019.03.11 at 19h 43m 51s.xml">
       <configuration name="tile_test" configurationId="mocha-javascript-test-runner" />
     </history-entry>
-    <history-entry file="tile_test - 2018.07.20 at 22h 02m 46s.xml">
+    <history-entry file="tile_test - 2019.03.11 at 19h 44m 53s.xml">
       <configuration name="tile_test" configurationId="mocha-javascript-test-runner" />
     </history-entry>
-    <history-entry file="tile_test - 2018.07.20 at 22h 03m 03s.xml">
-      <configuration name="tile_test" configurationId="mocha-javascript-test-runner" />
-    </history-entry>
-    <history-entry file="tile_test - 2018.07.20 at 22h 03m 36s.xml">
-      <configuration name="tile_test" configurationId="mocha-javascript-test-runner" />
-    </history-entry>
-    <history-entry file="tile_test - 2018.07.20 at 22h 03m 52s.xml">
-      <configuration name="tile_test" configurationId="mocha-javascript-test-runner" />
-    </history-entry>
-    <history-entry file="tile_test - 2018.07.20 at 22h 04m 53s.xml">
+    <history-entry file="tile_test - 2019.03.11 at 19h 45m 24s.xml">
       <configuration name="tile_test" configurationId="mocha-javascript-test-runner" />
     </history-entry>
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="182427000" />
+    <option name="totallyTimeSpent" value="398821000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -1016,30 +874,33 @@
     </todo-panel>
   </component>
   <component name="ToolWindowManager">
-    <frame x="-1" y="0" width="3442" height="1329" extended-state="6" />
+    <frame x="818" y="31" width="2340" height="1265" extended-state="0" />
     <layout>
-      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.120795555" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.122572295" />
       <window_info anchor="bottom" id="TODO" order="6" weight="0.3294606" />
       <window_info anchor="bottom" id="Docker" order="7" show_stripe_button="false" />
       <window_info anchor="bottom" id="Event Log" order="10" sideWeight="0.50054526" side_tool="true" weight="0.37728938" />
       <window_info anchor="bottom" id="Version Control" order="9" show_stripe_button="false" />
-      <window_info anchor="bottom" id="Run" order="2" visible="true" weight="0.40497926" />
+      <window_info anchor="bottom" id="Run" order="2" visible="true" weight="0.22261174" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
-      <window_info anchor="bottom" id="Terminal" order="8" weight="0.32863072" />
+      <window_info anchor="bottom" id="Terminal" order="8" weight="0.32865906" />
       <window_info id="Favorites" order="2" side_tool="true" />
-      <window_info anchor="bottom" id="Debug" order="3" sideWeight="0.49945474" weight="0.37593362" />
+      <window_info anchor="bottom" id="Debug" order="3" sideWeight="0.49945474" weight="0.30587205" />
       <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
       <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
       <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
-      <window_info anchor="bottom" id="Find" order="1" weight="0.32863072" />
-      <window_info anchor="right" id="Coverage" order="3" side_tool="true" visible="true" weight="0.2680989" />
+      <window_info anchor="bottom" id="Find" order="1" weight="0.32778266" />
+      <window_info anchor="right" id="Coverage" order="3" side_tool="true" visible="true" weight="0.116071425" />
     </layout>
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="1" />
+  </component>
+  <component name="UnknownFeatures">
+    <option featureType="com.intellij.fileTypeFactory" implementationName="*.sh" />
   </component>
   <component name="VcsContentAnnotationSettings">
     <option name="myLimit" value="2678400000" />
@@ -1057,17 +918,83 @@
           <line>57</line>
           <option name="timeStamp" value="51" />
         </line-breakpoint>
-        <line-breakpoint enabled="true" type="javascript">
-          <url>file://$PROJECT_DIR$/tests/infrastructure/server_test.js</url>
-          <line>21</line>
-          <option name="timeStamp" value="126" />
-        </line-breakpoint>
       </breakpoints>
-      <option name="time" value="127" />
+      <option name="time" value="358" />
     </breakpoint-manager>
   </component>
+  <component name="XSLT-Support.FileAssociations.UIState">
+    <expand>
+      <path>
+        <item name="prototype" type="b2602c69:ProjectViewProjectNode" />
+        <item name="prototype" type="462c0819:PsiDirectoryNode" />
+      </path>
+    </expand>
+    <select />
+  </component>
   <component name="debuggerHistoryManager">
+    <expressions id="evaluateCodeFragment">
+      <expression>
+        <expression-string>payload.slice(2)</expression-string>
+        <language-id>JavaScript</language-id>
+        <evaluation-mode>CODE_FRAGMENT</evaluation-mode>
+      </expression>
+      <expression>
+        <expression-string>payload.slice(1)</expression-string>
+        <language-id>JavaScript</language-id>
+        <evaluation-mode>CODE_FRAGMENT</evaluation-mode>
+      </expression>
+      <expression>
+        <expression-string>(new c2s.LoginRequest()).prototype</expression-string>
+        <language-id>JavaScript</language-id>
+        <evaluation-mode>CODE_FRAGMENT</evaluation-mode>
+      </expression>
+      <expression>
+        <expression-string>new c2s.LoginRequest()</expression-string>
+        <language-id>JavaScript</language-id>
+        <evaluation-mode>CODE_FRAGMENT</evaluation-mode>
+      </expression>
+      <expression>
+        <expression-string>c2s.LoginRequest</expression-string>
+        <language-id>JavaScript</language-id>
+        <evaluation-mode>CODE_FRAGMENT</evaluation-mode>
+      </expression>
+      <expression>
+        <expression-string>LoginRequest</expression-string>
+        <language-id>JavaScript</language-id>
+        <evaluation-mode>CODE_FRAGMENT</evaluation-mode>
+      </expression>
+      <expression>
+        <expression-string>type.prototype</expression-string>
+        <language-id>JavaScript</language-id>
+        <evaluation-mode>CODE_FRAGMENT</evaluation-mode>
+      </expression>
+      <expression>
+        <expression-string>type.prototype.name</expression-string>
+        <language-id>JavaScript</language-id>
+        <evaluation-mode>CODE_FRAGMENT</evaluation-mode>
+      </expression>
+      <expression>
+        <expression-string>type</expression-string>
+        <language-id>JavaScript</language-id>
+        <evaluation-mode>CODE_FRAGMENT</evaluation-mode>
+      </expression>
+    </expressions>
     <expressions id="evaluateExpression">
+      <expression>
+        <expression-string>this.login</expression-string>
+        <language-id>JavaScript</language-id>
+        <evaluation-mode>EXPRESSION</evaluation-mode>
+      </expression>
+      <expression>
+        <expression-string>login</expression-string>
+        <language-id>JavaScript</language-id>
+        <evaluation-mode>EXPRESSION</evaluation-mode>
+      </expression>
+      <expression>
+        <expression-string>this.login.slice(0, 12-1)</expression-string>
+        <language-id>JavaScript</language-id>
+        <evaluation-mode>EXPRESSION</evaluation-mode>
+      </expression>
       <expression>
         <expression-string>socketToUnreg.id</expression-string>
         <language-id>JavaScript</language-id>
@@ -1098,230 +1025,77 @@
         <language-id>JavaScript</language-id>
         <evaluation-mode>EXPRESSION</evaluation-mode>
       </expression>
-      <expression>
-        <expression-string>new o.constructor()</expression-string>
-        <language-id>JavaScript</language-id>
-        <evaluation-mode>EXPRESSION</evaluation-mode>
-      </expression>
-      <expression>
-        <expression-string>new window[classType]()</expression-string>
-        <language-id>JavaScript</language-id>
-        <evaluation-mode>EXPRESSION</evaluation-mode>
-      </expression>
-      <expression>
-        <expression-string>new this[classType]()</expression-string>
-        <language-id>JavaScript</language-id>
-        <evaluation-mode>EXPRESSION</evaluation-mode>
-      </expression>
     </expressions>
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/game/states/state_holeground.js">
+    <entry file="file://$PROJECT_DIR$/infrastructure/network/auth.js" />
+    <entry file="file://$PROJECT_DIR$/package.json">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="195">
-          <caret line="13" column="17" selection-start-line="13" selection-start-column="17" selection-end-line="13" selection-end-column="17" />
+        <state relative-caret-position="72">
+          <caret line="4" column="19" lean-forward="true" selection-start-line="4" selection-start-column="19" selection-end-line="4" selection-end-column="19" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/old_src/run.js">
+    <entry file="file://$PROJECT_DIR$/tests/infrastructure/network/hasher_test.js" />
+    <entry file="file://$PROJECT_DIR$/infrastructure/utils/hasher.js" />
+    <entry file="file://$PROJECT_DIR$/infrastructure/rules.txt" />
+    <entry file="file://$PROJECT_DIR$/tests/game/logic/logic_test.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="75">
-          <caret line="5" selection-start-line="5" selection-end-line="5" selection-end-column="32" />
+        <state relative-caret-position="72">
+          <caret line="4" lean-forward="true" selection-start-line="4" selection-end-line="4" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/old_src/logic.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="225">
-          <caret line="15" column="10" selection-start-line="15" selection-start-column="10" selection-end-line="15" selection-end-column="10" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="uml://JavaScript-modules-diagram//home/luk/dev/ClickerGardenServer/prototype/network/server.js">
-      <provider selected="true" editor-type-id="UmlEditorProvider">
-        <state>
-          <ID>JavaScript-modules-diagram</ID>
-          <OriginalElement>$PROJECT_DIR$/network/server.js</OriginalElement>
-          <nodes>
-            <node x="" y="">$APPLICATION_CONFIG_DIR$/javascript/nodejs/10.0.0/core-modules/net.js</node>
-            <node x="" y="">$PROJECT_DIR$/network/server.js#net#18;/home/luk/dev/ClickerGardenServer/prototype/network/server.js#util#44;</node>
-            <node x="" y="">$APPLICATION_CONFIG_DIR$/javascript/nodejs/10.0.0/core-modules/util.js</node>
-          </nodes>
-          <notes />
-          <edges />
-          <settings layout="Hierarchic Group" zoom="1.0" x="104.0" y="129.0" />
-          <SelectedNodes />
-          <Categories>
-            <Category>All</Category>
-          </Categories>
-          <SCOPE>All</SCOPE>
-          <VISIBILITY>Details</VISIBILITY>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/old_tests/tile_test_.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="335">
-          <caret line="27" column="21" lean-forward="true" selection-start-line="27" selection-start-column="21" selection-end-line="27" selection-end-column="21" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="jar://$APPLICATION_HOME_DIR$/plugins/JavaScriptLanguage/lib/JavaScriptLanguage.jar!/com/intellij/javascript/nodejs/library/node-buffer-stub.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="210">
-          <caret line="14" column="9" selection-start-line="14" selection-start-column="9" selection-end-line="14" selection-end-column="9" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/node_modules/source-map-support/README.md">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="349">
-          <caret line="246" column="26" selection-start-line="246" selection-start-column="26" selection-end-line="246" selection-end-column="26" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/old_tests/logic_test_.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="45">
-          <caret line="3" column="29" selection-start-line="3" selection-start-column="29" selection-end-line="3" selection-end-column="29" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/old_tests/game_server_test_.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="225">
-          <caret line="15" column="23" lean-forward="true" selection-start-line="15" selection-start-column="23" selection-end-line="15" selection-end-column="23" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$APPLICATION_CONFIG_DIR$/javascript/nodejs/10.0.0/core-modules/domain.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="6165">
-          <caret line="430" selection-start-line="430" selection-end-line="430" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/old_src/server.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="2475">
-          <caret line="165" column="27" selection-start-line="165" selection-start-column="27" selection-end-line="165" selection-end-column="27" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/network/network_test.js" />
-    <entry file="file://$PROJECT_DIR$/network/network.js" />
-    <entry file="file://$PROJECT_DIR$/run.js">
+    <entry file="file://$PROJECT_DIR$/game/rules.txt">
       <provider selected="true" editor-type-id="text-editor" />
     </entry>
-    <entry file="file://$PROJECT_DIR$/node_modules/sinon/lib/sinon/mock.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="161">
-          <caret line="65" column="12" selection-start-line="65" selection-start-column="12" selection-end-line="65" selection-end-column="12" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$APPLICATION_CONFIG_DIR$/javascript/nodejs/10.0.0/core-modules/assert.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="177">
-          <caret line="259" selection-start-line="259" selection-end-line="259" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$APPLICATION_CONFIG_DIR$/javascript/nodejs/10.0.0/core-modules/events.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="177">
-          <caret line="181" column="12" selection-start-line="181" selection-start-column="12" selection-end-line="181" selection-end-column="12" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$APPLICATION_CONFIG_DIR$/javascript/nodejs/10.0.0/core-modules/net.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="731">
-          <caret line="1160" column="13" selection-start-line="1160" selection-start-column="13" selection-end-line="1160" selection-end-column="13" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/tests/infrastructure/network/message_parser_test.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="2610">
-          <caret line="145" column="28" selection-start-line="145" selection-start-column="28" selection-end-line="145" selection-end-column="28" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/infrastructure/network/events.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1602">
-          <caret line="89" column="43" selection-start-line="89" selection-start-column="43" selection-end-line="89" selection-end-column="43" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/infrastructure/network/listener.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="936">
-          <caret line="52" column="26" selection-start-line="52" selection-start-column="26" selection-end-line="52" selection-end-column="26" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/infrastructure/network/message_parser.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="288">
-          <caret line="22" column="29" lean-forward="true" selection-start-line="22" selection-start-column="29" selection-end-line="22" selection-end-column="29" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/infrastructure/network/event_dispatcher.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="108">
-          <caret line="6" column="15" selection-start-line="6" selection-start-column="15" selection-end-line="6" selection-end-column="15" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/infrastructure/server.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="378">
-          <caret line="21" column="22" selection-start-line="21" selection-start-column="22" selection-end-line="21" selection-end-column="22" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/tests/infrastructure/network/listener_test.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="633">
-          <caret line="49" selection-start-line="49" selection-end-line="49" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/tests/infrastructure/logic/logic_test.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="144">
-          <caret line="8" lean-forward="true" selection-start-line="8" selection-end-line="8" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/game/states/state.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="36">
-          <caret line="2" column="6" selection-start-line="2" selection-start-column="6" selection-end-line="2" selection-end-column="6" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/game/states/plants.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="90">
-          <caret line="5" column="21" selection-start-line="5" selection-start-column="21" selection-end-line="5" selection-end-column="21" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/game/states/state_grass.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state>
-          <caret column="27" selection-start-column="27" selection-end-column="27" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/game/states/state_plant.js">
+    <entry file="file://$PROJECT_DIR$/game/states/state_wilted.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="342">
-          <caret line="19" column="16" selection-start-line="19" selection-start-column="16" selection-end-line="19" selection-end-column="16" />
+          <caret line="19" lean-forward="true" selection-start-line="19" selection-end-line="19" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/game/states/state_planted.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="234">
+          <caret line="13" column="42" selection-start-line="13" selection-start-column="42" selection-end-line="13" selection-end-column="42" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/infra/utils/hasher.js" />
+    <entry file="file://$PROJECT_DIR$/game/states/state_highgrass.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="216">
+          <caret line="12" column="8" selection-start-line="12" selection-start-column="8" selection-end-line="12" selection-end-column="8" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/game/farm.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="126">
+          <caret line="7" column="1" selection-start-line="7" selection-start-column="1" selection-end-line="7" selection-end-column="1" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/game/player.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="126">
+          <caret line="7" column="1" selection-start-line="7" selection-start-column="1" selection-end-line="7" selection-end-column="1" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/game/field.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="144">
+          <caret line="8" column="22" selection-start-line="8" selection-start-column="22" selection-end-line="8" selection-end-column="22" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/game/states/tile.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="270">
+          <caret line="15" selection-start-line="15" selection-end-line="15" />
         </state>
       </provider>
     </entry>
@@ -1339,73 +1113,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/game/states/state_wilted.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="36">
-          <caret line="2" column="6" selection-start-line="2" selection-start-column="6" selection-end-line="2" selection-end-column="6" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/game/states/state_planted.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="234">
-          <caret line="13" column="42" selection-start-line="13" selection-start-column="42" selection-end-line="13" selection-end-column="42" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/game/states/state_highgrass.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="216">
-          <caret line="12" column="8" selection-start-line="12" selection-start-column="8" selection-end-line="12" selection-end-column="8" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/tests/infrastructure/utils/client.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="216">
-          <caret line="12" column="16" selection-start-line="12" selection-start-column="16" selection-end-line="12" selection-end-column="16" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/tests/infrastructure/server_test.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="558">
-          <caret line="31" column="31" selection-start-line="31" selection-start-column="31" selection-end-line="31" selection-end-column="31" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/tests/game/states/state_wilted_test.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="18">
-          <caret line="1" column="31" selection-start-line="1" selection-start-column="31" selection-end-line="1" selection-end-column="31" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/tests/game/states/state_ready_test.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="126">
-          <caret line="7" column="88" selection-start-line="7" selection-start-column="88" selection-end-line="7" selection-end-column="88" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/tests/game/states/state_highgrass_test.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="36">
-          <caret line="2" selection-start-line="2" selection-end-line="2" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/tests/game/states/state_ground_test.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="90">
-          <caret line="5" selection-start-line="5" selection-end-line="5" selection-end-column="88" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/tests/game/states/state_grass_test.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="306">
-          <caret line="17" column="52" lean-forward="true" selection-start-line="17" selection-start-column="52" selection-end-line="17" selection-end-column="52" />
+          <caret line="17" column="52" selection-start-line="17" selection-start-column="52" selection-end-line="17" selection-end-column="52" />
         </state>
       </provider>
     </entry>
@@ -1423,6 +1134,27 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/tests/game/states/state_ready_test.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="126">
+          <caret line="7" column="88" selection-start-line="7" selection-start-column="88" selection-end-line="7" selection-end-column="88" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/tests/game/states/state_ground_test.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="90">
+          <caret line="5" selection-start-line="5" selection-end-line="5" selection-end-column="88" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/tests/game/states/state_wilted_test.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="18">
+          <caret line="1" column="31" selection-start-line="1" selection-start-column="31" selection-end-line="1" selection-end-column="31" />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/tests/game/states/state_planted_test.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="90">
@@ -1430,45 +1162,212 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/tests/infrastructure/network/event_dispatcher_test.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="216">
-          <caret line="12" column="34" selection-start-line="12" selection-start-column="34" selection-end-line="12" selection-end-column="34" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/game/farm.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="126">
-          <caret line="7" column="1" lean-forward="true" selection-start-line="7" selection-start-column="1" selection-end-line="7" selection-end-column="1" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/game/player.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="126">
-          <caret line="7" column="1" lean-forward="true" selection-start-line="7" selection-start-column="1" selection-end-line="7" selection-end-column="1" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/game/states/tile.js">
+    <entry file="file://$PROJECT_DIR$/infra/utils/crypto_checker.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="270">
           <caret line="15" lean-forward="true" selection-start-line="15" selection-end-line="15" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/game/field.js">
+    <entry file="file://$PROJECT_DIR$/infra/server.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="144">
-          <caret line="8" column="22" selection-start-line="8" selection-start-column="22" selection-end-line="8" selection-end-column="22" />
+        <state relative-caret-position="342">
+          <caret line="19" column="23" selection-start-line="19" selection-start-column="23" selection-end-line="19" selection-end-column="23" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/infrastructure/logic/logic.js">
+    <entry file="file://$PROJECT_DIR$/tests/game/states/state_highgrass_test.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="342">
-          <caret line="19" column="23" lean-forward="true" selection-start-line="19" selection-start-column="23" selection-end-line="19" selection-end-column="23" />
+        <state relative-caret-position="36">
+          <caret line="2" selection-start-line="2" selection-end-line="2" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$APPLICATION_CONFIG_DIR$/javascript/nodejs/10.0.0/core-modules/events.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="3186">
+          <caret line="196" selection-start-line="196" selection-end-line="196" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/infra/network/chunk_processor.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="972">
+          <caret line="54" column="16" selection-start-line="54" selection-start-column="16" selection-end-line="54" selection-end-column="16" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/infra/network/messages/client2server_pb.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1458">
+          <caret line="81" column="2" lean-forward="true" selection-start-line="81" selection-start-column="2" selection-end-line="81" selection-end-column="2" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/tests/infra/utils/crypto_checker_test.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state>
+          <caret selection-end-line="5" selection-end-column="33" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/tests/infra/utils/message_types.test.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="414">
+          <caret line="23" column="34" lean-forward="true" selection-start-line="23" selection-start-column="34" selection-end-line="23" selection-end-column="34" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/tests/auth/auth_test.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="2574">
+          <caret line="143" column="24" selection-start-line="143" selection-start-column="24" selection-end-line="143" selection-end-column="24" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/infra/network/messages/message_types.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="126">
+          <caret line="7" column="6" selection-start-line="7" selection-start-column="6" selection-end-line="7" selection-end-column="6" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/infra/network/messages/server2client.proto">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="54">
+          <caret line="3" column="21" selection-start-line="3" selection-start-column="8" selection-end-line="3" selection-end-column="21" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/infra/network/messages/server2client_pb.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-26" />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/infra/network/messages/client2server.proto">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="54">
+          <caret line="3" column="20" selection-start-line="3" selection-start-column="8" selection-end-line="3" selection-end-column="20" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/infra/core/events_dispatcher.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="504">
+          <caret line="28" lean-forward="true" selection-start-line="28" selection-end-line="28" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/tests/infra/network/unpacker_test.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="44">
+          <caret line="40" lean-forward="true" selection-start-line="40" selection-end-line="40" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/infra/network/unpacker.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="978">
+          <caret line="75" column="18" selection-start-line="75" selection-start-column="18" selection-end-line="75" selection-end-column="18" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/e2e/server_test.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="600">
+          <caret line="58" column="36" lean-forward="true" selection-start-line="58" selection-start-column="36" selection-end-line="58" selection-end-column="36" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/infra/core/event_handler.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="234">
+          <caret line="13" column="4" selection-start-line="13" selection-start-column="4" selection-end-line="13" selection-end-column="4" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/infra/Rules.txt">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="360">
+          <caret line="20" column="26" lean-forward="true" selection-start-line="20" selection-start-column="26" selection-end-line="20" selection-end-column="26" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/auth/auth.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="636">
+          <caret line="43" column="9" lean-forward="true" selection-start-line="43" selection-start-column="9" selection-end-line="43" selection-end-column="9" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/tests/core/events_dispatcher_test.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="100">
+          <caret line="163" column="7" selection-start-line="163" selection-start-column="7" selection-end-line="163" selection-end-column="7" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="uml://JavaScript-modules-diagram//home/luk/dev/ClickerGardenServer/prototype/infra/network">
+      <provider selected="true" editor-type-id="UmlEditorProvider">
+        <state>
+          <ID>JavaScript-modules-diagram</ID>
+          <OriginalElement>$PROJECT_DIR$/infra/network</OriginalElement>
+          <nodes>
+            <node x="" y="">$PROJECT_DIR$/infra/network/chunk_processor.js#ChunkProcessor#2144;</node>
+            <node x="" y="">$PROJECT_DIR$/infra/network/messages/client2server_pb.js#jspb#237;</node>
+            <node x="" y="">$PROJECT_DIR$/infra/network/connection_handler.js#ChunkProcessor#65;/home/luk/dev/ClickerGardenServer/prototype/infra/network/connection_handler.js#net#20;</node>
+            <node x="" y="">$PROJECT_DIR$/infra/network/dispatcher.js#msgTypes#98;/home/luk/dev/ClickerGardenServer/prototype/infra/network/dispatcher.js#net#18;/home/luk/dev/ClickerGardenServer/prototype/infra/network/dispatcher.js#s2c#46;</node>
+            <node x="" y="">$PROJECT_DIR$/node_modules/google-protobuf/google-protobuf.js</node>
+            <node x="" y="">$PROJECT_DIR$/infra/network/messages/message1_pb.js#jspb#237;</node>
+            <node x="" y="">$PROJECT_DIR$/infra/network/messages/message_types.js#c2s#7;/home/luk/dev/ClickerGardenServer/prototype/infra/network/messages/message_types.js#s2c#49;</node>
+            <node x="" y="">$APPLICATION_CONFIG_DIR$/javascript/nodejs/10.0.0/core-modules/net.js</node>
+            <node x="" y="">$PROJECT_DIR$/infra/network/messages/server2client_pb.js#jspb#237;</node>
+            <node x="" y="">$PROJECT_DIR$/infra/network/tcp_server.js#net#18;</node>
+            <node x="" y="">$PROJECT_DIR$/infra/network/unpacker.js#c2s#46;/home/luk/dev/ClickerGardenServer/prototype/infra/network/unpacker.js#msgTypes#150;/home/luk/dev/ClickerGardenServer/prototype/infra/network/unpacker.js#net#18;/home/luk/dev/ClickerGardenServer/prototype/infra/network/unpacker.js#s2c#98;</node>
+          </nodes>
+          <notes />
+          <edges />
+          <settings layout="Hierarchic Group" zoom="1.0" x="469.0" y="415.0" />
+          <SelectedNodes />
+          <Categories>
+            <Category>All</Category>
+          </Categories>
+          <VISIBILITY>Details</VISIBILITY>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/infra/network/tcp_server.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="144">
+          <caret line="8" column="52" selection-start-line="8" selection-start-column="52" selection-end-line="8" selection-end-column="52" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/tests/infra/network/dispatcher_test.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="314">
+          <caret line="85" column="24" selection-start-line="85" selection-start-column="24" selection-end-line="85" selection-end-column="24" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/tests/infra/network/tcp_server_test.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="206">
+          <caret line="16" column="30" lean-forward="true" selection-start-line="16" selection-start-column="30" selection-end-line="16" selection-end-column="30" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/infra/network/dispatcher.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="450">
+          <caret line="25" column="21" lean-forward="true" selection-start-line="25" selection-start-column="21" selection-end-line="25" selection-end-column="21" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/infra/network/connection_handler.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="252">
+          <caret line="14" column="19" selection-start-line="14" selection-start-column="19" selection-end-line="14" selection-end-column="19" />
         </state>
       </provider>
     </entry>

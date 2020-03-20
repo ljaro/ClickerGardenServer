@@ -84,7 +84,6 @@ describe('Dispatcher', function () {
     it('should registerSocket, unpackMessage, createEvent, dispatch after consume', function () {
         let socket = {}
         let message = {}
-        dispatcher.registerSocket = sinon.spy();
         dispatcher.unpackMessage = sinon.spy();
         dispatcher.createEvent = sinon.spy();
         dispatcher.dispatch = sinon.spy();
@@ -92,7 +91,6 @@ describe('Dispatcher', function () {
         dispatcher.consume(socket, message);
 
         sinon.assert.callOrder(
-            dispatcher.registerSocket,
             dispatcher.unpackMessage,
             dispatcher.dispatch
         )

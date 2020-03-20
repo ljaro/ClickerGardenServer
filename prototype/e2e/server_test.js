@@ -1,12 +1,13 @@
 const assert = require('assert');
 
 const net = require('net');
-
+const c2s = require('../infra/network/messages/client2server_pb')
 const sinon = require("sinon");
 var fp = require("find-free-port")
 
 
 const server = require('../infra/server').server;
+const UnPacker = require('../infra/network/unpacker').UnPacker;
 
 describe('Server', function () {
 
@@ -39,9 +40,19 @@ describe('Server', function () {
         });
     }
 
-    it('should 1', async function () {
+    it('should login and get login status message', async function () {
+
+        const loginReq = new c2s.LoginRequest();
+        loginReq.setLogin('login1');
+        loginReq.setPass('pass2');
+
+        const unPacker = new UnPacker();
+        const payload = unPacker.packMessage(loginReq);
+
         let client = await clientConnect({port: server.port()});
-        client.on('data',async (data)=>{
+        await send(client, payload)
+
+        client.on('data', async (data)=>{
             console.log('data ' + data)
 
             await send(client, Buffer.from([1,2,3]))
